@@ -1,0 +1,204 @@
+```react
+import React, { useState, useEffect } from 'react';
+import { Globe, Info, Home } from 'lucide-react';
+
+// ==========================================
+// Data & Translations
+// ==========================================
+const appData = {
+  ui: {
+    he: {
+      mainTitle: "Global Explorer Hub",
+      pageTitle: "אינדקס מחקר: פולין",
+      introText: "ברוכים הבאים למאגר המידע. מסך זה מאגד את קישורי הגישה הישירים למחקרי העומק אודות פולין וחמשת ערי המטרופולין המרכזיות שלה. כל מחקר כולל ניתוח אטימולוגי נרחב, דמוגרפיה, היסטוריה ופירוט על ההוגים.",
+      footerTitle: "תחזוקה, טכנולוגיה וסטנדרטים:",
+      footerText: "מאגר זה נבנה ומתוחזק תוך עמידה מלאה בעקרונות עקביות (Consistency) ושימור (Retention). תצורת המאגר מותאמת ל-Dark Mode ועברה אופטימיזציה ייעודית לתצוגת Samsung S25 Ultra. לא מבוצעות השמטות מידע.",
+      aboutBtn: "אודות",
+      homeBtn: "ראשי",
+      langToggleBtn: "English",
+      aboutTitle: "אודות הפרויקט",
+      aboutP1: "פרויקט מחקר זה נבנה תחת פרוטוקול פיתוח מחמיר המבטיח שלמות מידע ואחידות טוטאלית. אנו מתחייבים לעקרונות 'אפס מחיקות' (Zero Deletion) ושימור מידע מלא בכל עדכון של המערכת.",
+      aboutP2: "כל אובייקט במאגר, בין אם זו מדינה, עיר, או אישיות היסטורית, זוכה לטיפול עמוק ומפורט הכולל: חלוקה אטימולוגית ברורה של השם, שנות הקמה מדוייקות, זיהוי המייסדים וההוגים, וניתוח מעמיק של רקע, היסטוריה ואידאולוגיה.",
+      aboutP3: "המעטפת הטכנית מבוססת על סביבת React ו-Tailwind CSS. היא מותאמת ב-100% לתצוגת Dark Mode ועברה אופטימיזציית Mobile-First קפדנית, התפורה בדיוק למידות של מסכי Samsung S25 Ultra, על מנת להבטיח נוחות קריאה מקסימלית לאורך זמן ללא מאמץ עיניים.",
+    },
+    en: {
+      mainTitle: "Global Explorer Hub",
+      pageTitle: "Research Index: Poland",
+      introText: "Welcome to the knowledge base. This screen aggregates direct access links to in-depth research on Poland and its five major metropolitan cities. Each research includes extensive etymological analysis, demographics, history, and details about the founders.",
+      footerTitle: "Maintenance, Technology & Standards:",
+      footerText: "This database is built and maintained in full compliance with Consistency and Retention principles. The configuration is optimized for Dark Mode and specifically tailored for Samsung S25 Ultra displays. No information is omitted.",
+      aboutBtn: "About",
+      homeBtn: "Home",
+      langToggleBtn: "עברית",
+      aboutTitle: "About the Project",
+      aboutP1: "This research project is built under a strict development protocol ensuring data completeness and absolute uniformity. We are committed to the 'Zero Deletion' principle and full information retention with every system update.",
+      aboutP2: "Every object in the database, whether a country, city, or historical figure, receives an in-depth and detailed treatment including: clear etymological breakdown of the name, exact establishment years, identification of founders, and profound analysis of background, history, and ideology.",
+      aboutP3: "The technical framework is based on React and Tailwind CSS environments. It is 100% optimized for Dark Mode and has undergone rigorous Mobile-First optimization, perfectly tailored for Samsung S25 Ultra displays to ensure maximum reading comfort over time without eye strain.",
+    }
+  },
+  links: [
+    { id: 'poland', title: { he: 'רפובליקת פולין', en: 'Republic of Poland' }, subtitle: { he: 'מחקר מדינה', en: 'Country Research' }, color: 'from-red-900/80 to-red-600/40', border: 'border-red-500/30' },
+    { id: 'warsaw', title: { he: 'ורשה', en: 'Warsaw' }, subtitle: { he: 'עיר בירה', en: 'Capital City' }, color: 'from-blue-900/80 to-blue-600/40', border: 'border-blue-500/30' },
+    { id: 'krakow', title: { he: 'קרקוב', en: 'Kraków' }, subtitle: { he: 'מחקר עיר', en: 'City Research' }, color: 'from-amber-900/80 to-amber-600/40', border: 'border-amber-500/30' },
+    { id: 'wroclaw', title: { he: 'ורוצלב', en: 'Wrocław' }, subtitle: { he: 'מחקר עיר', en: 'City Research' }, color: 'from-emerald-900/80 to-emerald-600/40', border: 'border-emerald-500/30' },
+    { id: 'lodz', title: { he: "לודז'", en: 'Łódź' }, subtitle: { he: 'מחקר עיר', en: 'City Research' }, color: 'from-purple-900/80 to-purple-600/40', border: 'border-purple-500/30' },
+    { id: 'poznan', title: { he: 'פוזנן', en: 'Poznań' }, subtitle: { he: 'מחקר עיר', en: 'City Research' }, color: 'from-teal-900/80 to-teal-600/40', border: 'border-teal-500/30' }
+  ]
+};
+
+export default function IndexBubbles() {
+  const [lang, setLang] = useState('he');
+  const [view, setView] = useState('home'); // 'home' | 'about'
+  
+  const ui = appData.ui[lang];
+
+  // Dynamically update document direction based on language
+  useEffect(() => {
+    document.documentElement.setAttribute('dir', lang === 'he' ? 'rtl' : 'ltr');
+  }, [lang]);
+
+  return (
+    <div 
+      dir={lang === 'he' ? 'rtl' : 'ltr'} 
+      className="min-h-screen bg-slate-950 flex flex-col items-center justify-between text-slate-200 font-sans p-6 overflow-hidden relative"
+    >
+      {/* רקע דקורטיבי עדין */}
+      <div className="absolute top-[-10%] left-[-10%] w-96 h-96 bg-blue-900/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div className="absolute bottom-[-10%] right-[-10%] w-96 h-96 bg-emerald-900/10 rounded-full blur-3xl pointer-events-none"></div>
+
+      {/* Top Navigation Bar */}
+      <nav className="w-full max-w-md flex justify-between items-center mb-8 relative z-20 mt-4">
+        <button 
+          onClick={() => setLang(lang === 'he' ? 'en' : 'he')}
+          className="flex items-center gap-2 bg-slate-900/60 hover:bg-slate-800 transition-colors border border-slate-700/50 rounded-full px-4 py-2 text-sm font-semibold backdrop-blur-md"
+        >
+          <Globe size={18} className="text-blue-400" />
+          <span>{ui.langToggleBtn}</span>
+        </button>
+
+        <button 
+          onClick={() => setView(view === 'home' ? 'about' : 'home')}
+          className="flex items-center gap-2 bg-slate-900/60 hover:bg-slate-800 transition-colors border border-slate-700/50 rounded-full px-4 py-2 text-sm font-semibold backdrop-blur-md"
+        >
+          {view === 'home' ? (
+            <>
+              <Info size={18} className="text-emerald-400" />
+              <span>{ui.aboutBtn}</span>
+            </>
+          ) : (
+            <>
+              <Home size={18} className="text-blue-400" />
+              <span>{ui.homeBtn}</span>
+            </>
+          )}
+        </button>
+      </nav>
+
+      {/* אזור תוכן דינמי (ראשי / אודות) */}
+      <div className="flex-1 w-full max-w-md flex flex-col items-center relative z-10 w-full">
+        
+        {view === 'home' && (
+          <>
+            {/* מבוא חלקי */}
+            <header className="w-full text-center mb-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
+              <h1 className="text-4xl sm:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-l from-blue-400 to-emerald-400 mb-4 tracking-tight">
+                {ui.mainTitle}
+              </h1>
+              <div className="bg-slate-900/80 backdrop-blur-sm border border-slate-800 rounded-2xl p-5 shadow-xl text-start">
+                <h2 className="text-xl font-bold text-white mb-2 text-center">{ui.pageTitle}</h2>
+                <p className="text-slate-400 text-sm leading-relaxed">
+                  {ui.introText}
+                </p>
+              </div>
+            </header>
+
+            {/* אזור הבועות (Bubbles) */}
+            <main className="w-full flex items-center justify-center my-4 animate-in fade-in slide-in-from-bottom-8 duration-700">
+              <div className="flex flex-wrap justify-center gap-5">
+                {appData.links.map((link, index) => (
+                  <button
+                    key={link.id}
+                    onClick={() => console.log(`Navigating to ${link.id}...`)}
+                    className={`
+                      group relative flex flex-col items-center justify-center text-center
+                      w-28 h-28 sm:w-32 sm:h-32 rounded-full 
+                      bg-gradient-to-br ${link.color} 
+                      border ${link.border}
+                      shadow-[0_0_20px_rgba(0,0,0,0.3)]
+                      hover:shadow-[0_0_30px_rgba(255,255,255,0.1)]
+                      hover:-translate-y-2 transition-all duration-300 ease-out
+                      backdrop-blur-md
+                    `}
+                    style={{
+                      animation: `float 6s ease-in-out infinite`,
+                      animationDelay: `${index * 0.5}s`
+                    }}
+                  >
+                    <div className="absolute inset-0 rounded-full bg-slate-950/20 group-hover:bg-transparent transition-colors duration-300"></div>
+                    <span className="relative z-10 text-white font-bold text-lg sm:text-xl drop-shadow-md px-2">
+                      {link.title[lang]}
+                    </span>
+                    <span className="relative z-10 text-slate-300 text-xs sm:text-sm mt-1 opacity-80 group-hover:opacity-100 transition-opacity">
+                      {link.subtitle[lang]}
+                    </span>
+                  </button>
+                ))}
+              </div>
+            </main>
+          </>
+        )}
+
+        {view === 'about' && (
+          <main className="w-full flex flex-col items-center animate-in fade-in slide-in-from-bottom-6 duration-500">
+             <h1 className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-l from-emerald-400 to-blue-400 mb-8 tracking-tight text-center">
+                {ui.aboutTitle}
+             </h1>
+             
+             <div className="bg-slate-900/80 backdrop-blur-sm border border-slate-800 rounded-2xl p-6 shadow-xl space-y-4 text-start">
+                <div className="flex items-start gap-3">
+                  <div className="mt-1 bg-blue-500/20 p-2 rounded-lg"><Info size={20} className="text-blue-400" /></div>
+                  <p className="text-slate-300 leading-relaxed text-sm sm:text-base">{ui.aboutP1}</p>
+                </div>
+                
+                <div className="w-full h-px bg-slate-800/50"></div>
+                
+                <div className="flex items-start gap-3">
+                  <div className="mt-1 bg-purple-500/20 p-2 rounded-lg"><Globe size={20} className="text-purple-400" /></div>
+                  <p className="text-slate-300 leading-relaxed text-sm sm:text-base">{ui.aboutP2}</p>
+                </div>
+
+                <div className="w-full h-px bg-slate-800/50"></div>
+
+                <div className="flex items-start gap-3">
+                  <div className="mt-1 bg-emerald-500/20 p-2 rounded-lg"><Home size={20} className="text-emerald-400" /></div>
+                  <p className="text-slate-300 leading-relaxed text-sm sm:text-base">{ui.aboutP3}</p>
+                </div>
+             </div>
+          </main>
+        )}
+      </div>
+
+      {/* פוטר */}
+      <footer className="w-full max-w-md mt-10 pt-6 pb-4 text-center border-t border-slate-800/50 relative z-10">
+        <div className="bg-slate-900/50 rounded-xl p-4">
+          <p className="text-slate-400 text-xs leading-relaxed text-start">
+            <strong className="text-slate-300 block mb-1">{ui.footerTitle}</strong>
+            {ui.footerText}
+          </p>
+        </div>
+      </footer>
+
+      {/* הגדרת אנימציית ריחוף פשוטה לבועות בקובץ עצמו לשלמות הקוד */}
+      <style dangerouslySetInnerHTML={{__html: `
+        @keyframes float {
+          0% { transform: translateY(0px); }
+          50% { transform: translateY(-8px); }
+          100% { transform: translateY(0px); }
+        }
+      `}} />
+    </div>
+  );
+}
+
+
+```
