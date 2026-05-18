@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About | Global Explorer Hub</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body{background:#020617;color:#e2e8f0;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif}
+    .research-card{background:rgba(15,23,42,.88);border:1px solid rgba(51,65,85,.9);border-radius:24px;box-shadow:0 18px 50px rgba(0,0,0,.35)}
+    .modal-open{overflow:hidden}
+  </style>
+</head>
+
+<body class="min-h-screen selection:bg-blue-500/30 selection:text-blue-100">
+  <header class="sticky top-0 z-40 bg-slate-950/90 backdrop-blur border-b border-slate-800">
+    <nav class="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between gap-3">
+      <a href="index.html" class="inline-flex items-center gap-2 text-sm text-slate-300 hover:text-white bg-slate-900 border border-slate-800 rounded-full px-4 py-2 transition">
+        <i class="fa-solid fa-chevron-left text-xs"></i>
+        Back to Index
+      </a>
+      <div class="flex items-center gap-2">
+        <a href="about.html" class="inline-flex items-center gap-2 text-sm text-slate-300 hover:text-white bg-slate-900 border border-slate-800 rounded-full px-4 py-2 transition">
+          <i class="fa-solid fa-language text-xs"></i>
+          עברית
+        </a>
+        <a href="poland-en.html" class="inline-flex items-center gap-2 text-sm text-slate-300 hover:text-white bg-slate-900 border border-slate-800 rounded-full px-4 py-2 transition">
+          <i class="fa-solid fa-flag text-xs"></i>
+          Poland Page
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="max-w-5xl mx-auto px-4 py-8 space-y-6">
+    <section class="research-card p-6 md:p-8 overflow-hidden relative">
+      <div class="absolute -top-20 -right-20 w-56 h-56 bg-emerald-600/20 blur-3xl rounded-full pointer-events-none"></div>
+      <div class="absolute -bottom-24 -left-24 w-64 h-64 bg-blue-600/10 blur-3xl rounded-full pointer-events-none"></div>
+      <div class="relative z-10 grid md:grid-cols-[190px_1fr] gap-6 items-center">
+        <button type="button" onclick="openImage('assets/images/ramprofile.png','Ram — Project Creator','Profile image of the website creator')" class="group mx-auto md:mx-0">
+          <img src="assets/images/ramprofile.png" data-fallback="assets/ramprofile.png" onerror="useFallback(this)" alt="Ram - Project Creator" class="w-36 h-36 md:w-44 md:h-44 rounded-full object-cover border-4 border-blue-500 shadow-2xl group-hover:scale-105 transition-transform">
+          <span class="mt-3 text-xs text-blue-300 flex items-center justify-center gap-2">
+            <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
+            Open image
+          </span>
+        </button>
+        <div>
+          <p class="text-emerald-300 font-semibold mb-2 tracking-wide">About the Project</p>
+          <h1 class="text-3xl md:text-5xl font-extrabold text-white mb-4">About the Project</h1>
+          <p class="text-slate-300 leading-8 max-w-3xl">
+            An independent research website about Poland and its major cities, created to present historical,
+            geographical, demographic, economic, and cultural information in a structured, readable, and accessible way.
+            The website is divided into separate research pages, with images, credits, floating image modals,
+            and a mobile-friendly layout.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="grid md:grid-cols-3 gap-4">
+      <article class="research-card p-5">
+        <i class="fa-solid fa-layer-group text-blue-400 text-xl mb-3"></i>
+        <h2 class="font-bold text-white mb-2">Organized Structure</h2>
+        <p class="text-sm leading-7 text-slate-300">
+          The main index links to independent research pages: the Poland page, city pages, and the about page.
+          This makes it easy to expand the website without overloading a single file.
+        </p>
+      </article>
+      <article class="research-card p-5">
+        <i class="fa-solid fa-image text-emerald-400 text-xl mb-3"></i>
+        <h2 class="font-bold text-white mb-2">Images and Credits</h2>
+        <p class="text-sm leading-7 text-slate-300">
+          Images are stored in the <span class="font-mono text-blue-300">assets/images/</span> folder,
+          and attribution credits are added on pages where a license or source credit is required.
+        </p>
+      </article>
+      <article class="research-card p-5">
+        <i class="fa-solid fa-mobile-screen text-purple-400 text-xl mb-3"></i>
+        <h2 class="font-bold text-white mb-2">Mobile Friendly</h2>
+        <p class="text-sm leading-7 text-slate-300">
+          The design uses dark research cards, rounded corners, and a layout that works well on small screens,
+          including image opening through floating modal windows.
+        </p>
+      </article>
+    </section>
+
+    <section class="research-card p-5 md:p-6">
+      <h2 class="text-xl md:text-2xl font-bold text-white mb-4 flex items-center gap-2">
+        <i class="fa-solid fa-bullseye text-amber-400"></i>
+        Website Purpose
+      </h2>
+      <div class="space-y-4 text-sm leading-8 text-slate-300">
+        <p>
+          The purpose of this website is to build a clear and expanding research hub about Poland: the country itself,
+          the capital city Warsaw, and later additional major cities such as Kraków, Wrocław, Łódź, and Poznań.
+        </p>
+        <p>
+          Each page is designed to combine quick facts with expanded research text: etymology, foundation period,
+          founders or formative figures, reasons for development, geography, demography, economy, history, and culture.
+        </p>
+        <p>
+          The website is built so that more pages, images, credits, and sources can be added gradually without breaking
+          the existing structure.
+        </p>
+      </div>
+    </section>
+
+    <section class="research-card p-5 md:p-6">
+      <h2 class="text-xl md:text-2xl font-bold text-white mb-4 flex items-center gap-2">
+        <i class="fa-solid fa-folder-tree text-cyan-400"></i>
+        Website File Structure
+      </h2>
+      <p class="text-sm leading-8 text-slate-300 mb-4">
+        The current structure keeps a clear separation between the main index page, country pages, city pages,
+        and one organized image folder.
+      </p>
+      <div class="bg-slate-950/70 border border-slate-800 rounded-2xl p-4 overflow-x-auto text-left" dir="ltr">
+<pre class="text-sm leading-7 text-slate-300"><code>poland-demographic-rese/
+├── index.html
+├── poland.html
+├── poland-en.html
+├── about.html
+├── about-en.html
+├── cities/
+│   ├── warsaw.html
+│   └── warsaw-en.html
+└── assets/
+    └── images/
+        ├── ramprofile.png
+        ├── poland-tatra-mountains-golden-hour-panorama.jpg
+        ├── poland-flag-straight-symmetrical.png
+        ├── polish-50-zloty-banknote-1919.png
+        └── warsaw-old-town-panorama.jpg</code></pre>
+      </div>
+    </section>
+
+    <section class="research-card p-5 md:p-6">
+      <h2 class="text-xl md:text-2xl font-bold text-white mb-4 flex items-center gap-2">
+        <i class="fa-solid fa-road text-rose-400"></i>
+        Development Plan
+      </h2>
+      <ul class="space-y-3 text-sm leading-8 text-slate-300">
+        <li><strong class="text-slate-100">Stage 1:</strong> Complete the Poland and Warsaw pages, including images, bilingual versions, and attribution credits.</li>
+        <li><strong class="text-slate-100">Stage 2:</strong> Create additional city pages inside the <span class="font-mono text-blue-300">cities/</span> folder.</li>
+        <li><strong class="text-slate-100">Stage 3:</strong> Add dedicated images for each city while keeping GitHub-friendly file names.</li>
+        <li><strong class="text-slate-100">Stage 4:</strong> Add sources and credits sections to every research page.</li>
+      </ul>
+    </section>
+
+    <section class="research-card p-5 md:p-6">
+      <h2 class="text-xl md:text-2xl font-bold text-white mb-4 flex items-center gap-2">
+        <i class="fa-solid fa-link text-blue-400"></i>
+        Internal Links
+      </h2>
+      <div class="grid md:grid-cols-3 gap-3">
+        <a href="index.html" class="bg-slate-950/70 border border-slate-800 hover:border-blue-500 rounded-2xl p-4 transition">
+          <strong class="text-white block mb-1">Main Index</strong>
+          <span class="text-sm text-slate-400">Return to the homepage of the website</span>
+        </a>
+        <a href="poland-en.html" class="bg-slate-950/70 border border-slate-800 hover:border-red-500 rounded-2xl p-4 transition">
+          <strong class="text-white block mb-1">Poland Page</strong>
+          <span class="text-sm text-slate-400">Main country research page in English</span>
+        </a>
+        <a href="cities/warsaw-en.html" class="bg-slate-950/70 border border-slate-800 hover:border-emerald-500 rounded-2xl p-4 transition">
+          <strong class="text-white block mb-1">Warsaw Page</strong>
+          <span class="text-sm text-slate-400">Capital city research page in English</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="research-card p-5 md:p-6">
+      <h2 class="text-xl md:text-2xl font-bold text-white mb-4 flex items-center gap-2">
+        <i class="fa-solid fa-copyright text-slate-400"></i>
+        Rights and Credits Note
+      </h2>
+      <div class="space-y-4 text-sm leading-8 text-slate-300">
+        <p>
+          This website is intended for research, learning, and educational visual reference. When images from free
+          external sources are used, the file name, source, and license should be credited according to the relevant
+          usage requirements.
+        </p>
+        <p>
+          Original images created for the website are stored in the <span class="font-mono text-blue-300">assets/images/</span>
+          folder. When an image comes from Wikimedia Commons or another external source, a clear credit should be added
+          to the page where the image appears.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <div id="imageModal" class="fixed inset-0 z-[100] hidden bg-slate-950/90 backdrop-blur-md p-3 md:p-6 items-center justify-center" onclick="closeImage()">
+    <div class="w-full max-w-6xl max-h-[92vh] bg-slate-900 border border-slate-700 rounded-3xl overflow-hidden shadow-2xl" onclick="event.stopPropagation()">
+      <div class="p-4 border-b border-slate-800 flex items-center justify-between gap-3">
+        <div class="min-w-0">
+          <h3 id="modalTitle" class="font-bold text-white truncate"></h3>
+          <p id="modalCaption" class="text-xs text-slate-400 truncate mt-1"></p>
+        </div>
+        <button type="button" onclick="closeImage()" class="w-10 h-10 rounded-full bg-slate-800 hover:bg-slate-700 text-white shrink-0" aria-label="Close image modal">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <div class="p-3 bg-slate-950 flex items-center justify-center max-h-[76vh] overflow-auto">
+        <img id="modalImg" src="" alt="" class="max-w-full max-h-[72vh] object-contain rounded-xl">
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function useFallback(img) {
+      const fallback = img.getAttribute("data-fallback");
+      if (fallback && img.src.indexOf(fallback) === -1) {
+        img.src = fallback;
+      }
+    }
+
+    function openImage(src, title, caption) {
+      const modal = document.getElementById("imageModal");
+      const img = document.getElementById("modalImg");
+      img.src = src;
+      img.onerror = function () {
+        if (src.includes("assets/images/")) {
+          this.src = src.replace("assets/images/", "assets/");
+        }
+      };
+      img.alt = title;
+      document.getElementById("modalTitle").textContent = title;
+      document.getElementById("modalCaption").textContent = caption || "";
+      modal.classList.remove("hidden");
+      modal.classList.add("flex");
+      document.body.classList.add("modal-open");
+    }
+
+    function closeImage() {
+      const modal = document.getElementById("imageModal");
+      modal.classList.add("hidden");
+      modal.classList.remove("flex");
+      document.body.classList.remove("modal-open");
+    }
+
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape") closeImage();
+    });
+  </script>
+</body>
+</html>
