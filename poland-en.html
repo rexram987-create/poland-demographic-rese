@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Republic of Poland | Country Research</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    body {
+      background: #020617;
+      color: #e2e8f0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+    }
+
+    .research-card {
+      background: rgba(15, 23, 42, 0.88);
+      border: 1px solid rgba(51, 65, 85, 0.9);
+      border-radius: 24px;
+      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
+    }
+
+    .modal-open {
+      overflow: hidden;
+    }
+
+    .soft-divider {
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba(148, 163, 184, 0.35), transparent);
+    }
+  </style>
+</head>
+
+<body class="min-h-screen selection:bg-blue-500/30 selection:text-blue-100">
+
+  <!-- Top navigation -->
+  <header class="sticky top-0 z-40 bg-slate-950/90 backdrop-blur border-b border-slate-800">
+    <nav class="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between gap-3">
+      <a href="index.html" class="inline-flex items-center gap-2 text-sm text-slate-300 hover:text-white bg-slate-900 border border-slate-800 rounded-full px-4 py-2 transition">
+        <i class="fa-solid fa-chevron-left text-xs"></i>
+        Back to Index
+      </a>
+
+      <div class="flex items-center gap-2">
+        <a href="poland.html" class="inline-flex items-center gap-2 text-sm text-slate-300 hover:text-white bg-slate-900 border border-slate-800 rounded-full px-4 py-2 transition">
+          <i class="fa-solid fa-language text-xs"></i>
+          עברית
+        </a>
+
+        <a href="about.html" class="inline-flex items-center gap-2 text-sm text-slate-300 hover:text-white bg-slate-900 border border-slate-800 rounded-full px-4 py-2 transition">
+          <i class="fa-solid fa-circle-info text-xs"></i>
+          About
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="max-w-5xl mx-auto px-4 py-8 space-y-6">
+
+    <!-- Main title -->
+    <section class="research-card p-6 md:p-8 overflow-hidden relative">
+      <div class="absolute -top-20 -right-20 w-56 h-56 bg-red-600/20 blur-3xl rounded-full pointer-events-none"></div>
+      <div class="absolute -bottom-24 -left-24 w-64 h-64 bg-blue-600/10 blur-3xl rounded-full pointer-events-none"></div>
+
+      <div class="relative z-10">
+        <p class="text-red-300 font-semibold mb-2 tracking-wide">Rzeczpospolita Polska</p>
+        <h1 class="text-3xl md:text-5xl font-extrabold text-white mb-4">
+          Republic of Poland
+        </h1>
+        <p class="text-slate-300 leading-8 max-w-3xl">
+          An independent country research page about Poland: the origin of its name, symbolic foundation,
+          national flag, landscapes, economy, currency, demography, and political history. This English page
+          mirrors the Hebrew research page and keeps the same visual structure, image modal system, and mobile-first design.
+        </p>
+      </div>
+    </section>
+
+    <!-- Quick facts -->
+    <section class="grid grid-cols-2 md:grid-cols-4 gap-3">
+      <div class="research-card p-4 text-center">
+        <i class="fa-solid fa-calendar-days text-emerald-400 text-xl mb-2"></i>
+        <p class="text-xs text-slate-400">Symbolic Foundation</p>
+        <strong class="text-white">966 CE</strong>
+      </div>
+
+      <div class="research-card p-4 text-center">
+        <i class="fa-solid fa-expand text-blue-400 text-xl mb-2"></i>
+        <p class="text-xs text-slate-400">Area</p>
+        <strong class="text-white">312,696 km²</strong>
+      </div>
+
+      <div class="research-card p-4 text-center">
+        <i class="fa-solid fa-users text-purple-400 text-xl mb-2"></i>
+        <p class="text-xs text-slate-400">Population</p>
+        <strong class="text-white">About 37.6 million</strong>
+      </div>
+
+      <div class="research-card p-4 text-center">
+        <i class="fa-solid fa-coins text-amber-400 text-xl mb-2"></i>
+        <p class="text-xs text-slate-400">Currency</p>
+        <strong class="text-white">Polish złoty zł</strong>
+      </div>
+    </section>
+
+    <!-- Landscape -->
+    <section class="research-card p-5 md:p-6">
+      <h2 class="text-xl md:text-2xl font-bold text-white mb-4 flex items-center gap-2">
+        <i class="fa-solid fa-mountain-sun text-blue-400"></i>
+        1. Poland’s Landscapes — The Tatra Mountains near Zakopane
+      </h2>
+
+      <figure class="bg-slate-950 border border-slate-800 rounded-2xl overflow-hidden">
+        <button
+          type="button"
+          class="relative block w-full aspect-video group bg-slate-950"
+          onclick="openImage('assets/images/poland-tatra-mountains-golden-hour-panorama.jpg', 'The Tatra Mountains near Zakopane at golden hour', 'A panoramic view of the Tatra Mountains near Zakopane, with a green valley and traditional Polish wooden cottages.')"
+        >
+          <img
+            src="assets/images/poland-tatra-mountains-golden-hour-panorama.jpg"
+            data-fallback="assets/poland-tatra-mountains-golden-hour-panorama.jpg"
+            onerror="useFallback(this)"
+            alt="The Tatra Mountains near Zakopane"
+            class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+
+          <span class="absolute top-3 right-3 bg-slate-950/80 border border-slate-700 rounded-full px-3 py-1 text-xs text-white backdrop-blur">
+            <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
+            Open image
+          </span>
+        </button>
+
+        <figcaption class="p-3 text-center text-xs text-slate-400 leading-6">
+          A panoramic view of the Tatra Mountains near Zakopane — an illustration of southern Poland’s mountain landscape.
+        </figcaption>
+      </figure>
+
+      <div class="mt-4 space-y-3 text-sm leading-8 text-slate-300">
+        <p>
+          The Tatra Mountains are among the most impressive natural regions in Poland and represent the highest
+          and most dramatic part of the Carpathian range within the country. The Zakopane region, located at the
+          foot of the mountains, is associated with alpine scenery, wooden highland architecture, winter tourism,
+          hiking routes, dramatic peaks, and a distinct mountain culture.
+        </p>
+
+        <p>
+          Poland is not mostly mountainous. Large parts of the country are plains, lowlands, or gently rolling
+          landscapes. For that reason, the Tatra region stands out strongly in the national landscape: it gives
+          Poland a dramatic mountain front, contrasting with the broad plains of central and northern Poland.
+        </p>
+      </div>
+    </section>
+
+    <!-- Flag -->
+    <section class="research-card p-5 md:p-6">
+      <h2 class="text-xl md:text-2xl font-bold text-white mb-4 flex items-center gap-2">
+        <i class="fa-solid fa-flag text-red-400"></i>
+        2. The National Flag of Poland
+      </h2>
+
+      <figure class="bg-slate-950 border border-slate-800 rounded-2xl overflow-hidden">
+        <button
+          type="button"
+          class="relative block w-full aspect-[16/10] group bg-slate-950"
+          onclick="openImage('assets/images/poland-flag-straight-symmetrical.png', 'Flag of Poland', 'The Polish flag consists of two horizontal bands: white above red.')"
+        >
+          <img
+            src="assets/images/poland-flag-straight-symmetrical.png"
+            data-fallback="assets/poland-flag-straight-symmetrical.png"
+            onerror="useFallback(this)"
+            alt="Flag of Poland"
+            class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+
+          <span class="absolute top-3 right-3 bg-slate-950/80 border border-slate-700 rounded-full px-3 py-1 text-xs text-white backdrop-blur">
+            <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
+            Open image
+          </span>
+        </button>
+
+        <figcaption class="p-3 text-center text-xs text-slate-400 leading-6">
+          The Polish flag: a white upper band and a red lower band.
+        </figcaption>
+      </figure>
+
+      <div class="mt-4 space-y-3 text-sm leading-8 text-slate-300">
+        <p>
+          The Polish flag consists of two equal horizontal bands: white on top and red below. Its visual simplicity
+          hides a deep heraldic tradition connected to the historical state emblem: a white eagle on a red shield.
+        </p>
+
+        <p>
+          White is associated with the white eagle, a major symbol of Polish sovereignty. It is also connected with
+          purity, integrity, hope, and historical continuity. Red is associated with the heraldic shield background,
+          and with courage, sacrifice, struggles for independence, and the blood shed throughout Polish history.
+        </p>
+
+        <p>
+          Over time, the white and red colors evolved from royal and heraldic symbols into modern national colors.
+          They accompanied the struggles for independence, the restoration of statehood after World War I, and the
+          national identity of Poland in the twentieth century.
+        </p>
+      </div>
+    </section>
+
+    <!-- Etymology -->
+    <section class="research-card p-5 md:p-6">
+      <h2 class="text-xl md:text-2xl font-bold text-white mb-4 flex items-center gap-2">
+        <i class="fa-solid fa-book-open text-blue-400"></i>
+        3. Etymology and Origin of the Name
+      </h2>
+
+      <div class="space-y-4 text-sm leading-8 text-slate-300">
+        <p>
+          The name Poland is linked to an early West Slavic tribe known as the
+          <strong class="text-blue-300">Polanie</strong>. This tribe lived in the region of the Warta River basin
+          in what is now west-central Poland, and it is considered one of the political and cultural cores from
+          which the early Polish state emerged.
+        </p>
+
+        <p>
+          The key linguistic root is <strong class="text-blue-300">pole</strong>, meaning “field,” “plain,” or
+          “open land” in Slavic languages. This gives the name a meaningful interpretation: Poland can be understood
+          as “the land of the people of the fields” or “the land of those who live on the plains.”
+        </p>
+
+        <p>
+          This meaning fits the country’s geography. Large parts of Poland are made up of plains, fields, rivers,
+          and agricultural land. The name therefore reflects not only an early tribal identity, but also a connection
+          between people, landscape, and a territorial agricultural way of life.
+        </p>
+
+        <div class="soft-divider my-4"></div>
+
+        <p>
+          In Latin, Poland appeared as <strong class="text-blue-300">Polonia</strong>, a form used in European
+          writing, church chronicles, and diplomatic documents. The transition from a tribal name to a state name
+          reflects the transformation of a regional group into a wider political community.
+        </p>
+      </div>
+    </section>
+
+    <!-- Foundation -->
+    <section class="research-card p-5 md:p-6">
+      <h2 class="text-xl md:text-2xl font-bold text-white mb-4 flex items-center gap-2">
+        <i class="fa-solid fa-landmark text-emerald-400"></i>
+        4. Foundation, Mieszko I, and the Birth of the Polish State
+      </h2>
+
+      <div class="space-y-4 text-sm leading-8 text-slate-300">
+        <p>
+          The year <strong class="text-emerald-300">966 CE</strong> is considered one of the foundational moments
+          in Polish history. In that year, ruler Mieszko I accepted Christianity in an event known as the
+          “Baptism of Poland.” This was not only a religious act, but also a political, strategic, and cultural step.
+        </p>
+
+        <p>
+          <strong class="text-emerald-300">Mieszko I</strong>, a ruler of the Piast dynasty, is regarded as the
+          central political founder of early Poland. He ruled over a region made up of different Slavic groups,
+          and through alliances, warfare, dynastic marriage, and conversion to Christianity, he helped transform
+          a developing tribal formation into a more recognizable European state.
+        </p>
+
+        <p>
+          The adoption of Christianity helped Poland enter the Latin Catholic world of Western Europe. It strengthened
+          Mieszko’s legitimacy, reduced the danger of Poland being treated as a target for Christianizing conquest,
+          and created new institutional foundations: a church structure, written culture, diplomatic links, and a
+          shared ideological framework with Christian Europe.
+        </p>
+      </div>
+    </section>
+
+    <!-- Currency -->
+    <section class="research-card p-5 md:p-6">
+      <h2 class="text-xl md:text-2xl font-bold text-white mb-4 flex items-center gap-2">
+        <i class="fa-solid fa-coins text-amber-400"></i>
+        5. National Currency: The Polish Złoty
+      </h2>
+
+      <figure class="bg-slate-950 border border-slate-800 rounded-2xl overflow-hidden mb-4">
+        <button
+          type="button"
+          class="relative block w-full aspect-video group bg-slate-950"
+          onclick="openImage('assets/images/polish-50-zloty-banknote-1919.png', 'Historic 50 złoty Polish banknote from 1919', 'A historic Polish 50 złoty banknote from 1919, shown as a visual reference for Poland’s monetary history.')"
+        >
+          <img
+            src="assets/images/polish-50-zloty-banknote-1919.png"
+            data-fallback="assets/polish-50-zloty-banknote-1919.png"
+            onerror="useFallback(this)"
+            alt="Historic Polish 50 złoty banknote from 1919"
+            class="absolute inset-0 w-full h-full object-contain bg-slate-950 transition-transform duration-500 group-hover:scale-105"
+          />
+
+          <span class="absolute top-3 right-3 bg-slate-950/80 border border-slate-700 rounded-full px-3 py-1 text-xs text-white backdrop-blur">
+            <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
+            Open image
+          </span>
+        </button>
+
+        <figcaption class="p-3 text-center text-xs text-slate-400 leading-6">
+          Historic Polish 50 złoty banknote from 1919 — shown as an illustration of the early modern Polish złoty.
+          <br>
+          Image credit:
+          <span class="text-slate-300">1919 50 polish zloty.png</span>,
+          Wikimedia Commons,
+          license
+          <a
+            href="https://creativecommons.org/licenses/by-sa/4.0/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-blue-300 hover:text-blue-200 underline"
+          >
+            CC BY-SA 4.0
+          </a>.
+        </figcaption>
+      </figure>
+
+      <div class="space-y-4 text-sm leading-8 text-slate-300">
+        <p>
+          The word <strong class="text-amber-300">Złoty</strong> means “golden” in Polish. The name originated in
+          the Middle Ages, when foreign gold coins such as ducats and florins circulated in Poland. Such coins were
+          often referred to generally as “złoty,” meaning a gold coin or a coin of high value.
+        </p>
+
+        <p>
+          The złoty gradually became a symbol of Polish economic sovereignty. After World War I, when Poland regained
+          independence after a long period of partition by foreign powers, the country needed to rebuild a stable
+          monetary system. In 1924, the modern złoty was introduced as the official currency, replacing the highly
+          inflationary Polish mark.
+        </p>
+
+        <p>
+          The historic 1919 banknote is useful as a visual reference because it represents the transitional period
+          between older monetary systems and the new Polish monetary identity of the twentieth century. It is not a
+          modern banknote in circulation, but it helps illustrate what Polish paper money looked like during the
+          early period of restored independence.
+        </p>
+
+        <p>
+          In the modern era, the złoty experienced major turbulence, especially after the fall of communism. The
+          transition from a planned economy to a market economy led to severe inflation, and in 1995 Poland carried
+          out a redenomination: 10,000 old złoty were converted into 1 new Polish złoty.
+        </p>
+
+        <p>
+          Although Poland is a member of the European Union, it continues to use the złoty as its official currency.
+          Keeping the national currency gives Poland monetary independence, including greater control over interest
+          rates, exchange rates, and economic policy.
+        </p>
+      </div>
+    </section>
+
+    <!-- Economy -->
+    <section class="research-card p-5 md:p-6">
+      <h2 class="text-xl md:text-2xl font-bold text-white mb-4 flex items-center gap-2">
+        <i class="fa-solid fa-chart-line text-emerald-400"></i>
+        6. Poland’s Economy: From Communism to Market Economy
+      </h2>
+
+      <div class="space-y-4 text-sm leading-8 text-slate-300">
+        <p>
+          Modern Poland’s economy was shaped largely after 1989, when the country left the communist bloc and moved
+          from a centrally planned economy to a market economy. The transition was sharp and painful, but it created
+          the basis for long-term growth, foreign investment, and deeper integration into the European economy.
+        </p>
+
+        <p>
+          Poland benefited from a relatively large domestic market, a skilled workforce, a central geographic position
+          between eastern and western Europe, and infrastructure that improved significantly after joining the European
+          Union. This combination made it one of the most important economies in Central Europe.
+        </p>
+
+        <p>
+          Key sectors include industry, food production, automotive components, chemicals, furniture, financial services,
+          logistics, information technology, and gaming. In recent years Poland has also become an important center for
+          service hubs, software development, and international technology firms.
+        </p>
+      </div>
+    </section>
+
+    <!-- Demography -->
+    <section class="research-card p-5 md:p-6">
+      <h2 class="text-xl md:text-2xl font-bold text-white mb-4 flex items-center gap-2">
+        <i class="fa-solid fa-users text-cyan-400"></i>
+        7. Demography and Social Structure
+      </h2>
+
+      <div class="space-y-4 text-sm leading-8 text-slate-300">
+        <p>
+          Poland has a population of about 37.6 million people and is one of Europe’s larger countries by population.
+          Polish society is characterized by a clear ethnic Polish majority, shaped by deep historical processes,
+          especially border changes, wars, expulsions, and population transfers during the twentieth century.
+        </p>
+
+        <p>
+          One of Poland’s major challenges today is demographic: low birth rates, an aging population, and the migration
+          of young people to western European countries. At the same time, Poland has received migrants and refugees,
+          especially from eastern Europe, which has affected the labor market and society.
+        </p>
+
+        <p>
+          Culturally, Catholicism has played a central role in Polish national identity, especially during periods when
+          the Polish state itself did not exist as an independent political entity. The church often served as a center
+          for preserving language, culture, national memory, and political resistance.
+        </p>
+      </div>
+    </section>
+
+    <!-- History -->
+    <section class="research-card p-5 md:p-6">
+      <h2 class="text-xl md:text-2xl font-bold text-white mb-4 flex items-center gap-2">
+        <i class="fa-solid fa-shield-halved text-purple-400"></i>
+        8. History, Ideology, and Achievements
+      </h2>
+
+      <div class="space-y-4 text-sm leading-8 text-slate-300">
+        <p>
+          Poland’s history is a sequence of rise, decline, expansion, destruction, and revival. In the Middle Ages,
+          the Polish kingdom formed around the Piast dynasty, and later Poland became a major power in east-central Europe.
+        </p>
+
+        <p>
+          In the sixteenth and seventeenth centuries, Poland was part of the Polish-Lithuanian Commonwealth, one of
+          the largest political entities in Europe. The Commonwealth had a unique political system with a powerful
+          nobility, an elected king, and a parliament with wide powers. The idea of “Golden Liberty” granted the nobility
+          extensive political rights, but later also contributed to political weakness and paralysis.
+        </p>
+
+        <p>
+          In the late eighteenth century, Poland was partitioned by Russia, Prussia, and Austria, and disappeared from
+          the political map for more than a century. Despite the absence of an independent state, Polish identity survived
+          through language, literature, religion, education, historical memory, and repeated uprisings.
+        </p>
+
+        <p>
+          Poland regained independence in 1918, but was devastated again in World War II. After the war, it was placed
+          under communist rule within the Soviet sphere of influence. In the 1980s, the Solidarity movement, led by
+          Lech Wałęsa, became a global symbol of civil resistance and helped undermine communist rule.
+        </p>
+
+        <p>
+          Today, Poland is a democratic republic, a member of the European Union and NATO, and a strategically important
+          state in eastern Europe. Its location between Germany, Ukraine, Belarus, the Baltic Sea, and central Europe
+          gives it major geopolitical importance.
+        </p>
+      </div>
+    </section>
+
+    <!-- Sources and credits -->
+    <section class="research-card p-5 md:p-6">
+      <h2 class="text-xl md:text-2xl font-bold text-white mb-4 flex items-center gap-2">
+        <i class="fa-solid fa-link text-blue-400"></i>
+        9. Sources and Credits
+      </h2>
+
+      <ul class="space-y-3 text-sm leading-8 text-slate-300">
+        <li>
+          <strong class="text-slate-100">Złoty banknote image:</strong>
+          <span class="text-slate-100">1919 50 polish zloty.png</span>,
+          Wikimedia Commons,
+          license
+          <a
+            href="https://creativecommons.org/licenses/by-sa/4.0/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-blue-300 hover:text-blue-200 underline"
+          >
+            CC BY-SA 4.0
+          </a>.
+        </li>
+
+        <li>
+          <strong class="text-slate-100">Flag and landscape images:</strong>
+          Local files stored in
+          <span class="font-mono text-blue-300">assets/images/</span>,
+          used for visual illustration within the website.
+        </li>
+
+        <li>
+          <strong class="text-slate-100">Page purpose:</strong>
+          Research, educational explanation, and visual reference about Poland, with a separate English version.
+        </li>
+      </ul>
+    </section>
+
+  </main>
+
+  <!-- Floating image modal -->
+  <div
+    id="imageModal"
+    class="fixed inset-0 z-[100] hidden bg-slate-950/90 backdrop-blur-md p-3 md:p-6 items-center justify-center"
+    onclick="closeImage()"
+  >
+    <div
+      class="w-full max-w-6xl max-h-[92vh] bg-slate-900 border border-slate-700 rounded-3xl overflow-hidden shadow-2xl"
+      onclick="event.stopPropagation()"
+    >
+      <div class="p-4 border-b border-slate-800 flex items-center justify-between gap-3">
+        <div class="min-w-0">
+          <h3 id="modalTitle" class="font-bold text-white truncate"></h3>
+          <p id="modalCaption" class="text-xs text-slate-400 truncate mt-1"></p>
+        </div>
+
+        <button
+          type="button"
+          onclick="closeImage()"
+          class="w-10 h-10 rounded-full bg-slate-800 hover:bg-slate-700 text-white shrink-0"
+          aria-label="Close image modal"
+        >
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <div class="p-3 bg-slate-950 flex items-center justify-center max-h-[76vh] overflow-auto">
+        <img
+          id="modalImg"
+          src=""
+          alt=""
+          class="max-w-full max-h-[72vh] object-contain rounded-xl"
+        />
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function useFallback(img) {
+      const fallback = img.getAttribute("data-fallback");
+      if (fallback && img.src.indexOf(fallback) === -1) {
+        img.src = fallback;
+      }
+    }
+
+    function openImage(src, title, caption) {
+      const modal = document.getElementById("imageModal");
+      const img = document.getElementById("modalImg");
+
+      img.src = src;
+      img.onerror = function () {
+        if (src.includes("assets/images/")) {
+          this.src = src.replace("assets/images/", "assets/");
+        }
+      };
+
+      img.alt = title;
+      document.getElementById("modalTitle").textContent = title;
+      document.getElementById("modalCaption").textContent = caption || "";
+
+      modal.classList.remove("hidden");
+      modal.classList.add("flex");
+      document.body.classList.add("modal-open");
+    }
+
+    function closeImage() {
+      const modal = document.getElementById("imageModal");
+      modal.classList.add("hidden");
+      modal.classList.remove("flex");
+      document.body.classList.remove("modal-open");
+    }
+
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape") {
+        closeImage();
+      }
+    });
+  </script>
+
+</body>
+</html>
