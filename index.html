@@ -1,528 +1,293 @@
-```html
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Global Explorer Hub - Poland Research</title>
-    
-    <!-- Tailwind CSS (CDN) -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- React & ReactDOM (CDN) -->
-    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-    
-    <!-- Babel for JSX processing in the browser -->
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Global Explorer Hub | Poland Research Index</title>
 
-    <!-- FontAwesome Icons (Stable CDN Fallback) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- Tailwind Configuration -->
-    <script>
-      tailwind.config = {
-        darkMode: 'class',
-        theme: {
-          extend: {
-            fontFamily: {
-              sans: ['system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
-            }
-          }
-        }
-      }
-    </script>
-    
-    <style>
-        /* Custom scrollbar for webkit (Android/Chrome) */
-        ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-track { background: #020617; } /* slate-950 */
-        ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 10px; } /* slate-800 */
-        ::-webkit-scrollbar-thumb:hover { background: #334155; } /* slate-700 */
-        body { background-color: #020617; color: #f8fafc; overflow-x: hidden; }
-        
-        /* Float Animation for UI Elements */
-        @keyframes float {
-          0% { transform: translateY(0px); }
-          50% { transform: translateY(-8px); }
-          100% { transform: translateY(0px); }
-        }
-        .animate-float { animation: float 6s ease-in-out infinite; }
-    </style>
+  <style>
+    body {
+      background: #020617;
+      color: #e2e8f0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      overflow-x: hidden;
+    }
+
+    .glass-card {
+      background: rgba(15, 23, 42, 0.82);
+      border: 1px solid rgba(51, 65, 85, 0.9);
+      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
+      backdrop-filter: blur(14px);
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+      100% { transform: translateY(0); }
+    }
+
+    .float-bubble {
+      animation: float 6s ease-in-out infinite;
+    }
+  </style>
 </head>
-<body class="bg-slate-950 antialiased selection:bg-blue-500/30 selection:text-blue-200">
-    <div id="root"></div>
 
-    <!-- Application Code -->
-    <script type="text/babel">
-        const { useState, useEffect } = React;
+<body class="min-h-screen selection:bg-blue-500/30 selection:text-blue-100">
 
-        // Stable Icon Component using FontAwesome to prevent React crashes
-        const Icon = ({ name, size = 24, className = "" }) => {
-            const faMap = {
-                ChevronRight: 'fa-chevron-right',
-                Map: 'fa-map-marked-alt',
-                Calendar: 'fa-calendar-alt',
-                Maximize: 'fa-expand-arrows-alt',
-                Users: 'fa-users',
-                Coins: 'fa-coins',
-                Globe: 'fa-globe-americas',
-                Flag: 'fa-flag',
-                MessageSquare: 'fa-comment-dots',
-                BookOpen: 'fa-book-open',
-                TrendingUp: 'fa-chart-line',
-                Landmark: 'fa-landmark',
-                User: 'fa-user-tie',
-                Target: 'fa-bullseye',
-                ShieldAlert: 'fa-shield-alt',
-                X: 'fa-times',
-                Send: 'fa-paper-plane',
-                Info: 'fa-info-circle',
-                Home: 'fa-home'
-            };
-            
-            const faClass = faMap[name] || 'fa-circle';
-            return <i className={`fas ${faClass} ${className} flex items-center justify-center`} style={{ fontSize: `${size}px` }}></i>;
-        };
+  <!-- רקע דקורטיבי -->
+  <div class="fixed inset-0 pointer-events-none overflow-hidden">
+    <div class="absolute -top-28 -left-28 w-96 h-96 bg-blue-800/20 rounded-full blur-3xl"></div>
+    <div class="absolute top-1/3 -right-28 w-96 h-96 bg-red-800/20 rounded-full blur-3xl"></div>
+    <div class="absolute -bottom-28 left-1/4 w-96 h-96 bg-emerald-800/20 rounded-full blur-3xl"></div>
+  </div>
 
-        // ==========================================
-        // Data & Translations for Index
-        // ==========================================
-        const appData = {
-          ui: {
-            he: {
-              mainTitle: "Global Explorer Hub",
-              pageTitle: "אינדקס מחקר: פולין",
-              introText: "ברוכים הבאים למאגר המידע. מסך זה מאגד את קישורי הגישה הישירים למחקרי העומק אודות פולין וחמשת ערי המטרופולין המרכזיות שלה. כל מחקר כולל ניתוח אטימולוגי נרחב, דמוגרפיה, היסטוריה ופירוט על ההוגים.",
-              footerTitle: "תחזוקה, טכנולוגיה וסטנדרטים:",
-              footerText: "מאגר זה נבנה ומתוחזק תוך עמידה מלאה בעקרונות עקביות (Consistency) ושימור (Retention). תצורת המאגר מותאמת ל-Dark Mode ועברה אופטימיזציה ייעודית לתצוגת Samsung S25 Ultra. לא מבוצעות השמטות מידע.",
-              aboutBtn: "אודות",
-              homeBtn: "ראשי",
-              langToggleBtn: "English",
-              aboutTitle: "אודות הפרויקט",
-              aboutP1: "פרויקט מחקר זה נבנה תחת פרוטוקול פיתוח מחמיר המבטיח שלמות מידע ואחידות טוטאלית. אנו מתחייבים לעקרונות 'אפס מחיקות' (Zero Deletion) ושימור מידע מלא בכל עדכון של המערכת.",
-              aboutP2: "כל אובייקט במאגר, בין אם זו מדינה, עיר, או אישיות היסטורית, זוכה לטיפול עמוק ומפורט הכולל: חלוקה אטימולוגית ברורה של השם, שנות הקמה מדוייקות, זיהוי המייסדים וההוגים, וניתוח מעמיק של רקע, היסטוריה ואידאולוגיה.",
-              aboutP3: "המעטפת הטכנית מבוססת על סביבת React ו-Tailwind CSS. היא מותאמת ב-100% לתצוגת Dark Mode ועברה אופטימיזציית Mobile-First קפדנית, התפורה בדיוק למידות של מסכי Samsung S25 Ultra.",
-            },
-            en: {
-              mainTitle: "Global Explorer Hub",
-              pageTitle: "Research Index: Poland",
-              introText: "Welcome to the knowledge base. This screen aggregates direct access links to in-depth research on Poland and its major cities. Each research includes extensive etymological analysis, demographics, history, and details about the founders.",
-              footerTitle: "Maintenance, Technology & Standards:",
-              footerText: "This database is built and maintained in full compliance with Consistency and Retention principles. Optimized for Dark Mode and specifically tailored for Samsung S25 Ultra displays.",
-              aboutBtn: "About",
-              homeBtn: "Home",
-              langToggleBtn: "עברית",
-              aboutTitle: "About the Project",
-              aboutP1: "This research project is built under a strict development protocol ensuring data completeness and absolute uniformity. We are committed to the 'Zero Deletion' principle.",
-              aboutP2: "Every object receives an in-depth treatment including: clear etymological breakdown, establishment years, founders, and profound analysis of background, history, and ideology.",
-              aboutP3: "The technical framework is 100% optimized for Dark Mode and has undergone rigorous Mobile-First optimization, perfectly tailored for Samsung S25 Ultra displays.",
-            }
-          },
-          links: [
-            { id: 'poland', title: { he: 'רפובליקת פולין', en: 'Republic of Poland' }, subtitle: { he: 'מחקר מדינה', en: 'Country Research' }, color: 'from-red-900/80 to-red-600/40', border: 'border-red-500/30' },
-            { id: 'warsaw', title: { he: 'ורשה', en: 'Warsaw' }, subtitle: { he: 'עיר בירה', en: 'Capital City' }, color: 'from-blue-900/80 to-blue-600/40', border: 'border-blue-500/30' },
-            { id: 'krakow', title: { he: 'קרקוב', en: 'Kraków' }, subtitle: { he: 'מחקר עיר', en: 'City Research' }, color: 'from-amber-900/80 to-amber-600/40', border: 'border-amber-500/30' },
-            { id: 'wroclaw', title: { he: 'ורוצלב', en: 'Wrocław' }, subtitle: { he: 'מחקר עיר', en: 'City Research' }, color: 'from-emerald-900/80 to-emerald-600/40', border: 'border-emerald-500/30' },
-            { id: 'lodz', title: { he: "לודז'", en: 'Łódź' }, subtitle: { he: 'מחקר עיר', en: 'City Research' }, color: 'from-purple-900/80 to-purple-600/40', border: 'border-purple-500/30' },
-            { id: 'poznan', title: { he: 'פוזנן', en: 'Poznań' }, subtitle: { he: 'מחקר עיר', en: 'City Research' }, color: 'from-teal-900/80 to-teal-600/40', border: 'border-teal-500/30' }
-          ]
-        };
+  <main class="relative z-10 min-h-screen flex flex-col items-center px-4 py-8">
 
-        // ==========================================
-        // COMPONENT 1: IndexBubbles (The Dashboard)
-        // ==========================================
-        function IndexBubbles({ onNavigate }) {
-          const [lang, setLang] = useState('he');
-          const [view, setView] = useState('home'); 
-          const ui = appData.ui[lang];
+    <!-- סרגל עליון -->
+    <nav class="w-full max-w-5xl flex items-center justify-between mb-10">
+      <a
+        href="index.html"
+        class="inline-flex items-center gap-2 bg-slate-900/80 border border-slate-700 hover:border-blue-500 text-slate-300 hover:text-white rounded-full px-4 py-2 text-sm transition"
+      >
+        <i class="fa-solid fa-house text-blue-400"></i>
+        ראשי
+      </a>
 
-          useEffect(() => {
-            document.documentElement.setAttribute('dir', lang === 'he' ? 'rtl' : 'ltr');
-          }, [lang]);
+      <a
+        href="about.html"
+        class="inline-flex items-center gap-2 bg-slate-900/80 border border-slate-700 hover:border-emerald-500 text-slate-300 hover:text-white rounded-full px-4 py-2 text-sm transition"
+      >
+        <i class="fa-solid fa-circle-info text-emerald-400"></i>
+        אודות
+      </a>
+    </nav>
 
-          return (
-            <div dir={lang === 'he' ? 'rtl' : 'ltr'} className="min-h-screen bg-slate-950 flex flex-col items-center justify-between text-slate-200 font-sans p-6 overflow-hidden relative">
-              <div className="absolute top-[-10%] left-[-10%] w-96 h-96 bg-blue-900/10 rounded-full blur-3xl pointer-events-none"></div>
-              <div className="absolute bottom-[-10%] right-[-10%] w-96 h-96 bg-emerald-900/10 rounded-full blur-3xl pointer-events-none"></div>
+    <!-- כותרת -->
+    <header class="w-full max-w-4xl text-center mb-10">
+      <p class="text-blue-300 font-semibold tracking-wide mb-3">
+        Global Explorer Hub
+      </p>
 
-              <nav className="w-full max-w-md flex justify-between items-center mb-8 relative z-20 mt-4">
-                <button onClick={() => setLang(lang === 'he' ? 'en' : 'he')} className="flex items-center gap-2 bg-slate-900/60 hover:bg-slate-800 transition-colors border border-slate-700/50 rounded-full px-4 py-2 text-sm font-semibold backdrop-blur-md">
-                  <Icon name="Globe" size={16} className="text-blue-400" />
-                  <span>{ui.langToggleBtn}</span>
-                </button>
-                <button onClick={() => setView(view === 'home' ? 'about' : 'home')} className="flex items-center gap-2 bg-slate-900/60 hover:bg-slate-800 transition-colors border border-slate-700/50 rounded-full px-4 py-2 text-sm font-semibold backdrop-blur-md">
-                  {view === 'home' ? <><Icon name="Info" size={16} className="text-emerald-400" /><span>{ui.aboutBtn}</span></> : <><Icon name="Home" size={16} className="text-blue-400" /><span>{ui.homeBtn}</span></>}
-                </button>
-              </nav>
+      <h1 class="text-4xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-l from-blue-400 via-white to-emerald-400 mb-5">
+        אינדקס מחקר: פולין
+      </h1>
 
-              <div className="flex-1 w-full max-w-md flex flex-col items-center relative z-10">
-                {view === 'home' && (
-                  <>
-                    <header className="w-full text-center mb-8 animate-in fade-in duration-500">
-                      <h1 className="text-4xl sm:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-l from-blue-400 to-emerald-400 mb-4 tracking-tight">{ui.mainTitle}</h1>
-                      <div className="bg-slate-900/80 backdrop-blur-sm border border-slate-800 rounded-2xl p-5 shadow-xl text-start">
-                        <h2 className="text-xl font-bold text-white mb-2 text-center">{ui.pageTitle}</h2>
-                        <p className="text-slate-400 text-sm leading-relaxed">{ui.introText}</p>
-                      </div>
-                    </header>
-                    <main className="w-full flex items-center justify-center my-4 animate-in fade-in duration-700">
-                      <div className="flex flex-wrap justify-center gap-5">
-                        {appData.links.map((link, index) => (
-                          <button
-                            key={link.id}
-                            onClick={() => onNavigate(link.id)}
-                            className={`group relative flex flex-col items-center justify-center text-center w-28 h-28 sm:w-32 sm:h-32 rounded-full bg-gradient-to-br ${link.color} border ${link.border} shadow-[0_0_20px_rgba(0,0,0,0.3)] hover:shadow-[0_0_30px_rgba(255,255,255,0.1)] hover:-translate-y-2 transition-all duration-300 ease-out backdrop-blur-md`}
-                            style={{ animation: `float 6s ease-in-out infinite`, animationDelay: `${index * 0.5}s` }}
-                          >
-                            <div className="absolute inset-0 rounded-full bg-slate-950/20 group-hover:bg-transparent transition-colors duration-300"></div>
-                            <span className="relative z-10 text-white font-bold text-lg sm:text-xl drop-shadow-md px-2">{link.title[lang]}</span>
-                            <span className="relative z-10 text-slate-300 text-xs sm:text-sm mt-1 opacity-80 group-hover:opacity-100 transition-opacity">{link.subtitle[lang]}</span>
-                          </button>
-                        ))}
-                      </div>
-                    </main>
-                  </>
-                )}
-                {view === 'about' && (
-                  <main className="w-full flex flex-col items-center animate-in fade-in duration-500">
-                     <h1 className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-l from-emerald-400 to-blue-400 mb-8 tracking-tight text-center">{ui.aboutTitle}</h1>
-                     <div className="bg-slate-900/80 backdrop-blur-sm border border-slate-800 rounded-2xl p-6 shadow-xl space-y-4 text-start">
-                        <div className="flex items-start gap-3">
-                          <div className="mt-1 bg-blue-500/20 p-2 rounded-lg"><Icon name="Info" size={16} className="text-blue-400" /></div>
-                          <p className="text-slate-300 leading-relaxed text-sm sm:text-base">{ui.aboutP1}</p>
-                        </div>
-                        <div className="w-full h-px bg-slate-800/50"></div>
-                        <div className="flex items-start gap-3">
-                          <div className="mt-1 bg-purple-500/20 p-2 rounded-lg"><Icon name="Globe" size={16} className="text-purple-400" /></div>
-                          <p className="text-slate-300 leading-relaxed text-sm sm:text-base">{ui.aboutP2}</p>
-                        </div>
-                        <div className="w-full h-px bg-slate-800/50"></div>
-                        <div className="flex items-start gap-3">
-                          <div className="mt-1 bg-emerald-500/20 p-2 rounded-lg"><Icon name="Home" size={16} className="text-emerald-400" /></div>
-                          <p className="text-slate-300 leading-relaxed text-sm sm:text-base">{ui.aboutP3}</p>
-                        </div>
-                     </div>
-                  </main>
-                )}
-              </div>
+      <section class="glass-card rounded-3xl p-5 md:p-7 text-right">
+        <h2 class="text-xl md:text-2xl font-bold text-white mb-3 text-center">
+          מרכז מחקר גאוגרפי, היסטורי ודמוגרפי
+        </h2>
 
-              <footer className="w-full max-w-md mt-10 pt-6 pb-4 text-center border-t border-slate-800/50 relative z-10">
-                <div className="bg-slate-900/50 rounded-xl p-4">
-                  <p className="text-slate-400 text-xs leading-relaxed text-start">
-                    <strong className="text-slate-300 block mb-1">{ui.footerTitle}</strong>{ui.footerText}
-                  </p>
-                </div>
-              </footer>
-            </div>
-          );
-        }
+        <p class="text-slate-300 leading-8 text-sm md:text-base">
+          ברוכים הבאים למאגר המחקר. עמוד זה משמש כאינדקס הראשי של האתר,
+          וממנו ניתן לעבור לדפי המחקר הנפרדים. כל דף נבנה כעמוד עצמאי,
+          עם תמונות, הסברים, נתונים, דמוגרפיה, היסטוריה ותצוגה מותאמת למובייל.
+        </p>
+      </section>
+    </header>
 
-        // ==========================================
-        // COMPONENT 2: PolandDetail (The Research Page)
-        // ==========================================
-        function PolandDetail({ onBack }) {
-          const [isNotesModalOpen, setIsNotesModalOpen] = useState(false);
-          const [notes, setNotes] = useState([
-            { id: 1, author: "רם", text: "יש להוסיף בהמשך נתונים מדויקים על הפיתוח הכלכלי של פולין בין השנים 2020–2026.", date: "17/05/2026" },
-            { id: 2, author: "מערכת", text: "תיקיית המדיה assets/images מוכנה לקליטת קובצי המקור הוויזואליים.", date: "17/05/2026" }
-          ]);
-          const [newNote, setNewNote] = useState("");
+    <!-- בועות ניווט -->
+    <section class="w-full max-w-4xl">
+      <div class="flex flex-wrap justify-center gap-5 md:gap-7">
 
-          const handleAddNote = (e) => {
-            e.preventDefault();
-            if (!newNote.trim()) return;
-            setNotes([...notes, { id: Date.now(), author: "רם", text: newNote, date: new Date().toLocaleDateString('he-IL') }]);
-            setNewNote("");
-          };
+        <!-- פולין - פעיל -->
+        <a
+          href="poland.html"
+          class="float-bubble group relative w-32 h-32 md:w-40 md:h-40 rounded-full bg-gradient-to-br from-red-900/90 to-red-500/50 border border-red-400/40 shadow-2xl flex flex-col items-center justify-center text-center hover:-translate-y-2 transition-all duration-300"
+        >
+          <div class="absolute inset-0 rounded-full bg-slate-950/20 group-hover:bg-transparent transition"></div>
 
-          return (
-            <div dir="rtl" className="min-h-screen bg-slate-950 text-slate-200 font-sans p-4 sm:p-6 pb-24 overflow-x-hidden relative select-none animate-in fade-in duration-500">
-              
-              {/* כפתור חזרה עליון מחובר לראוטינג */}
-              <div className="w-full max-w-xl mx-auto mb-6 relative z-10">
-                <button onClick={onBack} className="flex items-center gap-2 text-sm text-slate-400 hover:text-white bg-slate-900/80 backdrop-blur px-4 py-2 rounded-full border border-slate-800 transition-colors shadow-md">
-                  <Icon name="ChevronRight" size={14} />
-                  <span>חזרה לאינדקס הבועות</span>
-                </button>
-              </div>
+          <i class="fa-solid fa-map-location-dot text-red-100 text-2xl mb-2 relative z-10"></i>
 
-              <article className="w-full max-w-xl mx-auto space-y-6 relative z-10">
-                <header className="bg-slate-900 border border-slate-800 rounded-3xl p-6 relative overflow-hidden shadow-2xl">
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-red-600/10 rounded-full blur-3xl pointer-events-none"></div>
-                  <div className="flex items-center gap-4 mb-3">
-                    <div className="w-12 h-12 rounded-xl bg-red-950/60 border border-red-800/50 flex items-center justify-center">
-                      <Icon name="Map" className="text-red-400" size={20} />
-                    </div>
-                    <div>
-                      <h1 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">רפובליקת פולין</h1>
-                      <p className="text-slate-400 text-xs sm:text-sm tracking-wide">Rzeczpospolita Polska • מחקר מדינה מקיף ומורחב</p>
-                    </div>
-                  </div>
-                  <div className="h-0.5 w-16 bg-red-600 rounded-full mt-4"></div>
-                </header>
+          <span class="relative z-10 text-white font-extrabold text-lg md:text-xl px-2">
+            רפובליקת פולין
+          </span>
 
-                {/* --- אזור נתונים מהירים --- */}
-                <section className="grid grid-cols-2 gap-3 sm:gap-4">
-                  <div className="bg-slate-900 border border-slate-800 rounded-2xl p-4 flex flex-col items-center justify-center text-center shadow-lg hover:bg-slate-800/80 transition-colors">
-                    <Icon name="Calendar" size={20} className="text-emerald-400 mb-2" />
-                    <span className="text-xs text-slate-400 mb-1">שנת ייסוד</span>
-                    <span className="text-sm sm:text-base font-bold text-slate-200">966 לספירה</span>
-                  </div>
-                  <div className="bg-slate-900 border border-slate-800 rounded-2xl p-4 flex flex-col items-center justify-center text-center shadow-lg hover:bg-slate-800/80 transition-colors">
-                    <Icon name="Maximize" size={20} className="text-blue-400 mb-2" />
-                    <span className="text-xs text-slate-400 mb-1">שטח כולל</span>
-                    <span className="text-sm sm:text-base font-bold text-slate-200">312,696 קמ"ר</span>
-                  </div>
-                  <div className="bg-slate-900 border border-slate-800 rounded-2xl p-4 flex flex-col items-center justify-center text-center shadow-lg hover:bg-slate-800/80 transition-colors">
-                    <Icon name="Users" size={20} className="text-purple-400 mb-2" />
-                    <span className="text-xs text-slate-400 mb-1">אוכלוסייה</span>
-                    <span className="text-sm sm:text-base font-bold text-slate-200">37.6 מיליון</span>
-                  </div>
-                  <div className="bg-slate-900 border border-slate-800 rounded-2xl p-4 flex flex-col items-center justify-center text-center shadow-lg hover:bg-slate-800/80 transition-colors">
-                    <Icon name="Coins" size={20} className="text-amber-400 mb-2" />
-                    <span className="text-xs text-slate-400 mb-1">מטבע רשמי</span>
-                    <span className="text-sm sm:text-base font-bold text-slate-200 flex items-center justify-center gap-1">זלוטי פולני <span className="text-amber-400 font-mono text-lg">(zł)</span></span>
-                  </div>
-                </section>
+          <span class="relative z-10 text-red-100/90 text-xs md:text-sm mt-1">
+            מחקר מדינה
+          </span>
+        </a>
 
-                {/* 1. תצוגה גאוגרפית */}
-                <section className="bg-slate-900 border border-slate-800 rounded-3xl p-4 shadow-xl">
-                  <h2 className="text-sm font-bold text-slate-400 mb-3 flex items-center gap-2"><Icon name="Globe" size={16} className="text-blue-400" /><span>1. תצוגה גאוגרפית / נופיה של פולין</span></h2>
-                  <div className="relative w-full aspect-[9/16] max-h-[420px] bg-slate-950 rounded-2xl overflow-hidden border border-slate-800 flex flex-col items-center justify-center text-center p-6 group">
-                    <img src="./assets/images/poland.jpg" alt="Poland Landscape" className="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-50 transition-opacity duration-300" onError={(e) => { e.target.style.display = 'none'; }} />
-                    <div className="relative z-10 space-y-2">
-                      <Icon name="Map" size={36} className="text-slate-600 mx-auto mb-2" />
-                      <p className="text-xs text-slate-500 font-mono">./assets/images/poland.jpg</p>
-                      <p className="text-sm text-slate-400 font-medium">מיקום פלייסהולדר לתמונת נוף</p>
-                      <p className="text-xs text-slate-500 max-w-xs">התצוגה מותאמת אנכית ברזולוציה גבוהה ומדויקת למסכי סמסונג S25 Ultra</p>
-                    </div>
-                  </div>
-                </section>
+        <!-- ורשה - בבנייה -->
+        <button
+          type="button"
+          onclick="showComingSoon('ורשה')"
+          class="float-bubble group relative w-32 h-32 md:w-40 md:h-40 rounded-full bg-gradient-to-br from-blue-900/80 to-blue-500/40 border border-blue-400/30 shadow-2xl flex flex-col items-center justify-center text-center hover:-translate-y-2 transition-all duration-300"
+          style="animation-delay: 0.4s;"
+        >
+          <div class="absolute inset-0 rounded-full bg-slate-950/30 group-hover:bg-transparent transition"></div>
 
-                {/* 2. דגל */}
-                <section className="bg-slate-900 border border-slate-800 rounded-3xl p-4 shadow-xl">
-                  <h2 className="text-sm font-bold text-slate-400 mb-3 flex items-center gap-2"><Icon name="Flag" size={16} className="text-red-400" /><span>2. דגל לאומי רשמי</span></h2>
-                  <div className="relative w-full aspect-[16/10] bg-slate-950 rounded-2xl overflow-hidden border border-slate-800 flex flex-col items-center justify-center text-center p-6 group">
-                    <img src="./assets/images/flag.jpg" alt="Flag of Poland" className="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-50 transition-opacity duration-300" onError={(e) => { e.target.style.display = 'none'; }} />
-                    <div className="relative z-10 space-y-2">
-                      <Icon name="Flag" size={36} className="text-slate-600 mx-auto mb-2" />
-                      <p className="text-xs text-slate-500 font-mono">./assets/images/flag.jpg</p>
-                      <p className="text-sm text-slate-400 font-medium">מיקום פלייסהולדר לתמונת הדגל הלאומי</p>
-                      <p className="text-xs text-slate-500">פרופורציה רשמית בחוקה: 5:8</p>
-                    </div>
-                  </div>
-                </section>
+          <i class="fa-solid fa-city text-blue-100 text-2xl mb-2 relative z-10"></i>
 
-                {/* 3. חלון הערות */}
-                <section className="bg-slate-900 border border-slate-800 rounded-3xl p-5 shadow-xl flex items-center justify-between">
-                  <div className="space-y-1">
-                    <h3 className="font-bold text-white text-base">3. חלון הערות ותגובות למחקר</h3>
-                    <p className="text-xs text-slate-400">ניהול, מעקב ותיעוד הארות</p>
-                  </div>
-                  <button onClick={() => setIsNotesModalOpen(true)} className="flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white font-semibold text-sm py-2.5 px-4 rounded-xl shadow-lg transition-all active:scale-95">
-                    <Icon name="MessageSquare" size={16} /><span>פתח תגובות ({notes.length})</span>
-                  </button>
-                </section>
+          <span class="relative z-10 text-white font-extrabold text-lg md:text-xl px-2">
+            ורשה
+          </span>
 
-                {/* אטימולוגיה מורחבת */}
-                <section className="bg-slate-900 border border-slate-800 rounded-3xl p-5 shadow-xl">
-                  <div className="flex items-center gap-3 mb-4 text-blue-400">
-                    <Icon name="BookOpen" size={20} />
-                    <h2 className="text-lg font-bold text-white">אטימולוגיה ומקור השם (Etymology)</h2>
-                  </div>
-                  <div className="space-y-3">
-                    <div className="bg-slate-950 p-4 rounded-xl border border-slate-800/60">
-                      <span className="block font-bold text-blue-300 text-base mb-1">Polanie (פולאנים)</span>
-                      <p className="text-sm text-slate-300 leading-relaxed">המונח נגזר ישירות משמו של שבט סלאבי מערבי עתיק בשם "הפולאנים", אשר שכן באזור אגן נהר הוורטה (Warta) ההיסטורי שבמרכז-מערב פולין של ימינו. במאה ה-9 וה-10, שבט זה הצליח לאחד בכוח הזרוע ובבריתות פוליטיות את יתר השבטים הסלאביים באזור.</p>
-                    </div>
-                    <div className="bg-slate-950 p-4 rounded-xl border border-slate-800/60">
-                      <span className="block font-bold text-blue-300 text-base mb-1">Pole (פולה)</span>
-                      <p className="text-sm text-slate-300 leading-relaxed">מקור המילה בשפה הפרוטו-סלאבית הקדומה שפירושה "שדה", "מישור לחקלאות" או "שטח פתוח נטול יערות עבותים". השם משקף נאמנה את הגיאוגרפיה והטופוגרפיה המישורית העצומה המאפיינת את רוב שטחה של המדינה.</p>
-                    </div>
-                    <div className="bg-slate-950 p-4 rounded-xl border border-slate-800/60">
-                      <span className="block font-bold text-blue-300 text-base mb-1">Polonia (פולוניה)</span>
-                      <p className="text-sm text-slate-300 leading-relaxed">הגרסה הלטינית של השם. התיעוד הכתוב הראשון והמוכר בהיסטוריה של המונח הופיע בסביבות שנת 1000 לספירה, בכרוניקה של יוחנן קנאפריוס המתארת את חייו של אדלברט הקדוש מפרג.</p>
-                    </div>
-                    <div className="mt-4 p-4 bg-blue-950/20 border border-blue-900/40 rounded-xl text-sm">
-                      <span className="font-bold text-blue-200">משמעות השם המלאה: </span>
-                      <span className="text-slate-300">"ארצם של אנשי השדות" או "העם היושב במישורים". משמעות זו מקפלת בתוכה את הזהות ההיסטורית של עם חקלאי שישב באזור פתוח ומישורי, נטול גבולות טבעיים מובהקים.</span>
-                    </div>
-                  </div>
-                </section>
+          <span class="relative z-10 text-blue-100/90 text-xs md:text-sm mt-1">
+            עיר בירה
+          </span>
+        </button>
 
-                {/* 4. הסבר מקיף על דגל פולין */}
-                <section className="bg-slate-900 border border-slate-800 rounded-3xl p-5 shadow-xl relative overflow-hidden">
-                  <div className="absolute top-0 left-0 w-24 h-24 bg-red-600/5 rounded-full blur-2xl pointer-events-none"></div>
-                  <div className="flex items-center gap-3 mb-4 text-red-400">
-                    <Icon name="Flag" size={20} />
-                    <h2 className="text-lg font-bold text-white">4. הסבר מקיף על הדגל הלאומי</h2>
-                  </div>
-                  <div className="space-y-4 text-sm leading-relaxed text-slate-300">
-                    <div>
-                      <h4 className="font-bold text-white mb-1.5 text-base border-b border-slate-800 pb-1">מבנה ויזואלי והגדרות חוקיות</h4>
-                      <p>דגל פולין מורכב משני פסים אופקיים רחבים שווים בגודלם לחלוטין: הפס העליון בצבע לבן והפס התחתון בצבע אדום. היחס הרשמי והחוקי של הדגל הוא <strong className="text-white">5:8</strong>. החוק הפולני מגדיר במדויק את הגוונים באמצעות קואורדינטות כרומטיות: הלבן מוגדר כגוון כסוף מעט, והאדום מוגדר כארגמן עמוק (Crimson).</p>
-                    </div>
-                    <div>
-                      <h4 className="font-bold text-white mb-1.5 text-base border-b border-slate-800 pb-1">הרלדיקה וסמליות הצבעים</h4>
-                      <p>מקורם של צבעי הדגל הוא הרלדי לחלוטין, והצבעים נגזרים ישירות מסמל המדינה ההיסטורי המציג עיט לבן ומוכתר על רקע מגן אדום.</p>
-                      <ul className="list-disc list-inside mt-2 space-y-1.5 text-slate-400 mr-2">
-                        <li><strong className="text-slate-200">הצבע הלבן:</strong> מסמל את העיט הלבן האגדי של שבט הפולאנים. הלבן מייצג טוהר כוונות, שלום, שאיפה רוחנית עליונה ויושרה.</li>
-                        <li><strong className="text-slate-200">הצבע האדום:</strong> מייצג את רקע המגן של שלט האצולה העתיק. מסמל גבורה עילאית, אומץ לב, ואת הדם הרב שניגר לאורך ההיסטוריה של העם הפולני.</li>
-                      </ul>
-                    </div>
-                    <div>
-                      <h4 className="font-bold text-white mb-1.5 text-base border-b border-slate-800 pb-1">התפתחות היסטורית</h4>
-                      <p>האימוץ הרשמי של הלבן והאדום כצבעים הלאומיים התרחש ב-<strong className="text-white">7 בפברואר 1831</strong> במהלך "מרד נובמבר". לאחר שפולין זכתה מחדש בעצמאותה ב-1918, אישר הפרלמנט רשמית את הדגל במתכונתו הנוכחית ב-1 באוגוסט 1919.</p>
-                    </div>
-                  </div>
-                </section>
+        <!-- קרקוב - בבנייה -->
+        <button
+          type="button"
+          onclick="showComingSoon('קרקוב')"
+          class="float-bubble group relative w-32 h-32 md:w-40 md:h-40 rounded-full bg-gradient-to-br from-amber-900/80 to-amber-500/40 border border-amber-400/30 shadow-2xl flex flex-col items-center justify-center text-center hover:-translate-y-2 transition-all duration-300"
+          style="animation-delay: 0.8s;"
+        >
+          <div class="absolute inset-0 rounded-full bg-slate-950/30 group-hover:bg-transparent transition"></div>
 
-                {/* 5. כלכלת פולין */}
-                <section className="bg-slate-900 border border-slate-800 rounded-3xl p-5 shadow-xl relative overflow-hidden">
-                  <div className="absolute top-[-20%] left-[-10%] w-32 h-32 bg-emerald-600/10 rounded-full blur-3xl pointer-events-none"></div>
-                  <div className="flex items-center gap-3 mb-4 text-emerald-400">
-                    <Icon name="TrendingUp" size={20} />
-                    <h2 className="text-lg font-bold text-white">5. כלכלת פולין: מ"טיפול בהלם" למעצמה אזורית</h2>
-                  </div>
-                  <div className="space-y-4 text-sm leading-relaxed text-slate-300 text-justify">
-                    <div>
-                      <h4 className="font-bold text-white mb-1.5 text-base border-b border-slate-800 pb-1">הנס הכלכלי שלאחר הקומוניזם</h4>
-                      <p>עם שחרור פולין ב-1989, הכלכלן לשק בלצרוביץ' הוביל תוכנית "טיפול בהלם" שהעבירה את פולין לכלכלת שוק. המהלך הוביל ל"נס כלכלי". כיום פולין היא הכלכלה ה-6 בגודלה באיחוד האירופי.</p>
-                    </div>
-                    <div>
-                      <h4 className="font-bold text-white mb-1.5 text-base border-b border-slate-800 pb-1">חוסן אסטרטגי ועצמאות תעשייתית</h4>
-                      <p>פולין הייתה המדינה היחידה באיחוד האירופי שלא נכנסה למיתון כלל במהלך המשבר הפיננסי העולמי של 2008 בזכות שוק מקומי גדול (37 מיליון צרכנים) ומערכת בנקאות שמרנית.</p>
-                    </div>
-                    <div>
-                      <h4 className="font-bold text-white mb-1.5 text-base border-b border-slate-800 pb-1">מנועי צמיחה ותעשיות מפתח</h4>
-                      <p>בעשור האחרון, פולין ביצעה זינוק טכנולוגי אדיר והפכה למוקד עולמי של שירותי IT, פיתוח תוכנה, וגיימינג (CD Projekt Red). ערי פולין מהוות מוקד פיתוח לחברות ענק בזכות כוח אדם מיומן.</p>
-                    </div>
-                  </div>
-                </section>
+          <i class="fa-solid fa-landmark text-amber-100 text-2xl mb-2 relative z-10"></i>
 
-                {/* 6. המטבע הלאומי */}
-                <section className="bg-slate-900 border border-slate-800 rounded-3xl p-5 shadow-xl relative overflow-hidden">
-                  <div className="absolute bottom-[-10%] right-[-10%] w-32 h-32 bg-amber-600/10 rounded-full blur-3xl pointer-events-none"></div>
-                  <div className="flex items-center gap-3 mb-4 text-amber-400">
-                    <Icon name="Landmark" size={20} />
-                    <h2 className="text-lg font-bold text-white">6. המטבע הלאומי: זלוטי פולני (Złoty)</h2>
-                  </div>
-                  <div className="space-y-4 text-sm leading-relaxed text-slate-300 text-justify">
-                    <div>
-                      <h4 className="font-bold text-white mb-1.5 text-base border-b border-slate-800 pb-1">אטימולוגיה ומשמעות השם</h4>
-                      <p>המילה <strong>"זלוטי" (Złoty)</strong> פירושה <strong>"זהוב"</strong>. המטבע מחולק ל-100 גרוש (Groszy) - מונח שפירושו המקורי "עבה".</p>
-                    </div>
-                    <div>
-                      <h4 className="font-bold text-white mb-1.5 text-base border-b border-slate-800 pb-1">היפר-אינפלציה ודנומינציה</h4>
-                      <p>בעקבות המעבר לשוק חופשי, פולין חוותה היפר-אינפלציה אדירה. בשנת 1995 הבנק המרכזי ביצע דנומינציה: 10,000 זלוטי ישנים הומרו ל-1 זלוטי פולני חדש (PLN).</p>
-                    </div>
-                    <div>
-                      <h4 className="font-bold text-white mb-1.5 text-base border-b border-slate-800 pb-1">פולין, הזלוטי וגוש האירו</h4>
-                      <p>אף על פי שפולין התחייבה לאמץ את האירו, המדינה שומרת בקנאות על עצמאותה המוניטרית והותירה את הזלוטי. הדבר איפשר לה שליטה בלעדית בשערי הריבית וגמישות כלכלית פנומנלית.</p>
-                    </div>
-                  </div>
-                </section>
+          <span class="relative z-10 text-white font-extrabold text-lg md:text-xl px-2">
+            קרקוב
+          </span>
 
-                {/* שנת הקמה והמייסד */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
-                  <section className="bg-slate-900 p-5 rounded-3xl border border-slate-800 shadow-xl">
-                    <span className="flex items-center gap-2 text-emerald-400 font-bold mb-2">
-                      <Icon name="Calendar" size={16} />
-                      <span className="text-base">שנת ייסוד / הקמה</span>
-                    </span>
-                    <div className="space-y-2 text-slate-300 leading-relaxed">
-                      <p><strong className="text-emerald-300">שנת 966 לספירה.</strong> "טבילת פולין". קבלת הנצרות הכניסה את פולין למשפחת העמים האירופיים.</p>
-                    </div>
-                  </section>
-                  <section className="bg-slate-900 p-5 rounded-3xl border border-slate-800 shadow-xl">
-                    <span className="flex items-center gap-2 text-amber-400 font-bold mb-2">
-                      <Icon name="User" size={16} />
-                      <span className="text-base">הבונה / המייסד</span>
-                    </span>
-                    <div className="space-y-2 text-slate-300 leading-relaxed">
-                      <p><strong className="text-amber-300">מיישקו הראשון (Mieszko I).</strong> הדוכס הראשון מבית פיאסט. (חי 930–992 לספירה).</p>
-                    </div>
-                  </section>
-                </div>
+          <span class="relative z-10 text-amber-100/90 text-xs md:text-sm mt-1">
+            מחקר עיר
+          </span>
+        </button>
 
-                {/* סיבת ההקמה, דמוגרפיה, היסטוריה */}
-                <section className="bg-slate-900 border border-slate-800 rounded-3xl p-5 shadow-xl text-sm">
-                  <span className="flex items-center gap-2 text-rose-400 font-bold mb-3"><Icon name="Target" size={18} /><h2 className="text-lg">סיבת ההקמה והמניע הגיאופוליטי</h2></span>
-                  <p className="text-slate-300 leading-relaxed text-justify">איחוד השבטים הסלאביים תחת שלטון ודת משותפת (נצרות קתולית) נועד ליצור כוח צבאי ומדיני איתן כנגד פלישות שכנים (במיוחד האימפריה הרומית הקדושה), ולמצב את פולין ככוח מוכר באירופה.</p>
-                </section>
+        <!-- ורוצלב - בבנייה -->
+        <button
+          type="button"
+          onclick="showComingSoon('ורוצלב')"
+          class="float-bubble group relative w-32 h-32 md:w-40 md:h-40 rounded-full bg-gradient-to-br from-emerald-900/80 to-emerald-500/40 border border-emerald-400/30 shadow-2xl flex flex-col items-center justify-center text-center hover:-translate-y-2 transition-all duration-300"
+          style="animation-delay: 1.2s;"
+        >
+          <div class="absolute inset-0 rounded-full bg-slate-950/30 group-hover:bg-transparent transition"></div>
 
-                <section className="bg-slate-900 border border-slate-800 rounded-3xl p-5 shadow-xl text-sm">
-                  <span className="flex items-center gap-2 text-cyan-400 font-bold mb-3"><Icon name="Users" size={18} /><h2 className="text-lg">דמוגרפיה ומבנה חברתי</h2></span>
-                  <p className="text-slate-300 leading-relaxed">כ-37.6 מיליון תושבים. למעלה מ-97% מזדהים כפולנים אתנים. קיימת מגמת ילודה נמוכה והגירה מערבה, לצד קליטה מסיבית של מהגרים מאוקראינה.</p>
-                </section>
+          <i class="fa-solid fa-bridge-water text-emerald-100 text-2xl mb-2 relative z-10"></i>
 
-                <section className="bg-slate-900 border border-slate-800 rounded-3xl p-5 shadow-xl text-sm relative overflow-hidden mb-12">
-                  <div className="absolute bottom-0 right-0 w-48 h-48 bg-purple-600/10 rounded-full blur-3xl pointer-events-none"></div>
-                  <span className="flex items-center gap-2 text-purple-400 font-bold mb-4 relative z-10"><Icon name="ShieldAlert" size={18} /><h2 className="text-lg">היסטוריה, ילדות האומה ואידאולוגיה</h2></span>
-                  <div className="space-y-5 text-slate-300 leading-relaxed text-justify relative z-10">
-                    <div>
-                      <p>בשיא כוחה יצרה פולין את האיחוד הפולני-ליטאי שהתבסס על אידאולוגיית "חירות הזהב" – דמוקרטיית אצולה ייחודית. בסוף המאה ה-18 פולין חוותה שלוש חלוקות ונמחקה מהמפה עד 1918. לאחר חורבן מלחמת העולם ה-2 ושלטון קומוניסטי, תנועת "סולידריות" בהנהגת לך ולנסה הפילה את המשטר הסובייטי. חלוצה דמוקרטית (חוקת 3 במאי 1791) וכלכלה צומחת.</p>
-                    </div>
-                  </div>
-                </section>
+          <span class="relative z-10 text-white font-extrabold text-lg md:text-xl px-2">
+            ורוצלב
+          </span>
 
-              </article>
+          <span class="relative z-10 text-emerald-100/90 text-xs md:text-sm mt-1">
+            מחקר עיר
+          </span>
+        </button>
 
-              {/* Modal לתגובות */}
-              {isNotesModalOpen && (
-                <div className="fixed inset-0 z-[100] flex items-end sm:items-center justify-center p-0 sm:p-4 bg-slate-950/80 backdrop-blur-sm animate-in fade-in">
-                  <div className="bg-slate-900 border-t sm:border border-slate-800 w-full max-w-md rounded-t-3xl sm:rounded-3xl max-h-[85vh] flex flex-col overflow-hidden shadow-2xl animate-in slide-in-from-bottom-8">
-                    <div className="p-4 border-b border-slate-800 flex items-center justify-between bg-slate-900/50">
-                      <div className="flex items-center gap-2 text-blue-400"><Icon name="MessageSquare" size={16} /><h3 className="font-bold text-white text-base">תגובות והערות מחקר</h3></div>
-                      <button onClick={() => setIsNotesModalOpen(false)} className="p-1 rounded-full hover:bg-slate-800 text-slate-400 hover:text-white transition-colors"><Icon name="X" size={16} /></button>
-                    </div>
-                    <div className="flex-1 overflow-y-auto p-4 space-y-3 bg-slate-950/40">
-                      {notes.map((note) => (
-                        <div key={note.id} className="bg-slate-900 p-3.5 rounded-2xl border border-slate-800/80 space-y-1">
-                          <div className="flex justify-between items-center text-xs"><span className="font-bold text-blue-400">{note.author}</span><span className="text-slate-500 font-mono">{note.date}</span></div>
-                          <p className="text-sm text-slate-200 leading-relaxed">{note.text}</p>
-                        </div>
-                      ))}
-                    </div>
-                    <form onSubmit={handleAddNote} className="p-4 border-t border-slate-800 bg-slate-900">
-                      <div className="flex gap-2">
-                        <input type="text" value={newNote} onChange={(e) => setNewNote(e.target.value)} placeholder="הוסף הערה או תובנה חדשה למחקר..." className="flex-1 bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-sm text-slate-200 placeholder-slate-500 focus:outline-none focus:border-blue-500 transition-colors" />
-                        <button type="submit" className="bg-blue-600 hover:bg-blue-500 text-white p-2.5 rounded-xl transition-colors flex items-center justify-center shadow-md w-12"><Icon name="Send" size={16} /></button>
-                      </div>
-                    </form>
-                  </div>
-                </div>
-              )}
-            </div>
-          );
-        }
+        <!-- לודז׳ - בבנייה -->
+        <button
+          type="button"
+          onclick="showComingSoon('לודז׳')"
+          class="float-bubble group relative w-32 h-32 md:w-40 md:h-40 rounded-full bg-gradient-to-br from-purple-900/80 to-purple-500/40 border border-purple-400/30 shadow-2xl flex flex-col items-center justify-center text-center hover:-translate-y-2 transition-all duration-300"
+          style="animation-delay: 1.6s;"
+        >
+          <div class="absolute inset-0 rounded-full bg-slate-950/30 group-hover:bg-transparent transition"></div>
 
-        // ==========================================
-        // MAIN APP COMPONENT (Router)
-        // ==========================================
-        function App() {
-          const [currentView, setCurrentView] = useState('index');
+          <i class="fa-solid fa-industry text-purple-100 text-2xl mb-2 relative z-10"></i>
 
-          if (currentView === 'poland') {
-            return <PolandDetail onBack={() => setCurrentView('index')} />;
-          }
+          <span class="relative z-10 text-white font-extrabold text-lg md:text-xl px-2">
+            לודז׳
+          </span>
 
-          return <IndexBubbles onNavigate={(pageId) => {
-            if (pageId === 'poland') {
-              setCurrentView('poland');
-            } else {
-              console.log(`Page ${pageId} is not built yet.`);
-              alert(`המחקר עבור ${pageId} נמצא כעת בבנייה.`);
-            }
-          }} />;
-        }
+          <span class="relative z-10 text-purple-100/90 text-xs md:text-sm mt-1">
+            מחקר עיר
+          </span>
+        </button>
 
-        const root = ReactDOM.createRoot(document.getElementById('root'));
-        root.render(<App />);
-    </script>
+        <!-- פוזנן - בבנייה -->
+        <button
+          type="button"
+          onclick="showComingSoon('פוזנן')"
+          class="float-bubble group relative w-32 h-32 md:w-40 md:h-40 rounded-full bg-gradient-to-br from-teal-900/80 to-teal-500/40 border border-teal-400/30 shadow-2xl flex flex-col items-center justify-center text-center hover:-translate-y-2 transition-all duration-300"
+          style="animation-delay: 2s;"
+        >
+          <div class="absolute inset-0 rounded-full bg-slate-950/30 group-hover:bg-transparent transition"></div>
+
+          <i class="fa-solid fa-church text-teal-100 text-2xl mb-2 relative z-10"></i>
+
+          <span class="relative z-10 text-white font-extrabold text-lg md:text-xl px-2">
+            פוזנן
+          </span>
+
+          <span class="relative z-10 text-teal-100/90 text-xs md:text-sm mt-1">
+            מחקר עיר
+          </span>
+        </button>
+
+      </div>
+    </section>
+
+    <!-- הערה תחתונה -->
+    <section class="w-full max-w-4xl mt-12">
+      <div class="glass-card rounded-3xl p-5 md:p-6">
+        <h2 class="text-white font-bold mb-2 flex items-center gap-2">
+          <i class="fa-solid fa-screwdriver-wrench text-blue-400"></i>
+          מבנה האתר
+        </h2>
+
+        <p class="text-slate-400 text-sm leading-7">
+          האינדקס נשאר עמוד ראשי בלבד. דף פולין נמצא כעת בקובץ עצמאי:
+          <span class="font-mono text-blue-300">poland.html</span>.
+          בהמשך ניתן להוסיף דפים נפרדים לערים נוספות, למשל
+          <span class="font-mono text-blue-300">warsaw.html</span>,
+          <span class="font-mono text-blue-300">krakow.html</span>
+          וכן הלאה.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- חלון הודעה לדפים בבנייה -->
+  <div
+    id="comingSoonModal"
+    class="fixed inset-0 z-[100] hidden items-center justify-center bg-slate-950/90 backdrop-blur-md p-4"
+    onclick="closeComingSoon()"
+  >
+    <div
+      class="w-full max-w-md bg-slate-900 border border-slate-700 rounded-3xl shadow-2xl overflow-hidden"
+      onclick="event.stopPropagation()"
+    >
+      <div class="p-5 border-b border-slate-800 flex items-center justify-between">
+        <h3 class="font-bold text-white text-lg">
+          דף בבנייה
+        </h3>
+
+        <button
+          type="button"
+          onclick="closeComingSoon()"
+          class="w-10 h-10 rounded-full bg-slate-800 hover:bg-slate-700 text-white"
+          aria-label="סגור"
+        >
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <div class="p-5">
+        <p id="comingSoonText" class="text-slate-300 leading-7"></p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function showComingSoon(name) {
+      const modal = document.getElementById("comingSoonModal");
+      const text = document.getElementById("comingSoonText");
+
+      text.textContent = "המחקר עבור " + name + " עדיין נמצא בבנייה. בשלב הבא ניתן ליצור עבורו דף עצמאי משלו.";
+
+      modal.classList.remove("hidden");
+      modal.classList.add("flex");
+    }
+
+    function closeComingSoon() {
+      const modal = document.getElementById("comingSoonModal");
+      modal.classList.add("hidden");
+      modal.classList.remove("flex");
+    }
+
+    document.addEventListener("keydown", function(event) {
+      if (event.key === "Escape") {
+        closeComingSoon();
+      }
+    });
+  </script>
+
 </body>
 </html>
-
-
-```
