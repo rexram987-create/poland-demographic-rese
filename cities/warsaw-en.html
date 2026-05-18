@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Warsaw | City Research</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    body {
+      background: #020617;
+      color: #e2e8f0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+    }
+
+    .research-card {
+      background: rgba(15, 23, 42, 0.88);
+      border: 1px solid rgba(51, 65, 85, 0.9);
+      border-radius: 24px;
+      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
+    }
+
+    .modal-open {
+      overflow: hidden;
+    }
+
+    .soft-divider {
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba(148, 163, 184, 0.35), transparent);
+    }
+  </style>
+</head>
+
+<body class="min-h-screen selection:bg-blue-500/30 selection:text-blue-100">
+
+  <!-- Top navigation -->
+  <header class="sticky top-0 z-40 bg-slate-950/90 backdrop-blur border-b border-slate-800">
+    <nav class="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between gap-3">
+      <a href="../index.html" class="inline-flex items-center gap-2 text-sm text-slate-300 hover:text-white bg-slate-900 border border-slate-800 rounded-full px-4 py-2 transition">
+        <i class="fa-solid fa-chevron-left text-xs"></i>
+        Back to Index
+      </a>
+
+      <div class="flex items-center gap-2">
+        <a href="warsaw.html" class="inline-flex items-center gap-2 text-sm text-slate-300 hover:text-white bg-slate-900 border border-slate-800 rounded-full px-4 py-2 transition">
+          <i class="fa-solid fa-language text-xs"></i>
+          עברית
+        </a>
+
+        <a href="../poland-en.html" class="inline-flex items-center gap-2 text-sm text-slate-300 hover:text-white bg-slate-900 border border-slate-800 rounded-full px-4 py-2 transition">
+          <i class="fa-solid fa-flag text-xs"></i>
+          Poland Page
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="max-w-5xl mx-auto px-4 py-8 space-y-6">
+
+    <!-- Main title -->
+    <section class="research-card p-6 md:p-8 overflow-hidden relative">
+      <div class="absolute -top-20 -right-20 w-56 h-56 bg-blue-600/20 blur-3xl rounded-full pointer-events-none"></div>
+      <div class="absolute -bottom-24 -left-24 w-64 h-64 bg-red-600/10 blur-3xl rounded-full pointer-events-none"></div>
+
+      <div class="relative z-10">
+        <p class="text-blue-300 font-semibold mb-2 tracking-wide">Warszawa • Warsaw</p>
+        <h1 class="text-3xl md:text-5xl font-extrabold text-white mb-4">
+          Warsaw — Capital City of Poland
+        </h1>
+        <p class="text-slate-300 leading-8 max-w-3xl">
+          An independent city research page about Warsaw: its foundation period, historical founders,
+          reasons for development, name origin, geographical position, political importance, demography,
+          destruction and reconstruction after World War II, and its role as the governmental, economic,
+          and cultural center of modern Poland.
+        </p>
+      </div>
+    </section>
+
+    <!-- Quick facts -->
+    <section class="grid grid-cols-2 md:grid-cols-4 gap-3">
+      <div class="research-card p-4 text-center">
+        <i class="fa-solid fa-location-dot text-blue-400 text-xl mb-2"></i>
+        <p class="text-xs text-slate-400">Country</p>
+        <strong class="text-white">Poland</strong>
+      </div>
+
+      <div class="research-card p-4 text-center">
+        <i class="fa-solid fa-landmark text-emerald-400 text-xl mb-2"></i>
+        <p class="text-xs text-slate-400">Status</p>
+        <strong class="text-white">Capital City</strong>
+      </div>
+
+      <div class="research-card p-4 text-center">
+        <i class="fa-solid fa-water text-cyan-400 text-xl mb-2"></i>
+        <p class="text-xs text-slate-400">Major River</p>
+        <strong class="text-white">Vistula</strong>
+      </div>
+
+      <div class="research-card p-4 text-center">
+        <i class="fa-solid fa-city text-purple-400 text-xl mb-2"></i>
+        <p class="text-xs text-slate-400">Role</p>
+        <strong class="text-white">National Center</strong>
+      </div>
+    </section>
+
+    <!-- Foundation, founder and reason -->
+    <section class="research-card p-5 md:p-6">
+      <h2 class="text-xl md:text-2xl font-bold text-white mb-4 flex items-center gap-2">
+        <i class="fa-solid fa-scroll text-emerald-400"></i>
+        1. Foundation Period, Founder, and Reason for Development
+      </h2>
+
+      <div class="grid md:grid-cols-3 gap-4 mb-5">
+        <div class="bg-slate-950/70 border border-slate-800 rounded-2xl p-4">
+          <div class="flex items-center gap-2 text-emerald-300 font-bold mb-2">
+            <i class="fa-solid fa-calendar-days"></i>
+            Foundation Period
+          </div>
+          <p class="text-sm leading-7 text-slate-300">
+            The beginnings of settlement in the Warsaw area are usually dated to the late 13th or early 14th century.
+            Warsaw gained urban status during the Middle Ages, around the 14th century.
+          </p>
+        </div>
+
+        <div class="bg-slate-950/70 border border-slate-800 rounded-2xl p-4">
+          <div class="flex items-center gap-2 text-blue-300 font-bold mb-2">
+            <i class="fa-solid fa-user"></i>
+            Founder
+          </div>
+          <p class="text-sm leading-7 text-slate-300">
+            Warsaw does not have one single universally accepted founder in the way some planned cities do.
+            Its development is connected to the Dukes of Masovia, especially the Masovian branch of the Piast dynasty.
+          </p>
+        </div>
+
+        <div class="bg-slate-950/70 border border-slate-800 rounded-2xl p-4">
+          <div class="flex items-center gap-2 text-amber-300 font-bold mb-2">
+            <i class="fa-solid fa-bullseye"></i>
+            Reason for Development
+          </div>
+          <p class="text-sm leading-7 text-slate-300">
+            Warsaw developed because of its strategic location on the Vistula River, an important trade and transport route.
+            It served as a point of control, commerce, passage, and defense in the Masovia region.
+          </p>
+        </div>
+      </div>
+
+      <div class="space-y-4 text-sm leading-8 text-slate-300">
+        <p>
+          Warsaw was not originally founded as a planned capital city. It grew gradually from a local settlement
+          in the Masovia region. Its position on the banks of the Vistula River gave it a natural advantage:
+          the river functioned as a route for movement, trade, regional connection, and partial defense.
+        </p>
+
+        <p>
+          During the Middle Ages, Masovia was a politically important region within the wider Polish world.
+          The Dukes of Masovia, belonging to a branch of the Piast dynasty, contributed to the settlement’s growth,
+          fortification, and transformation into a regional center. It is therefore more accurate to say that Warsaw
+          developed under the patronage of the Masovian dukes rather than being founded by one single individual.
+        </p>
+
+        <p>
+          The reason for Warsaw’s foundation and growth was a combination of geography, trade, and political control.
+          Its location near the Vistula made it possible to control routes, collect taxes, move goods, and connect
+          different regions of Poland. Later, these advantages helped Warsaw become an important administrative city
+          and eventually the capital of Poland.
+        </p>
+      </div>
+    </section>
+
+    <!-- Main image -->
+    <section class="research-card p-5 md:p-6">
+      <h2 class="text-xl md:text-2xl font-bold text-white mb-4 flex items-center gap-2">
+        <i class="fa-solid fa-image text-blue-400"></i>
+        2. Visual View — Warsaw and the Old Town
+      </h2>
+
+      <figure class="bg-slate-950 border border-slate-800 rounded-2xl overflow-hidden">
+        <button
+          type="button"
+          class="relative block w-full aspect-video group bg-slate-950"
+          onclick="openImage('../assets/images/warsaw-old-town-panorama.jpg', 'Warsaw — Old Town', 'A panoramic image of Warsaw and its historic Old Town.')"
+        >
+          <img
+            src="../assets/images/warsaw-old-town-panorama.jpg"
+            data-fallback="../assets/warsaw-old-town-panorama.jpg"
+            onerror="useFallback(this)"
+            alt="Warsaw — Old Town"
+            class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+
+          <div class="absolute inset-0 bg-slate-950/30 group-hover:bg-slate-950/10 transition"></div>
+
+          <span class="absolute top-3 right-3 bg-slate-950/80 border border-slate-700 rounded-full px-3 py-1 text-xs text-white backdrop-blur">
+            <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
+            Open image
+          </span>
+
+          <div class="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-slate-950/90 to-transparent text-left">
+            <p class="text-white font-bold">Warsaw — Old Town and Skyline</p>
+            <p class="text-xs text-slate-300">warsaw-old-town-panorama.jpg</p>
+          </div>
+        </button>
+
+        <figcaption class="p-3 text-center text-xs text-slate-400 leading-6">
+          A visual reference image of Warsaw’s Old Town, skyline, and historic urban space.
+        </figcaption>
+      </figure>
+    </section>
+
+    <!-- Etymology -->
+    <section class="research-card p-5 md:p-6">
+      <h2 class="text-xl md:text-2xl font-bold text-white mb-4 flex items-center gap-2">
+        <i class="fa-solid fa-book-open text-blue-400"></i>
+        3. Etymology and Origin of the Name Warsaw
+      </h2>
+
+      <div class="space-y-4 text-sm leading-8 text-slate-300">
+        <p>
+          The Polish name of the city is <strong class="text-blue-300">Warszawa</strong>. Its origin is usually
+          explained through linguistic traditions and local legends. One well-known tradition connects the name to
+          a figure called <strong class="text-blue-300">Wars</strong>, often described as a fisherman or local man,
+          and a female figure named <strong class="text-blue-300">Sawa</strong>.
+        </p>
+
+        <p>
+          According to the folk legend, Warsaw received its name from the combination of “Wars” and “Sawa.”
+          Although this legend should not be treated as a precise historical source, it became an important part
+          of the city’s symbolic identity. Such stories helped many European cities explain their origins and create
+          a shared urban memory.
+        </p>
+
+        <p>
+          From a research perspective, the name may be connected to a Slavic personal name or to a territorial
+          ownership name, meaning a place associated with a person or family. In any case, “Warszawa” gradually
+          evolved from the name of a local settlement into the name of a capital city with national political meaning.
+        </p>
+      </div>
+    </section>
+
+    <!-- Geography -->
+    <section class="research-card p-5 md:p-6">
+      <h2 class="text-xl md:text-2xl font-bold text-white mb-4 flex items-center gap-2">
+        <i class="fa-solid fa-map-location-dot text-emerald-400"></i>
+        4. Geographic Position and Spatial Importance
+      </h2>
+
+      <div class="space-y-4 text-sm leading-8 text-slate-300">
+        <p>
+          Warsaw is located in east-central Poland on the banks of the
+          <strong class="text-emerald-300">Vistula River</strong>, the longest and most important river in the country.
+          Its location made it a meeting point between different regions of Poland: north and south, east and west,
+          commercial zones, agricultural regions, and centers of political authority.
+        </p>
+
+        <p>
+          The Vistula played an important role in the city’s development. It served as a route for transport,
+          trade, natural defense, and connection to other towns and regions. Many European cities grew around rivers,
+          and Warsaw is a clear example of this: the river shaped its urban form, economy, and relationship with
+          the wider Polish landscape.
+        </p>
+
+        <p>
+          Although Warsaw is not located at the edge of the country and is not a seaport, it gradually became an
+          administrative and political center because of its relatively accessible position within the Polish space.
+          This location helped it become a major governmental base and eventually the national capital.
+        </p>
+      </div>
+    </section>
+
+    <!-- Historical development -->
+    <section class="research-card p-5 md:p-6">
+      <h2 class="text-xl md:text-2xl font-bold text-white mb-4 flex items-center gap-2">
+        <i class="fa-solid fa-landmark text-amber-400"></i>
+        5. Historical Development — From Local Settlement to Capital
+      </h2>
+
+      <div class="space-y-4 text-sm leading-8 text-slate-300">
+        <p>
+          Warsaw began as a relatively small settlement in the Masovia region, but over time it developed into a
+          city of regional importance. Its rise was connected to its location, the growth of political institutions,
+          commercial development, and changes in the political structure of the Polish kingdom.
+        </p>
+
+        <p>
+          Warsaw’s importance increased especially as it became a major political center of the state. The gradual
+          movement of political power toward Warsaw strengthened its status and turned it into a city where government,
+          nobility, diplomacy, culture, and public life became concentrated.
+        </p>
+
+        <p>
+          Unlike Kraków, which is strongly associated with Poland’s older royal past, Warsaw represents the modern
+          political state of Poland: a city of government institutions, parliament, ministries, embassies, urban economy,
+          and national identity struggles.
+        </p>
+      </div>
+    </section>
+
+    <!-- World War II and reconstruction -->
+    <section class="research-card p-5 md:p-6">
+      <h2 class="text-xl md:text-2xl font-bold text-white mb-4 flex items-center gap-2">
+        <i class="fa-solid fa-shield-halved text-red-400"></i>
+        6. Warsaw in World War II — Destruction, Memory, and Reconstruction
+      </h2>
+
+      <div class="space-y-4 text-sm leading-8 text-slate-300">
+        <p>
+          Warsaw was severely damaged during World War II. The city became a center of occupation, repression,
+          resistance, uprising, and systematic destruction. Its wartime history became one of the central symbols
+          of Polish suffering and endurance in the twentieth century.
+        </p>
+
+        <p>
+          Two events are especially connected to the city’s memory: the Warsaw Ghetto Uprising of 1943, one of the
+          major symbols of Jewish resistance during the Holocaust, and the Warsaw Uprising of 1944, in which the
+          Polish underground attempted to liberate the city from German occupation before the arrival of the Soviet army.
+        </p>
+
+        <p>
+          After the uprising was suppressed, huge parts of the city were destroyed. The postwar reconstruction was
+          not merely an architectural project, but also a national and symbolic project: Poland sought to show that
+          even a city almost completely destroyed could rise again, restore its historic centers, and return to life
+          as a functioning capital.
+        </p>
+
+        <p>
+          Warsaw’s Old Town was carefully reconstructed after the war and became a global symbol of urban reconstruction
+          and historical memory. The reconstruction was not only about rebuilding streets and houses, but also about
+          restoring a layer of identity that had been targeted for erasure.
+        </p>
+      </div>
+    </section>
+
+    <!-- Demography -->
+    <section class="research-card p-5 md:p-6">
+      <h2 class="text-xl md:text-2xl font-bold text-white mb-4 flex items-center gap-2">
+        <i class="fa-solid fa-users text-cyan-400"></i>
+        7. Demography, Society, and Urban Identity
+      </h2>
+
+      <div class="space-y-4 text-sm leading-8 text-slate-300">
+        <p>
+          Warsaw is the largest and most central city in Poland politically and economically. It attracts people
+          from across the country: students, civil servants, businesspeople, engineers, cultural workers, technology
+          professionals, and migrants.
+        </p>
+
+        <p>
+          Warsaw’s urban identity is especially complex because it combines traumatic history with modern dynamism.
+          On one hand, the city is full of memorial sites, museums, and buildings that preserve the story of destruction
+          and reconstruction. On the other hand, it functions as a modern center of business, skyscrapers, transport,
+          higher education, and contemporary culture.
+        </p>
+
+        <p>
+          Socially, Warsaw represents a more urban, educated, and globally connected side of Poland. It is a city where
+          national memory, modern economy, everyday politics, European culture, and international influences meet.
+        </p>
+      </div>
+    </section>
+
+    <!-- Economy -->
+    <section class="research-card p-5 md:p-6">
+      <h2 class="text-xl md:text-2xl font-bold text-white mb-4 flex items-center gap-2">
+        <i class="fa-solid fa-chart-line text-emerald-400"></i>
+        8. Economy and National Role
+      </h2>
+
+      <div class="space-y-4 text-sm leading-8 text-slate-300">
+        <p>
+          Warsaw is the most important economic center in Poland. It contains government ministries, financial
+          institutions, major companies, service centers, technology firms, universities, cultural institutions,
+          and foreign embassies.
+        </p>
+
+        <p>
+          The city’s economy is based on a broad service sector, finance, real estate, technology, communications,
+          government, higher education, and tourism. Its status as the capital concentrates decision-making, resources,
+          and highly skilled labor.
+        </p>
+
+        <p>
+          Compared with other Polish cities, Warsaw is often seen as faster-paced and more modern, with a clear contrast
+          between the business center and new towers on one side, and historic neighborhoods and reconstructed spaces
+          on the other.
+        </p>
+      </div>
+    </section>
+
+    <!-- Culture -->
+    <section class="research-card p-5 md:p-6">
+      <h2 class="text-xl md:text-2xl font-bold text-white mb-4 flex items-center gap-2">
+        <i class="fa-solid fa-building-columns text-purple-400"></i>
+        9. Culture, Landmarks, and Urban Symbols
+      </h2>
+
+      <div class="space-y-4 text-sm leading-8 text-slate-300">
+        <p>
+          Among the places most associated with Warsaw are the Old Town, the Royal Castle, the Old Town Market Square,
+          the Palace of Culture and Science, Łazienki Park, the Vistula River, historical museums, and memorial sites
+          connected to World War II and the Holocaust.
+        </p>
+
+        <p>
+          Warsaw’s Old Town is a central symbol because large parts of it were reconstructed after the destruction of
+          World War II. The reconstruction turned it into a place of historical and architectural significance, but also
+          into a symbol of cultural continuity.
+        </p>
+
+        <p>
+          Warsaw is also an important musical and cultural city, associated among other things with the memory of
+          Frédéric Chopin. It also contains theaters, museums, festivals, galleries, and modern cultural institutions.
+        </p>
+      </div>
+    </section>
+
+    <!-- Sources and credits -->
+    <section class="research-card p-5 md:p-6">
+      <h2 class="text-xl md:text-2xl font-bold text-white mb-4 flex items-center gap-2">
+        <i class="fa-solid fa-link text-blue-400"></i>
+        10. Sources and Credits
+      </h2>
+
+      <ul class="space-y-3 text-sm leading-8 text-slate-300">
+        <li>
+          <strong class="text-slate-100">Warsaw image:</strong>
+          Local file named
+          <span class="font-mono text-blue-300">warsaw-old-town-panorama.jpg</span>
+          inside
+          <span class="font-mono text-blue-300">assets/images/</span>.
+        </li>
+
+        <li>
+          <strong class="text-slate-100">Purpose of this page:</strong>
+          Research, educational explanation, and visual reference about the capital city of Poland.
+        </li>
+
+        <li>
+          <strong class="text-slate-100">Website structure:</strong>
+          This page is located inside the
+          <span class="font-mono text-blue-300">cities/</span>
+          folder, so image links use the path
+          <span class="font-mono text-blue-300">../assets/images/</span>.
+        </li>
+      </ul>
+    </section>
+
+  </main>
+
+  <!-- Floating image modal -->
+  <div
+    id="imageModal"
+    class="fixed inset-0 z-[100] hidden bg-slate-950/90 backdrop-blur-md p-3 md:p-6 items-center justify-center"
+    onclick="closeImage()"
+  >
+    <div
+      class="w-full max-w-6xl max-h-[92vh] bg-slate-900 border border-slate-700 rounded-3xl overflow-hidden shadow-2xl"
+      onclick="event.stopPropagation()"
+    >
+      <div class="p-4 border-b border-slate-800 flex items-center justify-between gap-3">
+        <div class="min-w-0">
+          <h3 id="modalTitle" class="font-bold text-white truncate"></h3>
+          <p id="modalCaption" class="text-xs text-slate-400 truncate mt-1"></p>
+        </div>
+
+        <button
+          type="button"
+          onclick="closeImage()"
+          class="w-10 h-10 rounded-full bg-slate-800 hover:bg-slate-700 text-white shrink-0"
+          aria-label="Close image modal"
+        >
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <div class="p-3 bg-slate-950 flex items-center justify-center max-h-[76vh] overflow-auto">
+        <img
+          id="modalImg"
+          src=""
+          alt=""
+          class="max-w-full max-h-[72vh] object-contain rounded-xl"
+        />
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function useFallback(img) {
+      const fallback = img.getAttribute("data-fallback");
+      if (fallback && img.src.indexOf(fallback) === -1) {
+        img.src = fallback;
+      }
+    }
+
+    function openImage(src, title, caption) {
+      const modal = document.getElementById("imageModal");
+      const img = document.getElementById("modalImg");
+
+      img.src = src;
+      img.onerror = function () {
+        if (src.includes("../assets/images/")) {
+          this.src = src.replace("../assets/images/", "../assets/");
+        }
+      };
+
+      img.alt = title;
+      document.getElementById("modalTitle").textContent = title;
+      document.getElementById("modalCaption").textContent = caption || "";
+
+      modal.classList.remove("hidden");
+      modal.classList.add("flex");
+      document.body.classList.add("modal-open");
+    }
+
+    function closeImage() {
+      const modal = document.getElementById("imageModal");
+      modal.classList.add("hidden");
+      modal.classList.remove("flex");
+      document.body.classList.remove("modal-open");
+    }
+
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape") {
+        closeImage();
+      }
+    });
+  </script>
+
+</body>
+</html>
