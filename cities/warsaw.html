@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ורשה | מחקר עיר</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    body {
+      background: #020617;
+      color: #e2e8f0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+    }
+
+    .research-card {
+      background: rgba(15, 23, 42, 0.88);
+      border: 1px solid rgba(51, 65, 85, 0.9);
+      border-radius: 24px;
+      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
+    }
+
+    .modal-open {
+      overflow: hidden;
+    }
+
+    .soft-divider {
+      height: 1px;
+      background: linear-gradient(to left, transparent, rgba(148, 163, 184, 0.35), transparent);
+    }
+  </style>
+</head>
+
+<body class="min-h-screen selection:bg-blue-500/30 selection:text-blue-100">
+
+  <!-- סרגל עליון -->
+  <header class="sticky top-0 z-40 bg-slate-950/90 backdrop-blur border-b border-slate-800">
+    <nav class="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between gap-3">
+      <a href="../index.html" class="inline-flex items-center gap-2 text-sm text-slate-300 hover:text-white bg-slate-900 border border-slate-800 rounded-full px-4 py-2 transition">
+        <i class="fa-solid fa-chevron-right text-xs"></i>
+        חזרה לאינדקס
+      </a>
+
+      <a href="../poland.html" class="inline-flex items-center gap-2 text-sm text-slate-300 hover:text-white bg-slate-900 border border-slate-800 rounded-full px-4 py-2 transition">
+        <i class="fa-solid fa-flag text-xs"></i>
+        דף פולין
+      </a>
+    </nav>
+  </header>
+
+  <main class="max-w-5xl mx-auto px-4 py-8 space-y-6">
+
+    <!-- כותרת ראשית -->
+    <section class="research-card p-6 md:p-8 overflow-hidden relative">
+      <div class="absolute -top-20 -right-20 w-56 h-56 bg-blue-600/20 blur-3xl rounded-full pointer-events-none"></div>
+      <div class="absolute -bottom-24 -left-24 w-64 h-64 bg-red-600/10 blur-3xl rounded-full pointer-events-none"></div>
+
+      <div class="relative z-10">
+        <p class="text-blue-300 font-semibold mb-2 tracking-wide">Warszawa • Warsaw</p>
+        <h1 class="text-3xl md:text-5xl font-extrabold text-white mb-4">
+          ורשה — עיר הבירה של פולין
+        </h1>
+        <p class="text-slate-300 leading-8 max-w-3xl">
+          דף מחקר עצמאי על ורשה: מקור השם, התפתחות היסטורית, מיקום גאוגרפי,
+          חשיבות פוליטית, דמוגרפיה, הרס ושיקום לאחר מלחמת העולם השנייה, והפיכתה
+          למרכז השלטוני, הכלכלי והתרבותי המרכזי של פולין המודרנית.
+        </p>
+      </div>
+    </section>
+
+    <!-- נתונים מהירים -->
+    <section class="grid grid-cols-2 md:grid-cols-4 gap-3">
+      <div class="research-card p-4 text-center">
+        <i class="fa-solid fa-location-dot text-blue-400 text-xl mb-2"></i>
+        <p class="text-xs text-slate-400">מדינה</p>
+        <strong class="text-white">פולין</strong>
+      </div>
+
+      <div class="research-card p-4 text-center">
+        <i class="fa-solid fa-landmark text-emerald-400 text-xl mb-2"></i>
+        <p class="text-xs text-slate-400">מעמד</p>
+        <strong class="text-white">עיר בירה</strong>
+      </div>
+
+      <div class="research-card p-4 text-center">
+        <i class="fa-solid fa-water text-cyan-400 text-xl mb-2"></i>
+        <p class="text-xs text-slate-400">נהר מרכזי</p>
+        <strong class="text-white">ויסלה</strong>
+      </div>
+
+      <div class="research-card p-4 text-center">
+        <i class="fa-solid fa-city text-purple-400 text-xl mb-2"></i>
+        <p class="text-xs text-slate-400">תפקיד</p>
+        <strong class="text-white">מרכז לאומי</strong>
+      </div>
+    </section>
+
+    <!-- תמונה ראשית -->
+    <section class="research-card p-5 md:p-6">
+      <h2 class="text-xl md:text-2xl font-bold text-white mb-4 flex items-center gap-2">
+        <i class="fa-solid fa-image text-blue-400"></i>
+        1. תצוגה חזותית — ורשה והעיר העתיקה
+      </h2>
+
+      <figure class="bg-slate-950 border border-slate-800 rounded-2xl overflow-hidden">
+        <button
+          type="button"
+          class="relative block w-full aspect-video group bg-slate-950"
+          onclick="openImage('../assets/images/warsaw-old-town-panorama.jpg', 'ורשה — העיר העתיקה', 'תמונה פנורמית של ורשה והעיר העתיקה. יש להעלות קובץ בשם warsaw-old-town-panorama.jpg לתיקיית assets/images.')"
+        >
+          <img
+            src="../assets/images/warsaw-old-town-panorama.jpg"
+            data-fallback="../assets/warsaw-old-town-panorama.jpg"
+            onerror="useFallback(this)"
+            alt="ורשה — העיר העתיקה"
+            class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+
+          <div class="absolute inset-0 bg-slate-950/30 group-hover:bg-slate-950/10 transition"></div>
+
+          <span class="absolute top-3 left-3 bg-slate-950/80 border border-slate-700 rounded-full px-3 py-1 text-xs text-white backdrop-blur">
+            <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
+            פתח בחלון צף
+          </span>
+
+          <div class="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-slate-950/90 to-transparent text-right">
+            <p class="text-white font-bold">ורשה — העיר העתיקה וקו הרקיע</p>
+            <p class="text-xs text-slate-300">קובץ מומלץ: warsaw-old-town-panorama.jpg</p>
+          </div>
+        </button>
+
+        <figcaption class="p-3 text-center text-xs text-slate-400 leading-6">
+          תמונת המחשה מומלצת לדף: העיר העתיקה של ורשה, נהר הוויסלה או קו הרקיע העירוני.
+        </figcaption>
+      </figure>
+    </section>
+
+    <!-- אטימולוגיה -->
+    <section class="research-card p-5 md:p-6">
+      <h2 class="text-xl md:text-2xl font-bold text-white mb-4 flex items-center gap-2">
+        <i class="fa-solid fa-book-open text-blue-400"></i>
+        2. אטימולוגיה ומקור השם ורשה
+      </h2>
+
+      <div class="space-y-4 text-sm leading-8 text-slate-300">
+        <p>
+          שמה הפולני של העיר הוא
+          <strong class="text-blue-300">Warszawa</strong>. מקור השם מוסבר בדרך כלל
+          באמצעות מסורות לשוניות ואגדות מקומיות. אחת המסורות הידועות קושרת את השם
+          לדמות בשם <strong class="text-blue-300">Wars</strong>, דייג או אדם מקומי,
+          ולדמות נשית בשם <strong class="text-blue-300">Sawa</strong>.
+        </p>
+
+        <p>
+          לפי האגדה העממית, ורשה קיבלה את שמה מצירוף השמות “Wars” ו־“Sawa”.
+          אף שאין לראות באגדה מקור היסטורי מדויק, היא הפכה לחלק חשוב מן הזהות הסמלית
+          של העיר. אגדות כאלה שימשו ערים רבות באירופה כדי להסביר את מוצאן וליצור
+          זיכרון עירוני משותף.
+        </p>
+
+        <p>
+          מבחינה מחקרית, ייתכן שמקור השם קשור לשם פרטי סלאבי או לשם בעלות טריטוריאלי,
+          כלומר מקום המזוהה עם אדם או משפחה. כך או כך, השם “Warszawa” הפך בהדרגה
+          משם של יישוב מקומי לשמה של עיר בירה בעלת משמעות פוליטית לאומית.
+        </p>
+      </div>
+    </section>
+
+    <!-- מיקום וגאוגרפיה -->
+    <section class="research-card p-5 md:p-6">
+      <h2 class="text-xl md:text-2xl font-bold text-white mb-4 flex items-center gap-2">
+        <i class="fa-solid fa-map-location-dot text-emerald-400"></i>
+        3. מיקום גאוגרפי וחשיבות מרחבית
+      </h2>
+
+      <div class="space-y-4 text-sm leading-8 text-slate-300">
+        <p>
+          ורשה ממוקמת במרכז־מזרח פולין, על גדות נהר
+          <strong class="text-emerald-300">הוויסלה</strong>, הנהר הארוך והחשוב במדינה.
+          מיקומה הפך אותה לנקודת מפגש בין אזורים שונים של פולין: הצפון והדרום,
+          המזרח והמערב, אזורי מסחר, אזורי חקלאות ומרכזי שלטון.
+        </p>
+
+        <p>
+          נהר הוויסלה מילא תפקיד חשוב בהתפתחות העיר. הוא שימש נתיב תחבורה, מסחר,
+          הגנה טבעית וחיבור אל ערים ואזורים אחרים. ערים רבות באירופה צמחו סביב נהרות,
+          וורשה היא דוגמה בולטת לכך: הנהר עיצב את המבנה העירוני, את הכלכלה ואת הקשר
+          בין העיר למרחב הפולני הרחב.
+        </p>
+
+        <p>
+          אף שוורשה איננה נמצאת בקצה המדינה ואיננה עיר נמל ימית, היא הפכה בהדרגה
+          למרכז ניהולי ופוליטי משום שהיא יושבת במיקום נגיש יחסית בתוך המרחב הפולני.
+          מיקום זה סייע לה להפוך לבסיס שלטוני חשוב ולבסוף לעיר הבירה.
+        </p>
+      </div>
+    </section>
+
+    <!-- התפתחות היסטורית -->
+    <section class="research-card p-5 md:p-6">
+      <h2 class="text-xl md:text-2xl font-bold text-white mb-4 flex items-center gap-2">
+        <i class="fa-solid fa-landmark text-amber-400"></i>
+        4. התפתחות היסטורית — מיישוב מקומי לבירת פולין
+      </h2>
+
+      <div class="space-y-4 text-sm leading-8 text-slate-300">
+        <p>
+          ורשה החלה כיישוב קטן יחסית באזור מזוביה, אך עם הזמן התפתחה לעיר בעלת
+          חשיבות אזורית. עלייתה קשורה למיקומה, לצמיחת מוסדות שלטון, להתפתחות מסחרית
+          ולשינויים הפוליטיים שעברו על הממלכה הפולנית.
+        </p>
+
+        <p>
+          חשיבותה של ורשה גדלה במיוחד כאשר הפכה למרכז פוליטי חשוב של המדינה.
+          המעבר ההדרגתי של מוקדי השלטון אל ורשה חיזק את מעמדה והפך אותה לעיר שבה
+          התרכזו מוסדות ממשל, אצולה, דיפלומטיה, תרבות וחיים ציבוריים.
+        </p>
+
+        <p>
+          בניגוד לקרקוב, המזוהה מאוד עם העבר המלכותי הקדום של פולין, ורשה מייצגת
+          במידה רבה את פולין הפוליטית המודרנית: עיר של מוסדות מדינה, פרלמנט, ממשלה,
+          שגרירויות, כלכלה עירונית ומאבקי זהות לאומית.
+        </p>
+      </div>
+    </section>
+
+    <!-- מלחמת העולם השנייה ושיקום -->
+    <section class="research-card p-5 md:p-6">
+      <h2 class="text-xl md:text-2xl font-bold text-white mb-4 flex items-center gap-2">
+        <i class="fa-solid fa-shield-halved text-red-400"></i>
+        5. ורשה במלחמת העולם השנייה — הרס, זיכרון ושיקום
+      </h2>
+
+      <div class="space-y-4 text-sm leading-8 text-slate-300">
+        <p>
+          ורשה נפגעה באופן קשה במיוחד במלחמת העולם השנייה. העיר הייתה מוקד של כיבוש,
+          דיכוי, התנגדות, מרד והרס שיטתי. ההיסטוריה של ורשה בתקופה זו הפכה לאחד
+          הסמלים המרכזיים של הסבל והעמידה הפולנית במאה ה־20.
+        </p>
+
+        <p>
+          שני אירועים מרכזיים קשורים במיוחד לזיכרון העיר: מרד גטו ורשה בשנת 1943,
+          שהיה אחד מסמלי ההתנגדות היהודית בתקופת השואה, ומרד ורשה בשנת 1944,
+          שבו ניסתה המחתרת הפולנית לשחרר את העיר מן הכיבוש הגרמני לפני כניסת הצבא הסובייטי.
+        </p>
+
+        <p>
+          לאחר דיכוי המרד נהרסו חלקים עצומים מהעיר. השיקום שלאחר המלחמה היה לא רק
+          פרויקט אדריכלי, אלא גם פרויקט לאומי־סמלי: פולין ביקשה להראות כי גם עיר
+          שנחרבה כמעט לחלוטין יכולה לקום מחדש, לשחזר את מרכזיה ההיסטוריים ולשוב
+          לשמש כבירה חיה ומתפקדת.
+        </p>
+
+        <p>
+          העיר העתיקה של ורשה שוחזרה בקפדנות לאחר המלחמה, והפכה לסמל עולמי של שיקום
+          עירוני ושל זיכרון היסטורי. השחזור לא היה רק בנייה מחדש של בתים ורחובות,
+          אלא ניסיון לשחזר שכבת זהות שניסו למחוק.
+        </p>
+      </div>
+    </section>
+
+    <!-- דמוגרפיה וחברה -->
+    <section class="research-card p-5 md:p-6">
+      <h2 class="text-xl md:text-2xl font-bold text-white mb-4 flex items-center gap-2">
+        <i class="fa-solid fa-users text-cyan-400"></i>
+        6. דמוגרפיה, חברה וזהות עירונית
+      </h2>
+
+      <div class="space-y-4 text-sm leading-8 text-slate-300">
+        <p>
+          ורשה היא העיר הגדולה והמרכזית ביותר בפולין מבחינה פוליטית וכלכלית.
+          היא מושכת אליה אוכלוסייה מכל רחבי המדינה: סטודנטים, עובדי ממשל, אנשי עסקים,
+          מהנדסים, אנשי תרבות, אנשי טכנולוגיה ומהגרים.
+        </p>
+
+        <p>
+          הזהות העירונית של ורשה מורכבת במיוחד, משום שהיא משלבת בין עבר טראומטי
+          לבין דינמיות מודרנית. מצד אחד, העיר מלאה אתרי זיכרון, מוזיאונים ומבנים
+          המשמרים את סיפור ההרס והשיקום. מצד שני, היא מתפקדת כמרכז מודרני של עסקים,
+          מגדלים, תחבורה, מוסדות השכלה ותרבות עכשווית.
+        </p>
+
+        <p>
+          מבחינה חברתית, ורשה מייצגת את פולין העירונית, המשכילה והגלובלית יותר.
+          היא עיר שבה נפגשים זיכרון לאומי, כלכלה מודרנית, פוליטיקה יומיומית,
+          תרבות אירופית והשפעות בינלאומיות.
+        </p>
+      </div>
+    </section>
+
+    <!-- כלכלה -->
+    <section class="research-card p-5 md:p-6">
+      <h2 class="text-xl md:text-2xl font-bold text-white mb-4 flex items-center gap-2">
+        <i class="fa-solid fa-chart-line text-emerald-400"></i>
+        7. כלכלה ותפקיד לאומי
+      </h2>
+
+      <div class="space-y-4 text-sm leading-8 text-slate-300">
+        <p>
+          ורשה היא המרכז הכלכלי החשוב ביותר בפולין. בה נמצאים משרדי ממשלה,
+          מוסדות פיננסיים, חברות גדולות, מרכזי שירות, חברות טכנולוגיה, אוניברסיטאות,
+          מרכזי תרבות ושגרירויות זרות.
+        </p>
+
+        <p>
+          כלכלת העיר נשענת על מגזר שירותים רחב, פיננסים, נדל״ן, טכנולוגיה,
+          תקשורת, ממשל, השכלה גבוהה ותיירות. מעמדה כבירה יוצר ריכוז של החלטות,
+          משאבים וכוח אדם איכותי.
+        </p>
+
+        <p>
+          בהשוואה לערים פולניות אחרות, ורשה נתפסת כעיר בעלת קצב מודרני מהיר יותר,
+          עם פער ברור בין המרכז העסקי והמגדלים החדשים לבין השכונות ההיסטוריות
+          והמרחבים המשוחזרים שלאחר המלחמה.
+        </p>
+      </div>
+    </section>
+
+    <!-- תרבות ואתרים חשובים -->
+    <section class="research-card p-5 md:p-6">
+      <h2 class="text-xl md:text-2xl font-bold text-white mb-4 flex items-center gap-2">
+        <i class="fa-solid fa-building-columns text-purple-400"></i>
+        8. תרבות, אתרים וסמלים עירוניים
+      </h2>
+
+      <div class="space-y-4 text-sm leading-8 text-slate-300">
+        <p>
+          בין המקומות המזוהים ביותר עם ורשה נמצאים העיר העתיקה, הטירה המלכותית,
+          כיכר השוק העתיקה, ארמון התרבות והמדע, פארק ואז׳נקי, נהר הוויסלה,
+          מוזיאונים היסטוריים ואתרי זיכרון הקשורים למלחמת העולם השנייה ולשואה.
+        </p>
+
+        <p>
+          העיר העתיקה של ורשה היא סמל מרכזי משום שחלקים גדולים ממנה שוחזרו לאחר
+          חורבן מלחמת העולם השנייה. השחזור הפך אותה לאתר בעל משמעות היסטורית
+          ואדריכלית, אך גם לסמל של רציפות תרבותית.
+        </p>
+
+        <p>
+          ורשה היא גם עיר מוזיקלית ותרבותית חשובה, המזוהה בין השאר עם זכרו של
+          פרדריק שופן. לצד זאת מתקיימים בה תיאטראות, מוזיאונים, פסטיבלים,
+          גלריות ומוסדות תרבות מודרניים.
+        </p>
+      </div>
+    </section>
+
+    <!-- מקורות וקרדיטים -->
+    <section class="research-card p-5 md:p-6">
+      <h2 class="text-xl md:text-2xl font-bold text-white mb-4 flex items-center gap-2">
+        <i class="fa-solid fa-link text-blue-400"></i>
+        9. מקורות וקרדיטים
+      </h2>
+
+      <ul class="space-y-3 text-sm leading-8 text-slate-300">
+        <li>
+          <strong class="text-slate-100">תמונת ורשה:</strong>
+          קובץ מקומי מומלץ בשם
+          <span class="font-mono text-blue-300">warsaw-old-town-panorama.jpg</span>
+          בתוך
+          <span class="font-mono text-blue-300">assets/images/</span>.
+        </li>
+
+        <li>
+          <strong class="text-slate-100">מטרת הדף:</strong>
+          מחקר, הסבר והמחשה חינוכית על עיר הבירה של פולין.
+        </li>
+
+        <li>
+          <strong class="text-slate-100">מבנה האתר:</strong>
+          דף זה נמצא בתוך תיקיית
+          <span class="font-mono text-blue-300">cities/</span>,
+          ולכן הקישורים לתמונות משתמשים בנתיב
+          <span class="font-mono text-blue-300">../assets/images/</span>.
+        </li>
+      </ul>
+    </section>
+
+  </main>
+
+  <!-- חלון צף לתמונות -->
+  <div
+    id="imageModal"
+    class="fixed inset-0 z-[100] hidden bg-slate-950/90 backdrop-blur-md p-3 md:p-6 items-center justify-center"
+    onclick="closeImage()"
+  >
+    <div
+      class="w-full max-w-6xl max-h-[92vh] bg-slate-900 border border-slate-700 rounded-3xl overflow-hidden shadow-2xl"
+      onclick="event.stopPropagation()"
+    >
+      <div class="p-4 border-b border-slate-800 flex items-center justify-between gap-3">
+        <div class="min-w-0">
+          <h3 id="modalTitle" class="font-bold text-white truncate"></h3>
+          <p id="modalCaption" class="text-xs text-slate-400 truncate mt-1"></p>
+        </div>
+
+        <button
+          type="button"
+          onclick="closeImage()"
+          class="w-10 h-10 rounded-full bg-slate-800 hover:bg-slate-700 text-white shrink-0"
+          aria-label="סגור חלון תמונה"
+        >
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <div class="p-3 bg-slate-950 flex items-center justify-center max-h-[76vh] overflow-auto">
+        <img
+          id="modalImg"
+          src=""
+          alt=""
+          class="max-w-full max-h-[72vh] object-contain rounded-xl"
+        />
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function useFallback(img) {
+      const fallback = img.getAttribute("data-fallback");
+      if (fallback && img.src.indexOf(fallback) === -1) {
+        img.src = fallback;
+      }
+    }
+
+    function openImage(src, title, caption) {
+      const modal = document.getElementById("imageModal");
+      const img = document.getElementById("modalImg");
+
+      img.src = src;
+      img.onerror = function () {
+        if (src.includes("../assets/images/")) {
+          this.src = src.replace("../assets/images/", "../assets/");
+        }
+      };
+
+      img.alt = title;
+      document.getElementById("modalTitle").textContent = title;
+      document.getElementById("modalCaption").textContent = caption || "";
+
+      modal.classList.remove("hidden");
+      modal.classList.add("flex");
+      document.body.classList.add("modal-open");
+    }
+
+    function closeImage() {
+      const modal = document.getElementById("imageModal");
+      modal.classList.add("hidden");
+      modal.classList.remove("flex");
+      document.body.classList.remove("modal-open");
+    }
+
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape") {
+        closeImage();
+      }
+    });
+  </script>
+
+</body>
+</html>
