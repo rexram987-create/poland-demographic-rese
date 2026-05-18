@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>רפובליקת פולין | מחקר מדינה</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    body {
+      background: #020617;
+      color: #e2e8f0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+    }
+
+    .research-card {
+      background: rgba(15, 23, 42, 0.88);
+      border: 1px solid rgba(51, 65, 85, 0.9);
+      border-radius: 24px;
+      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
+    }
+
+    .modal-open {
+      overflow: hidden;
+    }
+  </style>
+</head>
+
+<body class="min-h-screen selection:bg-blue-500/30 selection:text-blue-100">
+
+  <!-- סרגל עליון -->
+  <header class="sticky top-0 z-40 bg-slate-950/90 backdrop-blur border-b border-slate-800">
+    <nav class="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between gap-3">
+      <a href="index.html" class="inline-flex items-center gap-2 text-sm text-slate-300 hover:text-white bg-slate-900 border border-slate-800 rounded-full px-4 py-2 transition">
+        <i class="fa-solid fa-chevron-right text-xs"></i>
+        חזרה לאינדקס
+      </a>
+
+      <a href="about.html" class="inline-flex items-center gap-2 text-sm text-slate-300 hover:text-white bg-slate-900 border border-slate-800 rounded-full px-4 py-2 transition">
+        <i class="fa-solid fa-circle-info text-xs"></i>
+        אודות
+      </a>
+    </nav>
+  </header>
+
+  <main class="max-w-5xl mx-auto px-4 py-8 space-y-6">
+
+    <!-- כותרת ראשית -->
+    <section class="research-card p-6 md:p-8 overflow-hidden relative">
+      <div class="absolute -top-20 -right-20 w-56 h-56 bg-red-600/20 blur-3xl rounded-full pointer-events-none"></div>
+
+      <div class="relative z-10">
+        <p class="text-red-300 font-semibold mb-2 tracking-wide">Rzeczpospolita Polska</p>
+        <h1 class="text-3xl md:text-5xl font-extrabold text-white mb-4">
+          רפובליקת פולין
+        </h1>
+        <p class="text-slate-300 leading-8 max-w-3xl">
+          דף מחקר עצמאי על פולין: נופים, דגל, אטימולוגיה, כלכלה, מטבע, דמוגרפיה והיסטוריה.
+          כל תמונה בדף נפתחת בלחיצה בחלון צף מוגדל.
+        </p>
+      </div>
+    </section>
+
+    <!-- נתונים מהירים -->
+    <section class="grid grid-cols-2 md:grid-cols-4 gap-3">
+      <div class="research-card p-4 text-center">
+        <i class="fa-solid fa-calendar-days text-emerald-400 text-xl mb-2"></i>
+        <p class="text-xs text-slate-400">שנת ייסוד</p>
+        <strong class="text-white">966 לספירה</strong>
+      </div>
+
+      <div class="research-card p-4 text-center">
+        <i class="fa-solid fa-expand text-blue-400 text-xl mb-2"></i>
+        <p class="text-xs text-slate-400">שטח</p>
+        <strong class="text-white">312,696 קמ״ר</strong>
+      </div>
+
+      <div class="research-card p-4 text-center">
+        <i class="fa-solid fa-users text-purple-400 text-xl mb-2"></i>
+        <p class="text-xs text-slate-400">אוכלוסייה</p>
+        <strong class="text-white">כ־37.6 מיליון</strong>
+      </div>
+
+      <div class="research-card p-4 text-center">
+        <i class="fa-solid fa-coins text-amber-400 text-xl mb-2"></i>
+        <p class="text-xs text-slate-400">מטבע</p>
+        <strong class="text-white">זלוטי פולני zł</strong>
+      </div>
+    </section>
+
+    <!-- נוף פולין -->
+    <section class="research-card p-5 md:p-6">
+      <h2 class="text-xl md:text-2xl font-bold text-white mb-4 flex items-center gap-2">
+        <i class="fa-solid fa-mountain-sun text-blue-400"></i>
+        נופיה של פולין — הרי הטטרה בזקופנה
+      </h2>
+
+      <figure class="bg-slate-950 border border-slate-800 rounded-2xl overflow-hidden">
+        <button
+          type="button"
+          class="relative block w-full aspect-video group bg-slate-950"
+          onclick="openImage('assets/images/poland-tatra-mountains-golden-hour-panorama.jpg', 'הרי הטטרה בזקופנה בשעת הזהב', 'פנורמה של הרי הטטרה בזקופנה, עמק ירוק ובקתות עץ פולניות.')"
+        >
+          <img
+            src="assets/images/poland-tatra-mountains-golden-hour-panorama.jpg"
+            data-fallback="assets/poland-tatra-mountains-golden-hour-panorama.jpg"
+            onerror="useFallback(this)"
+            alt="הרי הטטרה בזקופנה"
+            class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+
+          <span class="absolute top-3 left-3 bg-slate-950/80 border border-slate-700 rounded-full px-3 py-1 text-xs text-white backdrop-blur">
+            <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
+            פתח בחלון צף
+          </span>
+        </button>
+
+        <figcaption class="p-3 text-center text-xs text-slate-400 leading-6">
+          פנורמה של הרי הטטרה בזקופנה בשעת הזהב — המחשה לנוף ההררי של דרום פולין.
+        </figcaption>
+      </figure>
+    </section>
+
+    <!-- דגל פולין -->
+    <section class="research-card p-5 md:p-6">
+      <h2 class="text-xl md:text-2xl font-bold text-white mb-4 flex items-center gap-2">
+        <i class="fa-solid fa-flag text-red-400"></i>
+        הדגל הלאומי של פולין
+      </h2>
+
+      <figure class="bg-slate-950 border border-slate-800 rounded-2xl overflow-hidden">
+        <button
+          type="button"
+          class="relative block w-full aspect-[16/10] group bg-slate-950"
+          onclick="openImage('assets/images/poland-flag-straight-symmetrical.png', 'דגל פולין', 'דגל פולין מורכב משני פסים אופקיים: לבן מעל אדום.')"
+        >
+          <img
+            src="assets/images/poland-flag-straight-symmetrical.png"
+            data-fallback="assets/poland-flag-straight-symmetrical.png"
+            onerror="useFallback(this)"
+            alt="דגל פולין"
+            class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+
+          <span class="absolute top-3 left-3 bg-slate-950/80 border border-slate-700 rounded-full px-3 py-1 text-xs text-white backdrop-blur">
+            <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
+            פתח בחלון צף
+          </span>
+        </button>
+
+        <figcaption class="p-3 text-center text-xs text-slate-400 leading-6">
+          דגל פולין: פס לבן עליון ופס אדום תחתון.
+        </figcaption>
+      </figure>
+
+      <div class="mt-4 space-y-3 text-sm leading-8 text-slate-300">
+        <p>
+          דגל פולין מורכב משני פסים אופקיים שווים בגודלם: הפס העליון לבן והפס התחתון אדום.
+          צבעי הדגל קשורים למסורת ההרלדית של המדינה — עיט לבן על רקע אדום.
+        </p>
+        <p>
+          הלבן מזוהה עם העיט הלבן ועם ערכים של טוהר, יושרה וריבונות.
+          האדום מזוהה עם רקע המגן ההרלדי ועם מסורת הגבורה והמאבק של העם הפולני.
+        </p>
+      </div>
+    </section>
+
+    <!-- אטימולוגיה -->
+    <section class="research-card p-5 md:p-6">
+      <h2 class="text-xl md:text-2xl font-bold text-white mb-4 flex items-center gap-2">
+        <i class="fa-solid fa-book-open text-blue-400"></i>
+        אטימולוגיה ומקור השם
+      </h2>
+
+      <div class="space-y-4 text-sm leading-8 text-slate-300">
+        <p>
+          <strong class="text-blue-300">Polanie</strong> היה שמו של שבט סלאבי מערבי עתיק שישב באזור אגן נהר הוורטה.
+          שבט זה היה אחד הגרעינים ההיסטוריים המרכזיים להתהוות המדינה הפולנית.
+        </p>
+
+        <p>
+          <strong class="text-blue-300">Pole</strong> פירושו בשפות סלאביות “שדה”, “מישור” או “שטח פתוח”.
+          לכן משמעות השם פולין היא בקירוב:
+          <strong class="text-white">“ארצם של אנשי השדות”</strong> או
+          <strong class="text-white">“העם היושב במישורים”</strong>.
+        </p>
+      </div>
+    </section>
+
+    <!-- מטבע זלוטי -->
+    <section class="research-card p-5 md:p-6">
+      <h2 class="text-xl md:text-2xl font-bold text-white mb-4 flex items-center gap-2">
+        <i class="fa-solid fa-coins text-amber-400"></i>
+        המטבע הלאומי: זלוטי פולני
+      </h2>
+
+      <figure class="bg-slate-950 border border-slate-800 rounded-2xl overflow-hidden mb-4">
+        <button
+          type="button"
+          class="relative block w-full aspect-video group bg-slate-950"
+          onclick="openImage('assets/images/polish-50-zloty-banknote-1919.png', 'שטר 50 זלוטי פולני משנת 1919', 'שטר פולני היסטורי של 50 זלוטי משנת 1919 — מוצג להמחשת ההיסטוריה המוניטרית של פולין.')"
+        >
+          <img
+            src="assets/images/polish-50-zloty-banknote-1919.png"
+            data-fallback="assets/polish-50-zloty-banknote-1919.png"
+            onerror="useFallback(this)"
+            alt="שטר 50 זלוטי פולני משנת 1919"
+            class="absolute inset-0 w-full h-full object-contain bg-slate-950 transition-transform duration-500 group-hover:scale-105"
+          />
+
+          <span class="absolute top-3 left-3 bg-slate-950/80 border border-slate-700 rounded-full px-3 py-1 text-xs text-white backdrop-blur">
+            <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
+            פתח בחלון צף
+          </span>
+        </button>
+
+        <figcaption class="p-3 text-center text-xs text-slate-400 leading-6">
+          שטר פולני היסטורי של 50 זלוטי משנת 1919 — להמחשת ראשיתו של הזלוטי הפולני המודרני.
+        </figcaption>
+      </figure>
+
+      <div class="space-y-3 text-sm leading-8 text-slate-300">
+        <p>
+          המילה <strong class="text-amber-300">Złoty</strong> פירושה בפולנית “זהוב”.
+          מקור השם נעוץ בתקופה שבה מטבעות זהב זרים ואיכותיים כונו בפולין בשם הכללי “זלוטי”.
+        </p>
+
+        <p>
+          הזלוטי המודרני כונן בשנת 1924, לאחר תקופה של אינפלציה וחוסר יציבות מוניטרית.
+          בשנת 1995 בוצעה דנומינציה: 10,000 זלוטי ישנים הומרו ל־1 זלוטי פולני חדש.
+        </p>
+
+        <p>
+          אף שפולין חברה באיחוד האירופי, היא ממשיכה להשתמש בזלוטי כמטבע הרשמי שלה,
+          ושומרת בכך על עצמאות מוניטרית.
+        </p>
+      </div>
+    </section>
+
+    <!-- שנת הקמה ומייסד -->
+    <section class="grid md:grid-cols-2 gap-4">
+      <article class="research-card p-5">
+        <h2 class="font-bold text-white mb-3 flex items-center gap-2">
+          <i class="fa-solid fa-landmark text-emerald-400"></i>
+          שנת ייסוד והמייסד
+        </h2>
+        <p class="text-sm leading-8 text-slate-300">
+          שנת 966 לספירה, הידועה כ“טבילת פולין”, נחשבת לרגע מכונן בהיסטוריה הפולנית.
+          מיישקו הראשון, הדוכס הראשון מבית פיאסט, נחשב למייסד המדיני המרכזי של פולין המוקדמת.
+        </p>
+      </article>
+
+      <article class="research-card p-5">
+        <h2 class="font-bold text-white mb-3 flex items-center gap-2">
+          <i class="fa-solid fa-users text-cyan-400"></i>
+          דמוגרפיה
+        </h2>
+        <p class="text-sm leading-8 text-slate-300">
+          פולין מונה כ־37.6 מיליון תושבים. החברה הפולנית מאופיינת ברוב אתני פולני מובהק,
+          לצד אתגרים דמוגרפיים של ילודה נמוכה, הזדקנות אוכלוסייה והגירה.
+        </p>
+      </article>
+    </section>
+
+    <!-- היסטוריה -->
+    <section class="research-card p-5 md:p-6">
+      <h2 class="text-xl md:text-2xl font-bold text-white mb-4 flex items-center gap-2">
+        <i class="fa-solid fa-shield-halved text-purple-400"></i>
+        היסטוריה, אידאולוגיה והישגים
+      </h2>
+
+      <p class="text-sm leading-8 text-slate-300">
+        פולין עברה מסלול היסטורי מורכב ורב־תהפוכות: ימי בית פיאסט, האיחוד הפולני־ליטאי,
+        אידאולוגיית “חירות הזהב”, חלוקות פולין, עצמאות מחודשת בשנת 1918,
+        חורבן מלחמת העולם השנייה, שלטון קומוניסטי ותנועת “סולידריות” שהובילה לשינוי דמוקרטי.
+        כיום פולין היא מדינה מרכזית באירופה ובנאט״ו, בעלת כלכלה צומחת וזהות היסטורית חזקה.
+      </p>
+    </section>
+
+  </main>
+
+  <!-- חלון צף לתמונות -->
+  <div
+    id="imageModal"
+    class="fixed inset-0 z-[100] hidden bg-slate-950/90 backdrop-blur-md p-3 md:p-6 items-center justify-center"
+    onclick="closeImage()"
+  >
+    <div
+      class="w-full max-w-6xl max-h-[92vh] bg-slate-900 border border-slate-700 rounded-3xl overflow-hidden shadow-2xl"
+      onclick="event.stopPropagation()"
+    >
+      <div class="p-4 border-b border-slate-800 flex items-center justify-between gap-3">
+        <div class="min-w-0">
+          <h3 id="modalTitle" class="font-bold text-white truncate"></h3>
+          <p id="modalCaption" class="text-xs text-slate-400 truncate mt-1"></p>
+        </div>
+
+        <button
+          type="button"
+          onclick="closeImage()"
+          class="w-10 h-10 rounded-full bg-slate-800 hover:bg-slate-700 text-white shrink-0"
+          aria-label="סגור חלון תמונה"
+        >
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <div class="p-3 bg-slate-950 flex items-center justify-center max-h-[76vh] overflow-auto">
+        <img
+          id="modalImg"
+          src=""
+          alt=""
+          class="max-w-full max-h-[72vh] object-contain rounded-xl"
+        />
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function useFallback(img) {
+      const fallback = img.getAttribute("data-fallback");
+      if (fallback && img.src.indexOf(fallback) === -1) {
+        img.src = fallback;
+      }
+    }
+
+    function openImage(src, title, caption) {
+      const modal = document.getElementById("imageModal");
+      const img = document.getElementById("modalImg");
+
+      img.src = src;
+      img.onerror = function () {
+        if (src.includes("assets/images/")) {
+          this.src = src.replace("assets/images/", "assets/");
+        }
+      };
+
+      img.alt = title;
+      document.getElementById("modalTitle").textContent = title;
+      document.getElementById("modalCaption").textContent = caption || "";
+
+      modal.classList.remove("hidden");
+      modal.classList.add("flex");
+      document.body.classList.add("modal-open");
+    }
+
+    function closeImage() {
+      const modal = document.getElementById("imageModal");
+      modal.classList.add("hidden");
+      modal.classList.remove("flex");
+      document.body.classList.remove("modal-open");
+    }
+
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape") {
+        closeImage();
+      }
+    });
+  </script>
+
+</body>
+</html>
