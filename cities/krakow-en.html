@@ -1,0 +1,107 @@
+<!DOCTYPE html><html lang="en" dir="ltr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Kraków | City Research</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body{background:#020617;color:#e2e8f0;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif}
+    .research-card{background:rgba(15,23,42,.88);border:1px solid rgba(51,65,85,.9);border-radius:24px;box-shadow:0 18px 50px rgba(0,0,0,.35)}
+    .modal-open{overflow:hidden}
+  </style>
+</head>
+<body class="min-h-screen selection:bg-blue-500/30 selection:text-blue-100">
+<header class="sticky top-0 z-40 bg-slate-950/90 backdrop-blur border-b border-slate-800"><nav class="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between gap-3"><a href="../index.html" class="inline-flex items-center gap-2 text-sm text-slate-300 hover:text-white bg-slate-900 border border-slate-800 rounded-full px-4 py-2 transition"><i class="fa-solid fa-chevron-left text-xs"></i>Back to Index</a><div class="flex items-center gap-2"><a href="krakow.html" class="inline-flex items-center gap-2 text-sm text-slate-300 hover:text-white bg-slate-900 border border-slate-800 rounded-full px-4 py-2 transition"><i class="fa-solid fa-language text-xs"></i>עברית</a><a href="../poland-en.html" class="inline-flex items-center gap-2 text-sm text-slate-300 hover:text-white bg-slate-900 border border-slate-800 rounded-full px-4 py-2 transition"><i class="fa-solid fa-flag text-xs"></i>Poland Page</a></div></nav></header>
+<main class="max-w-5xl mx-auto px-4 py-8 space-y-6">
+<section class="research-card p-6 md:p-8 overflow-hidden relative"><div class="absolute -top-20 -right-20 w-56 h-56 bg-amber-600/20 blur-3xl rounded-full pointer-events-none"></div><div class="relative z-10"><p class="text-amber-300 font-semibold mb-2 tracking-wide">Kraków • Krakow</p><h1 class="text-3xl md:text-5xl font-extrabold text-white mb-4">Kraków — Poland’s Historic Royal City</h1><p class="text-slate-300 leading-8 max-w-3xl">An independent city research page about Kraków: early settlement, the granting of city rights, name origin, location on the Vistula River, Wawel Castle, the Old Town, the Main Market Square, Kazimierz, Jewish heritage, urban economy, and its role as one of Poland’s major historical and cultural cities.</p></div></section>
+<section class="grid grid-cols-2 md:grid-cols-4 gap-3"><div class="research-card p-4 text-center"><i class="fa-solid fa-location-dot text-amber-400 text-xl mb-2"></i><p class="text-xs text-slate-400">Country</p><strong class="text-white">Poland</strong></div><div class="research-card p-4 text-center"><i class="fa-solid fa-calendar-days text-emerald-400 text-xl mb-2"></i><p class="text-xs text-slate-400">City Rights</p><strong class="text-white">1257</strong></div><div class="research-card p-4 text-center"><i class="fa-solid fa-water text-cyan-400 text-xl mb-2"></i><p class="text-xs text-slate-400">Major River</p><strong class="text-white">Vistula</strong></div><div class="research-card p-4 text-center"><i class="fa-solid fa-crown text-purple-400 text-xl mb-2"></i><p class="text-xs text-slate-400">Historic Role</p><strong class="text-white">Royal City</strong></div></section>
+
+    <section class="research-card p-5 md:p-6">
+      <h2 class="text-xl md:text-2xl font-bold text-white mb-4 flex items-center gap-2">
+        <i class="fa-solid fa-scroll text-amber-400"></i>1. Foundation, Founder, and Reason for Development
+      </h2>
+      <div class="space-y-4 text-sm leading-8 text-slate-300">
+        <p>Kraków was an important settlement before the medieval city was formally organized, but the key urban date is <strong class='text-emerald-300'>June 5, 1257</strong>, when it received city rights based on the Magdeburg-law model.</p><p>The granting of city rights is connected with Duke Bolesław V the Chaste and his wife Kinga. Legendary tradition connects the city’s name with the mythical ruler Krak or Krakus.</p><p>The purpose of the urban organization was to strengthen commerce, rule, and settlement after periods of destruction, and to establish Kraków as a stable center on the Vistula River.</p>
+      </div>
+    </section>
+
+<section class="research-card p-5 md:p-6"><h2 class="text-xl md:text-2xl font-bold text-white mb-4 flex items-center gap-2"><i class="fa-solid fa-image text-blue-400"></i>2. Visual View — Kraków, the Old Town, and Wawel Castle</h2><figure class="bg-slate-950 border border-slate-800 rounded-2xl overflow-hidden"><button type="button" class="relative block w-full aspect-video group bg-slate-950" onclick="openImage('../assets/images/krakow-old-town-wawel-panorama.jpg','Kraków — Old Town and Wawel Castle','A panoramic image of Kraków, the Vistula River, the Old Town, and Wawel Castle.')"><img src="../assets/images/krakow-old-town-wawel-panorama.jpg" data-fallback="../assets/krakow-old-town-wawel-panorama.jpg" onerror="useFallback(this)" alt="Kraków — Old Town and Wawel Castle" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"><div class="absolute inset-0 bg-slate-950/25 group-hover:bg-slate-950/10 transition"></div><span class="absolute top-3 right-3 bg-slate-950/80 border border-slate-700 rounded-full px-3 py-1 text-xs text-white backdrop-blur"><i class="fa-solid fa-up-right-and-down-left-from-center"></i> Open image</span><div class="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-slate-950/90 to-transparent text-left"><p class="text-white font-bold">Kraków — Old Town, Vistula River, and Wawel Castle</p><p class="text-xs text-slate-300">krakow-old-town-wawel-panorama.jpg</p></div></button><figcaption class="p-3 text-center text-xs text-slate-400 leading-6">A visual reference image of historic Kraków — the Old Town, the Vistula River, and Wawel Castle.</figcaption></figure></section>
+
+    <section class="research-card p-5 md:p-6">
+      <h2 class="text-xl md:text-2xl font-bold text-white mb-4 flex items-center gap-2">
+        <i class="fa-solid fa-book-open text-amber-400"></i>3. Etymology and Origin of the Name Kraków
+      </h2>
+      <div class="space-y-4 text-sm leading-8 text-slate-300">
+        <p>The Polish name of the city is <strong class='text-blue-300'>Kraków</strong>. A well-known tradition connects the name with Krak or Krakus, a legendary ruler who is said to have defeated the Wawel Dragon and founded the city.</p><p>Linguistically, the name is often understood as a place-name connected to a person named Krak: “Krak’s place” or “Krak’s town.”</p><p>The relationship between the name, Wawel Hill, and the dragon legend became a cultural foundation story for the city.</p>
+      </div>
+    </section>
+
+    <section class="research-card p-5 md:p-6">
+      <h2 class="text-xl md:text-2xl font-bold text-white mb-4 flex items-center gap-2">
+        <i class="fa-solid fa-map-location-dot text-amber-400"></i>4. Geographic Position and the Vistula River
+      </h2>
+      <div class="space-y-4 text-sm leading-8 text-slate-300">
+        <p>Kraków is located in southern Poland on the Vistula River. The river was an important route for movement, trade, and connection between regions.</p><p>Wawel Hill, rising above the river, formed a natural point of rule and defense. The combination of river, hill, religious center, and market helped make Kraków a major city.</p><p>The city served as a bridge between Central Europe, southern Poland, the Carpathian region, and the wider Polish world.</p>
+      </div>
+    </section>
+
+    <section class="research-card p-5 md:p-6">
+      <h2 class="text-xl md:text-2xl font-bold text-white mb-4 flex items-center gap-2">
+        <i class="fa-solid fa-landmark text-amber-400"></i>5. Historical Development — From Royal Capital to Heritage City
+      </h2>
+      <div class="space-y-4 text-sm leading-8 text-slate-300">
+        <p>For centuries, Kraków was one of Poland’s most important centers. It was connected with monarchy, the church, the university, trade, and cultural life.</p><p>Unlike Warsaw, which is strongly associated with the modern political state, Kraków is closely associated with Poland’s older royal and cultural past.</p><p>The city preserves many layers of history: medieval, Renaissance, Polish-Lithuanian, Austrian, and twentieth-century experience.</p>
+      </div>
+    </section>
+
+    <section class="research-card p-5 md:p-6">
+      <h2 class="text-xl md:text-2xl font-bold text-white mb-4 flex items-center gap-2">
+        <i class="fa-solid fa-chess-rook text-amber-400"></i>6. Wawel — Castle, Cathedral, and Royal Symbol
+      </h2>
+      <div class="space-y-4 text-sm leading-8 text-slate-300">
+        <p>Wawel Hill is one of the most important symbolic sites in Poland. It contains Wawel Castle and the cathedral, associated with monarchs, ceremonies, royal burials, and national memory.</p><p>Wawel is a meeting point of politics, religion, art, and historical memory. For many Poles, it symbolizes state continuity and royal identity.</p><p>The Wawel Dragon legend adds a popular cultural layer, linking history, myth, and urban identity.</p>
+      </div>
+    </section>
+
+    <section class="research-card p-5 md:p-6">
+      <h2 class="text-xl md:text-2xl font-bold text-white mb-4 flex items-center gap-2">
+        <i class="fa-solid fa-building-columns text-amber-400"></i>7. Old Town and Main Market Square
+      </h2>
+      <div class="space-y-4 text-sm leading-8 text-slate-300">
+        <p>Kraków’s Old Town is one of Poland’s most important historic urban spaces. The Main Market Square, Rynek Główny, is one of the best-known squares in Europe.</p><p>The square and surrounding streets preserve the medieval logic of the city: a large commercial center, public buildings, churches, narrow streets, and facades built across centuries.</p><p>The Old Town testifies to Kraków’s role as a merchant city, university city, religious center, and cultural hub.</p>
+      </div>
+    </section>
+
+    <section class="research-card p-5 md:p-6">
+      <h2 class="text-xl md:text-2xl font-bold text-white mb-4 flex items-center gap-2">
+        <i class="fa-solid fa-star-of-david text-amber-400"></i>8. Kazimierz and Jewish Heritage
+      </h2>
+      <div class="space-y-4 text-sm leading-8 text-slate-300">
+        <p>Kazimierz was founded in the fourteenth century as a separate town and later became one of the important Jewish centers in Poland and Europe.</p><p>The area is associated with synagogues, communal institutions, trade, learning, and rich Jewish cultural life. Before World War II, Kraków had a significant Jewish community.</p><p>Today Kazimierz combines historical memory, Jewish heritage sites, museums, contemporary culture, and tourism.</p>
+      </div>
+    </section>
+
+    <section class="research-card p-5 md:p-6">
+      <h2 class="text-xl md:text-2xl font-bold text-white mb-4 flex items-center gap-2">
+        <i class="fa-solid fa-chart-line text-amber-400"></i>9. Demography, Economy, and Culture
+      </h2>
+      <div class="space-y-4 text-sm leading-8 text-slate-300">
+        <p>Kraków is one of Poland’s largest and most important cities. It is an academic, cultural, tourist, and economic center.</p><p>The city’s economy is based on tourism, higher education, services, technology, culture, commerce, and business activity.</p><p>Culturally, Kraków is a city of museums, universities, festivals, art institutions, music, literature, and historical memory.</p>
+      </div>
+    </section>
+
+<section class="research-card p-5 md:p-6"><h2 class="text-xl md:text-2xl font-bold text-white mb-4 flex items-center gap-2"><i class="fa-solid fa-link text-blue-400"></i>10. Sources and Credits</h2><ul class="space-y-3 text-sm leading-8 text-slate-300"><li><strong class="text-slate-100">Kraków image:</strong> Local file named <span class="font-mono text-blue-300">krakow-old-town-wawel-panorama.jpg</span> inside <span class="font-mono text-blue-300">assets/images/</span>.</li><li><strong class="text-slate-100">Purpose of this page:</strong> Research, educational explanation, and visual reference about Kraków.</li></ul></section>
+</main>
+  <div id="imageModal" class="fixed inset-0 z-[100] hidden bg-slate-950/90 backdrop-blur-md p-3 md:p-6 items-center justify-center" onclick="closeImage()">
+    <div class="w-full max-w-6xl max-h-[92vh] bg-slate-900 border border-slate-700 rounded-3xl overflow-hidden shadow-2xl" onclick="event.stopPropagation()">
+      <div class="p-4 border-b border-slate-800 flex items-center justify-between gap-3">
+        <div class="min-w-0"><h3 id="modalTitle" class="font-bold text-white truncate"></h3><p id="modalCaption" class="text-xs text-slate-400 truncate mt-1"></p></div>
+        <button type="button" onclick="closeImage()" class="w-10 h-10 rounded-full bg-slate-800 hover:bg-slate-700 text-white shrink-0" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="p-3 bg-slate-950 flex items-center justify-center max-h-[76vh] overflow-auto"><img id="modalImg" src="" alt="" class="max-w-full max-h-[72vh] object-contain rounded-xl"></div>
+    </div>
+  </div>
+  <script>
+    function useFallback(img){const f=img.getAttribute("data-fallback");if(f&&img.src.indexOf(f)===-1)img.src=f;}
+    function openImage(src,title,caption){const m=document.getElementById("imageModal");const im=document.getElementById("modalImg");im.src=src;im.onerror=function(){if(src.includes("../assets/images/"))this.src=src.replace("../assets/images/","../assets/");};im.alt=title;document.getElementById("modalTitle").textContent=title;document.getElementById("modalCaption").textContent=caption||"";m.classList.remove("hidden");m.classList.add("flex");document.body.classList.add("modal-open");}
+    function closeImage(){const m=document.getElementById("imageModal");m.classList.add("hidden");m.classList.remove("flex");document.body.classList.remove("modal-open");}
+    document.addEventListener("keydown",e=>{if(e.key==="Escape")closeImage();});
+  </script>
+</body></html>
