@@ -4,174 +4,61 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>אודות | Global Explorer Hub</title>
-
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
   <style>
-    body {
-      background: #020617;
-      color: #e2e8f0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
-    }
-
-    .research-card {
-      background: rgba(15, 23, 42, 0.88);
-      border: 1px solid rgba(51, 65, 85, 0.9);
-      border-radius: 24px;
-      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
-    }
-
-    .modal-open {
-      overflow: hidden;
-    }
-
-    .soft-divider {
-      height: 1px;
-      background: linear-gradient(to left, transparent, rgba(148, 163, 184, 0.35), transparent);
-    }
+    body{background:#020617;color:#e2e8f0;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif}
+    .research-card{background:rgba(15,23,42,.88);border:1px solid rgba(51,65,85,.9);border-radius:24px;box-shadow:0 18px 50px rgba(0,0,0,.35)}
+    .modal-open{overflow:hidden}
   </style>
 </head>
-
 <body class="min-h-screen selection:bg-blue-500/30 selection:text-blue-100">
-
-  <!-- סרגל עליון -->
   <header class="sticky top-0 z-40 bg-slate-950/90 backdrop-blur border-b border-slate-800">
     <nav class="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between gap-3">
-      <a href="index.html" class="inline-flex items-center gap-2 text-sm text-slate-300 hover:text-white bg-slate-900 border border-slate-800 rounded-full px-4 py-2 transition">
-        <i class="fa-solid fa-chevron-right text-xs"></i>
-        חזרה לאינדקס
-      </a>
-
+      <a href="index.html" class="inline-flex items-center gap-2 text-sm text-slate-300 hover:text-white bg-slate-900 border border-slate-800 rounded-full px-4 py-2 transition"><i class="fa-solid fa-chevron-right text-xs"></i> חזרה לאינדקס</a>
       <div class="flex items-center gap-2">
-        <a href="about-en.html" class="inline-flex items-center gap-2 text-sm text-slate-300 hover:text-white bg-slate-900 border border-slate-800 rounded-full px-4 py-2 transition">
-          <i class="fa-solid fa-language text-xs"></i>
-          English
-        </a>
-
-        <a href="poland.html" class="inline-flex items-center gap-2 text-sm text-slate-300 hover:text-white bg-slate-900 border border-slate-800 rounded-full px-4 py-2 transition">
-          <i class="fa-solid fa-flag text-xs"></i>
-          דף פולין
-        </a>
+        <a href="about-en.html" class="inline-flex items-center gap-2 text-sm text-slate-300 hover:text-white bg-slate-900 border border-slate-800 rounded-full px-4 py-2 transition"><i class="fa-solid fa-language text-xs"></i> English</a>
+        <a href="sources.html" class="inline-flex items-center gap-2 text-sm text-slate-300 hover:text-white bg-slate-900 border border-slate-800 rounded-full px-4 py-2 transition"><i class="fa-solid fa-link text-xs"></i> מקורות</a>
+        <a href="poland.html" class="inline-flex items-center gap-2 text-sm text-slate-300 hover:text-white bg-slate-900 border border-slate-800 rounded-full px-4 py-2 transition"><i class="fa-solid fa-flag text-xs"></i> דף פולין</a>
       </div>
     </nav>
   </header>
 
   <main class="max-w-5xl mx-auto px-4 py-8 space-y-6">
-
-    <!-- כותרת + תמונת פרופיל -->
     <section class="research-card p-6 md:p-8 overflow-hidden relative">
       <div class="absolute -top-20 -right-20 w-56 h-56 bg-emerald-600/20 blur-3xl rounded-full pointer-events-none"></div>
       <div class="absolute -bottom-24 -left-24 w-64 h-64 bg-blue-600/10 blur-3xl rounded-full pointer-events-none"></div>
-
       <div class="relative z-10 grid md:grid-cols-[190px_1fr] gap-6 items-center">
-        <button
-          type="button"
-          onclick="openImage('assets/images/ramprofile.png', 'רם — יוצר הפרויקט', 'תמונת פרופיל של יוצר האתר')"
-          class="group mx-auto md:mx-0"
-        >
-          <img
-            src="assets/images/ramprofile.png"
-            data-fallback="assets/ramprofile.png"
-            onerror="useFallback(this)"
-            alt="רם - יוצר הפרויקט"
-            class="w-36 h-36 md:w-44 md:h-44 rounded-full object-cover border-4 border-blue-500 shadow-2xl group-hover:scale-105 transition-transform"
-          />
-
-          <span class="mt-3 text-xs text-blue-300 flex items-center justify-center gap-2">
-            <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
-            פתח תמונה בחלון צף
-          </span>
+        <button type="button" onclick="openImage('assets/images/ramprofile.png','רם — יוצר הפרויקט','תמונת פרופיל של יוצר האתר')" class="group mx-auto md:mx-0">
+          <img src="assets/images/ramprofile.png" data-fallback="assets/ramprofile.png" onerror="useFallback(this)" alt="רם - יוצר הפרויקט" class="w-36 h-36 md:w-44 md:h-44 rounded-full object-cover border-4 border-blue-500 shadow-2xl group-hover:scale-105 transition-transform">
+          <span class="mt-3 text-xs text-blue-300 flex items-center justify-center gap-2"><i class="fa-solid fa-up-right-and-down-left-from-center"></i> פתח תמונה בחלון צף</span>
         </button>
-
         <div>
-          <p class="text-emerald-300 font-semibold mb-2 tracking-wide">
-            About the Project
-          </p>
-
-          <h1 class="text-3xl md:text-5xl font-extrabold text-white mb-4">
-            אודות הפרויקט
-          </h1>
-
-          <p class="text-slate-300 leading-8 max-w-3xl">
-            אתר מחקר עצמאי על פולין ועריה המרכזיות, שנבנה כדי להציג מידע היסטורי,
-            גאוגרפי, דמוגרפי, כלכלי ותרבותי בצורה מסודרת, קריאה ונגישה.
-            האתר מחולק לדפי מחקר נפרדים, עם תמונות, קרדיטים, חלונות צפים ותצוגה
-            מותאמת למובייל.
-          </p>
+          <p class="text-emerald-300 font-semibold mb-2 tracking-wide">About the Project</p>
+          <h1 class="text-3xl md:text-5xl font-extrabold text-white mb-4">אודות הפרויקט</h1>
+          <p class="text-slate-300 leading-8 max-w-3xl">אתר מחקר עצמאי על פולין ועריה המרכזיות, שנבנה כדי להציג מידע היסטורי, גאוגרפי, דמוגרפי, כלכלי ותרבותי בצורה מסודרת, קריאה ונגישה. האתר מחולק לדפי מחקר נפרדים, עם תמונות, קרדיטים, חלונות צפים ותצוגה מותאמת למובייל.</p>
         </div>
       </div>
     </section>
 
-    <!-- כרטיסי עקרונות -->
     <section class="grid md:grid-cols-3 gap-4">
-      <article class="research-card p-5">
-        <i class="fa-solid fa-layer-group text-blue-400 text-xl mb-3"></i>
-        <h2 class="font-bold text-white mb-2">מבנה מסודר</h2>
-        <p class="text-sm leading-7 text-slate-300">
-          האינדקס הראשי מוביל לדפי מחקר עצמאיים: דף פולין, דפי ערים, ודף אודות.
-          כך קל להרחיב את האתר בלי ליצור עומס בקובץ אחד.
-        </p>
-      </article>
-
-      <article class="research-card p-5">
-        <i class="fa-solid fa-image text-emerald-400 text-xl mb-3"></i>
-        <h2 class="font-bold text-white mb-2">תמונות וקרדיטים</h2>
-        <p class="text-sm leading-7 text-slate-300">
-          התמונות נשמרות בתיקיית
-          <span class="font-mono text-blue-300">assets/images/</span>,
-          ובדפים מופיעים קרדיטים כאשר התמונה דורשת רישיון או ייחוס.
-        </p>
-      </article>
-
-      <article class="research-card p-5">
-        <i class="fa-solid fa-mobile-screen text-purple-400 text-xl mb-3"></i>
-        <h2 class="font-bold text-white mb-2">מותאם למובייל</h2>
-        <p class="text-sm leading-7 text-slate-300">
-          העיצוב מבוסס כרטיסים כהים, פינות מעוגלות ותצוגה נוחה במסכים קטנים,
-          כולל פתיחת תמונות בחלון צף.
-        </p>
-      </article>
+      <article class="research-card p-5"><i class="fa-solid fa-layer-group text-blue-400 text-xl mb-3"></i><h2 class="font-bold text-white mb-2">מבנה מסודר</h2><p class="text-sm leading-7 text-slate-300">האינדקס הראשי מוביל לדפי מחקר עצמאיים: דף פולין, דפי ערים, דף מקורות ודף אודות. כך קל להרחיב את האתר בלי ליצור עומס בקובץ אחד.</p></article>
+      <article class="research-card p-5"><i class="fa-solid fa-image text-emerald-400 text-xl mb-3"></i><h2 class="font-bold text-white mb-2">תמונות וקרדיטים</h2><p class="text-sm leading-7 text-slate-300">התמונות נשמרות בתיקיית <span class="font-mono text-blue-300">assets/images/</span>, ובדפים מופיעים קרדיטים כאשר התמונה דורשת רישיון או ייחוס.</p></article>
+      <article class="research-card p-5"><i class="fa-solid fa-mobile-screen text-purple-400 text-xl mb-3"></i><h2 class="font-bold text-white mb-2">מותאם למובייל</h2><p class="text-sm leading-7 text-slate-300">העיצוב מבוסס כרטיסים כהים, פינות מעוגלות ותצוגה נוחה במסכים קטנים, כולל פתיחת תמונות בחלון צף.</p></article>
     </section>
 
-    <!-- מטרת האתר -->
     <section class="research-card p-5 md:p-6">
-      <h2 class="text-xl md:text-2xl font-bold text-white mb-4 flex items-center gap-2">
-        <i class="fa-solid fa-bullseye text-amber-400"></i>
-        מטרת האתר
-      </h2>
-
+      <h2 class="text-xl md:text-2xl font-bold text-white mb-4 flex items-center gap-2"><i class="fa-solid fa-bullseye text-amber-400"></i> מטרת האתר</h2>
       <div class="space-y-4 text-sm leading-8 text-slate-300">
-        <p>
-          מטרת האתר היא לבנות מאגר מחקר ברור ומתרחב על פולין: המדינה עצמה,
-          עיר הבירה ורשה, ובהמשך ערים מרכזיות נוספות כמו קרקוב, ורוצלב, לודז׳ ופוזנן.
-        </p>
-
-        <p>
-          כל דף נועד לשלב בין מידע תמציתי ונתונים מהירים לבין טקסטים מורחבים יותר:
-          מקור שם, שנת ייסוד, מייסדים או דמויות הקמה, סיבת התפתחות, גאוגרפיה,
-          דמוגרפיה, כלכלה, היסטוריה ותרבות.
-        </p>
-
-        <p>
-          האתר בנוי כך שאפשר יהיה להוסיף בהדרגה עוד דפים, עוד תמונות, עוד קרדיטים
-          ועוד מקורות, בלי לשבור את המבנה הקיים.
-        </p>
+        <p>מטרת האתר היא לבנות מאגר מחקר ברור ומתרחב על פולין: המדינה עצמה, עיר הבירה ורשה, ובהמשך ערים מרכזיות נוספות כמו קרקוב, ורוצלב, לודז׳ ופוזנן.</p>
+        <p>כל דף נועד לשלב בין מידע תמציתי ונתונים מהירים לבין טקסטים מורחבים יותר: מקור שם, שנת ייסוד, מייסדים או דמויות הקמה, סיבת התפתחות, גאוגרפיה, דמוגרפיה, כלכלה, היסטוריה ותרבות.</p>
+        <p>האתר בנוי כך שאפשר יהיה להוסיף בהדרגה עוד דפים, עוד תמונות, עוד קרדיטים ועוד מקורות, בלי לשבור את המבנה הקיים.</p>
       </div>
     </section>
 
-    <!-- מבנה הקבצים -->
     <section class="research-card p-5 md:p-6">
-      <h2 class="text-xl md:text-2xl font-bold text-white mb-4 flex items-center gap-2">
-        <i class="fa-solid fa-folder-tree text-cyan-400"></i>
-        מבנה הקבצים באתר
-      </h2>
-
-      <p class="text-sm leading-8 text-slate-300 mb-4">
-        המבנה הנוכחי שומר על הפרדה ברורה בין עמוד ראשי, דפי מדינה, דפי ערים,
-        ותיקיית תמונות אחת מסודרת.
-      </p>
-
+      <h2 class="text-xl md:text-2xl font-bold text-white mb-4 flex items-center gap-2"><i class="fa-solid fa-folder-tree text-cyan-400"></i> מבנה הקבצים באתר</h2>
+      <p class="text-sm leading-8 text-slate-300 mb-4">המבנה הנוכחי שומר על הפרדה ברורה בין עמוד ראשי, דפי מדינה, דפי ערים, דפי מקורות ותיקיית תמונות אחת מסודרת.</p>
       <div class="bg-slate-950/70 border border-slate-800 rounded-2xl p-4 overflow-x-auto text-left" dir="ltr">
 <pre class="text-sm leading-7 text-slate-300"><code>poland-demographic-rese/
 ├── index.html
@@ -179,177 +66,50 @@
 ├── poland-en.html
 ├── about.html
 ├── about-en.html
+├── sources.html
+├── sources-en.html
 ├── cities/
 │   ├── warsaw.html
 │   └── warsaw-en.html
 └── assets/
-    └── images/
-        ├── ramprofile.png
-        ├── poland-tatra-mountains-golden-hour-panorama.jpg
-        ├── poland-flag-straight-symmetrical.png
-        ├── polish-50-zloty-banknote-1919.png
-        └── warsaw-old-town-panorama.jpg</code></pre>
+    └── images/</code></pre>
       </div>
     </section>
 
-    <!-- תוכנית המשך -->
     <section class="research-card p-5 md:p-6">
-      <h2 class="text-xl md:text-2xl font-bold text-white mb-4 flex items-center gap-2">
-        <i class="fa-solid fa-road text-rose-400"></i>
-        תוכנית המשך
-      </h2>
-
-      <ul class="space-y-3 text-sm leading-8 text-slate-300">
-        <li>
-          <strong class="text-slate-100">שלב 1:</strong>
-          השלמת דף פולין ודף ורשה, כולל תמונות, גרסאות דו־לשוניות וקרדיטים.
-        </li>
-
-        <li>
-          <strong class="text-slate-100">שלב 2:</strong>
-          יצירת דפי ערים נוספים בתוך תיקיית
-          <span class="font-mono text-blue-300">cities/</span>.
-        </li>
-
-        <li>
-          <strong class="text-slate-100">שלב 3:</strong>
-          הוספת תמונות ייעודיות לכל עיר ושמירה על שמות קבצים ידידותיים לגיטהאב.
-        </li>
-
-        <li>
-          <strong class="text-slate-100">שלב 4:</strong>
-          הוספת סעיף מקורות וקרדיטים בכל דף מחקר.
-        </li>
-      </ul>
-    </section>
-
-    <!-- קישורים פנימיים -->
-    <section class="research-card p-5 md:p-6">
-      <h2 class="text-xl md:text-2xl font-bold text-white mb-4 flex items-center gap-2">
-        <i class="fa-solid fa-link text-blue-400"></i>
-        קישורים פנימיים
-      </h2>
-
-      <div class="grid md:grid-cols-3 gap-3">
-        <a href="index.html" class="bg-slate-950/70 border border-slate-800 hover:border-blue-500 rounded-2xl p-4 transition">
-          <strong class="text-white block mb-1">אינדקס ראשי</strong>
-          <span class="text-sm text-slate-400">חזרה לעמוד הבית של האתר</span>
-        </a>
-
-        <a href="poland.html" class="bg-slate-950/70 border border-slate-800 hover:border-red-500 rounded-2xl p-4 transition">
-          <strong class="text-white block mb-1">דף פולין</strong>
-          <span class="text-sm text-slate-400">מחקר המדינה המרכזי</span>
-        </a>
-
-        <a href="cities/warsaw.html" class="bg-slate-950/70 border border-slate-800 hover:border-emerald-500 rounded-2xl p-4 transition">
-          <strong class="text-white block mb-1">דף ורשה</strong>
-          <span class="text-sm text-slate-400">מחקר עיר הבירה</span>
-        </a>
+      <h2 class="text-xl md:text-2xl font-bold text-white mb-4 flex items-center gap-2"><i class="fa-solid fa-link text-blue-400"></i> קישורים פנימיים</h2>
+      <div class="grid md:grid-cols-4 gap-3">
+        <a href="index.html" class="bg-slate-950/70 border border-slate-800 hover:border-blue-500 rounded-2xl p-4 transition"><strong class="text-white block mb-1">אינדקס ראשי</strong><span class="text-sm text-slate-400">חזרה לעמוד הבית</span></a>
+        <a href="poland.html" class="bg-slate-950/70 border border-slate-800 hover:border-red-500 rounded-2xl p-4 transition"><strong class="text-white block mb-1">דף פולין</strong><span class="text-sm text-slate-400">מחקר המדינה</span></a>
+        <a href="cities/warsaw.html" class="bg-slate-950/70 border border-slate-800 hover:border-emerald-500 rounded-2xl p-4 transition"><strong class="text-white block mb-1">דף ורשה</strong><span class="text-sm text-slate-400">מחקר עיר הבירה</span></a>
+        <a href="sources.html" class="bg-slate-950/70 border border-slate-800 hover:border-amber-500 rounded-2xl p-4 transition"><strong class="text-white block mb-1">מקורות וקרדיטים</strong><span class="text-sm text-slate-400">קרדיטים לתמונות ולמקורות</span></a>
       </div>
     </section>
 
-    <!-- הערת זכויות וקרדיטים -->
     <section class="research-card p-5 md:p-6">
-      <h2 class="text-xl md:text-2xl font-bold text-white mb-4 flex items-center gap-2">
-        <i class="fa-solid fa-copyright text-slate-400"></i>
-        הערת זכויות וקרדיטים
-      </h2>
-
+      <h2 class="text-xl md:text-2xl font-bold text-white mb-4 flex items-center gap-2"><i class="fa-solid fa-copyright text-slate-400"></i> הערת זכויות וקרדיטים</h2>
       <div class="space-y-4 text-sm leading-8 text-slate-300">
-        <p>
-          האתר מיועד למחקר, למידה והמחשה חינוכית. כאשר נעשה שימוש בתמונות ממקורות
-          חופשיים, יש לציין את שם הקובץ, המקור והרישיון בהתאם לדרישות השימוש.
-        </p>
-
-        <p>
-          תמונות מקוריות שנוצרו עבור האתר נשמרות בתיקיית
-          <span class="font-mono text-blue-300">assets/images/</span>.
-          כאשר תמונה מגיעה מ־Wikimedia Commons או ממקור חיצוני אחר, יש להוסיף
-          קרדיט ברור בדף שבו היא מופיעה.
-        </p>
+        <p>האתר מיועד למחקר, למידה והמחשה חינוכית. כאשר נעשה שימוש בתמונות ממקורות חופשיים, יש לציין את שם הקובץ, המקור והרישיון בהתאם לדרישות השימוש.</p>
+        <p>תמונות מקוריות שנוצרו עבור האתר נשמרות בתיקיית <span class="font-mono text-blue-300">assets/images/</span>. כאשר תמונה מגיעה מ־Wikimedia Commons או ממקור חיצוני אחר, יש להוסיף קרדיט ברור בדף שבו היא מופיעה, וכן בדף <span class="font-mono text-blue-300">sources.html</span>.</p>
       </div>
     </section>
-
   </main>
 
-  <!-- חלון צף לתמונות -->
-  <div
-    id="imageModal"
-    class="fixed inset-0 z-[100] hidden bg-slate-950/90 backdrop-blur-md p-3 md:p-6 items-center justify-center"
-    onclick="closeImage()"
-  >
-    <div
-      class="w-full max-w-6xl max-h-[92vh] bg-slate-900 border border-slate-700 rounded-3xl overflow-hidden shadow-2xl"
-      onclick="event.stopPropagation()"
-    >
+  <div id="imageModal" class="fixed inset-0 z-[100] hidden bg-slate-950/90 backdrop-blur-md p-3 md:p-6 items-center justify-center" onclick="closeImage()">
+    <div class="w-full max-w-6xl max-h-[92vh] bg-slate-900 border border-slate-700 rounded-3xl overflow-hidden shadow-2xl" onclick="event.stopPropagation()">
       <div class="p-4 border-b border-slate-800 flex items-center justify-between gap-3">
-        <div class="min-w-0">
-          <h3 id="modalTitle" class="font-bold text-white truncate"></h3>
-          <p id="modalCaption" class="text-xs text-slate-400 truncate mt-1"></p>
-        </div>
-
-        <button
-          type="button"
-          onclick="closeImage()"
-          class="w-10 h-10 rounded-full bg-slate-800 hover:bg-slate-700 text-white shrink-0"
-          aria-label="סגור חלון תמונה"
-        >
-          <i class="fa-solid fa-xmark"></i>
-        </button>
+        <div class="min-w-0"><h3 id="modalTitle" class="font-bold text-white truncate"></h3><p id="modalCaption" class="text-xs text-slate-400 truncate mt-1"></p></div>
+        <button type="button" onclick="closeImage()" class="w-10 h-10 rounded-full bg-slate-800 hover:bg-slate-700 text-white shrink-0" aria-label="סגור חלון תמונה"><i class="fa-solid fa-xmark"></i></button>
       </div>
-
-      <div class="p-3 bg-slate-950 flex items-center justify-center max-h-[76vh] overflow-auto">
-        <img
-          id="modalImg"
-          src=""
-          alt=""
-          class="max-w-full max-h-[72vh] object-contain rounded-xl"
-        />
-      </div>
+      <div class="p-3 bg-slate-950 flex items-center justify-center max-h-[76vh] overflow-auto"><img id="modalImg" src="" alt="" class="max-w-full max-h-[72vh] object-contain rounded-xl"></div>
     </div>
   </div>
 
   <script>
-    function useFallback(img) {
-      const fallback = img.getAttribute("data-fallback");
-      if (fallback && img.src.indexOf(fallback) === -1) {
-        img.src = fallback;
-      }
-    }
-
-    function openImage(src, title, caption) {
-      const modal = document.getElementById("imageModal");
-      const img = document.getElementById("modalImg");
-
-      img.src = src;
-      img.onerror = function () {
-        if (src.includes("assets/images/")) {
-          this.src = src.replace("assets/images/", "assets/");
-        }
-      };
-
-      img.alt = title;
-      document.getElementById("modalTitle").textContent = title;
-      document.getElementById("modalCaption").textContent = caption || "";
-
-      modal.classList.remove("hidden");
-      modal.classList.add("flex");
-      document.body.classList.add("modal-open");
-    }
-
-    function closeImage() {
-      const modal = document.getElementById("imageModal");
-      modal.classList.add("hidden");
-      modal.classList.remove("flex");
-      document.body.classList.remove("modal-open");
-    }
-
-    document.addEventListener("keydown", function (event) {
-      if (event.key === "Escape") {
-        closeImage();
-      }
-    });
+    function useFallback(img){const fallback=img.getAttribute("data-fallback");if(fallback&&img.src.indexOf(fallback)===-1)img.src=fallback;}
+    function openImage(src,title,caption){const modal=document.getElementById("imageModal");const img=document.getElementById("modalImg");img.src=src;img.onerror=function(){if(src.includes("assets/images/"))this.src=src.replace("assets/images/","assets/");};img.alt=title;document.getElementById("modalTitle").textContent=title;document.getElementById("modalCaption").textContent=caption||"";modal.classList.remove("hidden");modal.classList.add("flex");document.body.classList.add("modal-open");}
+    function closeImage(){const modal=document.getElementById("imageModal");modal.classList.add("hidden");modal.classList.remove("flex");document.body.classList.remove("modal-open");}
+    document.addEventListener("keydown",function(event){if(event.key==="Escape")closeImage();});
   </script>
-
 </body>
 </html>
