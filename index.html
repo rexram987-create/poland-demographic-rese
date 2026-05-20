@@ -1,132 +1,16 @@
-<!DOCTYPE html>
-<html lang="he" dir="rtl">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Global Explorer Hub | Poland Research Index</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <style>
-    body{background:#020617;color:#e2e8f0;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;overflow-x:hidden}
-    .glass-card{background:rgba(15,23,42,.82);border:1px solid rgba(51,65,85,.9);box-shadow:0 18px 50px rgba(0,0,0,.35);backdrop-filter:blur(14px)}
-    @keyframes float{0%{transform:translateY(0)}50%{transform:translateY(-8px)}100%{transform:translateY(0)}}
-    .float-bubble{animation:float 6s ease-in-out infinite}
-  </style>
-</head>
-<body class="min-h-screen selection:bg-blue-500/30 selection:text-blue-100">
-  <div class="fixed inset-0 pointer-events-none overflow-hidden">
-    <div class="absolute -top-28 -left-28 w-96 h-96 bg-blue-800/20 rounded-full blur-3xl"></div>
-    <div class="absolute top-1/3 -right-28 w-96 h-96 bg-red-800/20 rounded-full blur-3xl"></div>
-    <div class="absolute -bottom-28 left-1/4 w-96 h-96 bg-emerald-800/20 rounded-full blur-3xl"></div>
-  </div>
-
-  <main class="relative z-10 min-h-screen flex flex-col items-center px-4 py-8">
-    <nav class="w-full max-w-5xl flex items-center justify-between mb-10">
-      <a href="index.html" class="inline-flex items-center gap-2 bg-slate-900/80 border border-slate-700 hover:border-blue-500 text-slate-300 hover:text-white rounded-full px-4 py-2 text-sm transition">
-        <i class="fa-solid fa-house text-blue-400"></i> ראשי
-      </a>
-      <div class="flex items-center gap-2">
-        <a href="sources.html" class="inline-flex items-center gap-2 bg-slate-900/80 border border-slate-700 hover:border-amber-500 text-slate-300 hover:text-white rounded-full px-4 py-2 text-sm transition">
-          <i class="fa-solid fa-link text-amber-400"></i> מקורות
-        </a>
-        <a href="about.html" class="inline-flex items-center gap-2 bg-slate-900/80 border border-slate-700 hover:border-emerald-500 text-slate-300 hover:text-white rounded-full px-4 py-2 text-sm transition">
-          <i class="fa-solid fa-circle-info text-emerald-400"></i> אודות
-        </a>
-      </div>
-    </nav>
-
-    <header class="w-full max-w-4xl text-center mb-10">
-      <p class="text-blue-300 font-semibold tracking-wide mb-3">Global Explorer Hub</p>
-      <h1 class="text-4xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-l from-blue-400 via-white to-emerald-400 mb-5">אינדקס מחקר: פולין</h1>
-      <section class="glass-card rounded-3xl p-5 md:p-7 text-right">
-        <h2 class="text-xl md:text-2xl font-bold text-white mb-3 text-center">מרכז מחקר גאוגרפי, היסטורי ודמוגרפי</h2>
-        <p class="text-slate-300 leading-8 text-sm md:text-base">
-          ברוכים הבאים למאגר המחקר. עמוד זה משמש כאינדקס הראשי של האתר, וממנו ניתן לעבור לדפי המחקר הנפרדים.
-          כל דף נבנה כעמוד עצמאי, עם תמונות, הסברים, נתונים, דמוגרפיה, היסטוריה, קרדיטים ותצוגה מותאמת למובייל.
-        </p>
-      </section>
-    </header>
-
-    <section class="w-full max-w-4xl">
-      <div class="flex flex-wrap justify-center gap-5 md:gap-7">
-        <a href="poland.html" class="float-bubble group relative w-32 h-32 md:w-40 md:h-40 rounded-full bg-gradient-to-br from-red-900/90 to-red-500/50 border border-red-400/40 shadow-2xl flex flex-col items-center justify-center text-center hover:-translate-y-2 transition-all duration-300">
-          <div class="absolute inset-0 rounded-full bg-slate-950/20 group-hover:bg-transparent transition"></div>
-          <i class="fa-solid fa-map-location-dot text-red-100 text-2xl mb-2 relative z-10"></i>
-          <span class="relative z-10 text-white font-extrabold text-lg md:text-xl px-2">רפובליקת פולין</span>
-          <span class="relative z-10 text-red-100/90 text-xs md:text-sm mt-1">מחקר מדינה</span>
-        </a>
-
-        <a href="cities/warsaw.html" class="float-bubble group relative w-32 h-32 md:w-40 md:h-40 rounded-full bg-gradient-to-br from-blue-900/90 to-blue-500/50 border border-blue-400/40 shadow-2xl flex flex-col items-center justify-center text-center hover:-translate-y-2 transition-all duration-300" style="animation-delay:.4s">
-          <div class="absolute inset-0 rounded-full bg-slate-950/20 group-hover:bg-transparent transition"></div>
-          <i class="fa-solid fa-city text-blue-100 text-2xl mb-2 relative z-10"></i>
-          <span class="relative z-10 text-white font-extrabold text-lg md:text-xl px-2">ורשה</span>
-          <span class="relative z-10 text-blue-100/90 text-xs md:text-sm mt-1">עיר בירה</span>
-        </a>
-
-        <a href="cities/krakow.html" class="float-bubble group relative w-32 h-32 md:w-40 md:h-40 rounded-full bg-gradient-to-br from-amber-900/90 to-amber-500/50 border border-amber-400/40 shadow-2xl flex flex-col items-center justify-center text-center hover:-translate-y-2 transition-all duration-300" style="animation-delay:.7s">
-          <div class="absolute inset-0 rounded-full bg-slate-950/20 group-hover:bg-transparent transition"></div>
-          <i class="fa-solid fa-landmark text-amber-100 text-2xl mb-2 relative z-10"></i>
-          <span class="relative z-10 text-white font-extrabold text-lg md:text-xl px-2">קרקוב</span>
-          <span class="relative z-10 text-amber-100/90 text-xs md:text-sm mt-1">עיר מלכותית</span>
-        </a>
-
-        <a href="sources.html" class="float-bubble group relative w-32 h-32 md:w-40 md:h-40 rounded-full bg-gradient-to-br from-slate-900/90 to-amber-500/45 border border-amber-400/40 shadow-2xl flex flex-col items-center justify-center text-center hover:-translate-y-2 transition-all duration-300" style="animation-delay:1s">
-          <div class="absolute inset-0 rounded-full bg-slate-950/20 group-hover:bg-transparent transition"></div>
-          <i class="fa-solid fa-link text-amber-100 text-2xl mb-2 relative z-10"></i>
-          <span class="relative z-10 text-white font-extrabold text-lg md:text-xl px-2">מקורות</span>
-          <span class="relative z-10 text-amber-100/90 text-xs md:text-sm mt-1">קרדיטים</span>
-        </a>
-
-        <button type="button" onclick="showComingSoon('ורוצלב')" class="float-bubble group relative w-32 h-32 md:w-40 md:h-40 rounded-full bg-gradient-to-br from-emerald-900/80 to-emerald-500/40 border border-emerald-400/30 shadow-2xl flex flex-col items-center justify-center text-center hover:-translate-y-2 transition-all duration-300" style="animation-delay:1.2s">
-          <div class="absolute inset-0 rounded-full bg-slate-950/30 group-hover:bg-transparent transition"></div>
-          <i class="fa-solid fa-bridge-water text-emerald-100 text-2xl mb-2 relative z-10"></i>
-          <span class="relative z-10 text-white font-extrabold text-lg md:text-xl px-2">ורוצלב</span>
-          <span class="relative z-10 text-emerald-100/90 text-xs md:text-sm mt-1">מחקר עיר</span>
-        </button>
-
-        <button type="button" onclick="showComingSoon('לודז׳')" class="float-bubble group relative w-32 h-32 md:w-40 md:h-40 rounded-full bg-gradient-to-br from-purple-900/80 to-purple-500/40 border border-purple-400/30 shadow-2xl flex flex-col items-center justify-center text-center hover:-translate-y-2 transition-all duration-300" style="animation-delay:1.6s">
-          <div class="absolute inset-0 rounded-full bg-slate-950/30 group-hover:bg-transparent transition"></div>
-          <i class="fa-solid fa-industry text-purple-100 text-2xl mb-2 relative z-10"></i>
-          <span class="relative z-10 text-white font-extrabold text-lg md:text-xl px-2">לודז׳</span>
-          <span class="relative z-10 text-purple-100/90 text-xs md:text-sm mt-1">מחקר עיר</span>
-        </button>
-
-        <button type="button" onclick="showComingSoon('פוזנן')" class="float-bubble group relative w-32 h-32 md:w-40 md:h-40 rounded-full bg-gradient-to-br from-teal-900/80 to-teal-500/40 border border-teal-400/30 shadow-2xl flex flex-col items-center justify-center text-center hover:-translate-y-2 transition-all duration-300" style="animation-delay:2s">
-          <div class="absolute inset-0 rounded-full bg-slate-950/30 group-hover:bg-transparent transition"></div>
-          <i class="fa-solid fa-church text-teal-100 text-2xl mb-2 relative z-10"></i>
-          <span class="relative z-10 text-white font-extrabold text-lg md:text-xl px-2">פוזנן</span>
-          <span class="relative z-10 text-teal-100/90 text-xs md:text-sm mt-1">מחקר עיר</span>
-        </button>
-      </div>
-    </section>
-
-    <section class="w-full max-w-4xl mt-12">
-      <div class="glass-card rounded-3xl p-5 md:p-6">
-        <h2 class="text-white font-bold mb-2 flex items-center gap-2"><i class="fa-solid fa-screwdriver-wrench text-blue-400"></i> מבנה האתר</h2>
-        <p class="text-slate-400 text-sm leading-7">
-          דף פולין נמצא בקובץ <span class="font-mono text-blue-300">poland.html</span>.
-          דפי הערים נשמרים בתיקיית <span class="font-mono text-blue-300">cities/</span>.
-          קרקוב זמינה כעת בקובץ <span class="font-mono text-blue-300">cities/krakow.html</span>.
-          דף המקורות נמצא כאן: <span class="font-mono text-blue-300">sources.html</span>.
-        </p>
-      </div>
-    </section>
-  </main>
-
-  <div id="comingSoonModal" class="fixed inset-0 z-[100] hidden items-center justify-center bg-slate-950/90 backdrop-blur-md p-4" onclick="closeComingSoon()">
-    <div class="w-full max-w-md bg-slate-900 border border-slate-700 rounded-3xl shadow-2xl overflow-hidden" onclick="event.stopPropagation()">
-      <div class="p-5 border-b border-slate-800 flex items-center justify-between">
-        <h3 class="font-bold text-white text-lg">דף בבנייה</h3>
-        <button type="button" onclick="closeComingSoon()" class="w-10 h-10 rounded-full bg-slate-800 hover:bg-slate-700 text-white" aria-label="סגור"><i class="fa-solid fa-xmark"></i></button>
-      </div>
-      <div class="p-5"><p id="comingSoonText" class="text-slate-300 leading-7"></p></div>
-    </div>
-  </div>
-
-  <script>
-    function showComingSoon(name){const modal=document.getElementById("comingSoonModal");const text=document.getElementById("comingSoonText");text.textContent="המחקר עבור "+name+" עדיין נמצא בבנייה. בשלב הבא ניתן ליצור עבורו דף עצמאי משלו.";modal.classList.remove("hidden");modal.classList.add("flex");}
-    function closeComingSoon(){const modal=document.getElementById("comingSoonModal");modal.classList.add("hidden");modal.classList.remove("flex");}
-    document.addEventListener("keydown",function(event){if(event.key==="Escape")closeComingSoon();});
-  </script>
-</body>
-</html>
+<!DOCTYPE html><html lang="he" dir="rtl"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Global Explorer Hub | Poland Research Index</title><script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+body{background:#020617;color:#e2e8f0;font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
+.card{background:rgba(15,23,42,.88);border:1px solid rgba(51,65,85,.9);border-radius:24px;box-shadow:0 18px 50px rgba(0,0,0,.35)}
+.modal-open{overflow:hidden}
+@keyframes float{0%{transform:translateY(0)}50%{transform:translateY(-8px)}100%{transform:translateY(0)}}.float-bubble{animation:float 6s ease-in-out infinite}
+.credit-table th,.credit-table td{border-bottom:1px solid rgba(51,65,85,.85);padding:14px 12px;vertical-align:top}.credit-table th{color:white;background:rgba(15,23,42,.95);font-weight:800}.credit-table td{color:#cbd5e1;line-height:1.8}
+</style></head><body class="min-h-screen selection:bg-blue-500/30 selection:text-blue-100"><main class="relative z-10 min-h-screen flex flex-col items-center px-4 py-8"><nav class="w-full max-w-5xl flex items-center justify-between mb-10"><a href="index.html" class="inline-flex items-center gap-2 bg-slate-900/80 border border-slate-700 hover:border-blue-500 text-slate-300 hover:text-white rounded-full px-4 py-2 text-sm transition">ראשי</a><div class="flex items-center gap-2"><a href="sources.html" class="inline-flex items-center gap-2 bg-slate-900/80 border border-slate-700 hover:border-amber-500 text-slate-300 hover:text-white rounded-full px-4 py-2 text-sm transition">מקורות</a><a href="about.html" class="inline-flex items-center gap-2 bg-slate-900/80 border border-slate-700 hover:border-emerald-500 text-slate-300 hover:text-white rounded-full px-4 py-2 text-sm transition">אודות</a></div></nav><header class="w-full max-w-4xl text-center mb-10"><p class="text-blue-300 font-semibold tracking-wide mb-3">Global Explorer Hub</p><h1 class="text-4xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-l from-blue-400 via-white to-emerald-400 mb-5">אינדקס מחקר: פולין</h1><section class="card rounded-3xl p-5 md:p-7 text-right"><h2 class="text-xl md:text-2xl font-bold text-white mb-3 text-center">מרכז מחקר גאוגרפי, היסטורי ודמוגרפי</h2><p class="text-slate-300 leading-8 text-sm md:text-base">ברוכים הבאים למאגר המחקר. עמוד זה משמש כאינדקס הראשי של האתר, וממנו ניתן לעבור לדפי המחקר הנפרדים.</p></section></header><section class="w-full max-w-4xl"><div class="flex flex-wrap justify-center gap-5 md:gap-7">
+<a href="poland.html" class="float-bubble group relative w-32 h-32 md:w-40 md:h-40 rounded-full bg-gradient-to-br from-red-900/90 to-red-500/50 border border-red-400/40 shadow-2xl flex flex-col items-center justify-center text-center hover:-translate-y-2 transition-all duration-300"><i class="fa-solid fa-map-location-dot text-red-100 text-2xl mb-2 relative z-10"></i><span class="relative z-10 text-white font-extrabold text-lg md:text-xl px-2">רפובליקת פולין</span><span class="relative z-10 text-red-100/90 text-xs md:text-sm mt-1">מחקר מדינה</span></a>
+<a href="cities/warsaw.html" class="float-bubble group relative w-32 h-32 md:w-40 md:h-40 rounded-full bg-gradient-to-br from-blue-900/90 to-blue-500/50 border border-blue-400/40 shadow-2xl flex flex-col items-center justify-center text-center hover:-translate-y-2 transition-all duration-300" style="animation-delay:.4s"><i class="fa-solid fa-city text-blue-100 text-2xl mb-2 relative z-10"></i><span class="relative z-10 text-white font-extrabold text-lg md:text-xl px-2">ורשה</span><span class="relative z-10 text-blue-100/90 text-xs md:text-sm mt-1">עיר בירה</span></a>
+<a href="cities/krakow.html" class="float-bubble group relative w-32 h-32 md:w-40 md:h-40 rounded-full bg-gradient-to-br from-amber-900/90 to-amber-500/50 border border-amber-400/40 shadow-2xl flex flex-col items-center justify-center text-center hover:-translate-y-2 transition-all duration-300" style="animation-delay:.7s"><i class="fa-solid fa-landmark text-amber-100 text-2xl mb-2 relative z-10"></i><span class="relative z-10 text-white font-extrabold text-lg md:text-xl px-2">קרקוב</span><span class="relative z-10 text-amber-100/90 text-xs md:text-sm mt-1">עיר מלכותית</span></a>
+<a href="cities/lodz.html" class="float-bubble group relative w-32 h-32 md:w-40 md:h-40 rounded-full bg-gradient-to-br from-purple-900/90 to-purple-500/50 border border-purple-400/40 shadow-2xl flex flex-col items-center justify-center text-center hover:-translate-y-2 transition-all duration-300" style="animation-delay:1s"><i class="fa-solid fa-industry text-purple-100 text-2xl mb-2 relative z-10"></i><span class="relative z-10 text-white font-extrabold text-lg md:text-xl px-2">לודז׳</span><span class="relative z-10 text-purple-100/90 text-xs md:text-sm mt-1">עיר תעשייה</span></a>
+<a href="sources.html" class="float-bubble group relative w-32 h-32 md:w-40 md:h-40 rounded-full bg-gradient-to-br from-slate-900/90 to-amber-500/45 border border-amber-400/40 shadow-2xl flex flex-col items-center justify-center text-center hover:-translate-y-2 transition-all duration-300" style="animation-delay:1.3s"><i class="fa-solid fa-link text-amber-100 text-2xl mb-2 relative z-10"></i><span class="relative z-10 text-white font-extrabold text-lg md:text-xl px-2">מקורות</span><span class="relative z-10 text-amber-100/90 text-xs md:text-sm mt-1">קרדיטים</span></a>
+<button onclick="alert('המחקר עבור ורוצלב עדיין בבנייה.')" class="float-bubble group relative w-32 h-32 md:w-40 md:h-40 rounded-full bg-gradient-to-br from-emerald-900/80 to-emerald-500/40 border border-emerald-400/30 shadow-2xl flex flex-col items-center justify-center text-center" style="animation-delay:1.6s"><i class="fa-solid fa-bridge-water text-emerald-100 text-2xl mb-2 relative z-10"></i><span class="relative z-10 text-white font-extrabold text-lg md:text-xl px-2">ורוצלב</span><span class="relative z-10 text-emerald-100/90 text-xs md:text-sm mt-1">מחקר עיר</span></button>
+<button onclick="alert('המחקר עבור פוזנן עדיין בבנייה.')" class="float-bubble group relative w-32 h-32 md:w-40 md:h-40 rounded-full bg-gradient-to-br from-teal-900/80 to-teal-500/40 border border-teal-400/30 shadow-2xl flex flex-col items-center justify-center text-center" style="animation-delay:2s"><i class="fa-solid fa-church text-teal-100 text-2xl mb-2 relative z-10"></i><span class="relative z-10 text-white font-extrabold text-lg md:text-xl px-2">פוזנן</span><span class="relative z-10 text-teal-100/90 text-xs md:text-sm mt-1">מחקר עיר</span></button></div></section><section class="w-full max-w-4xl mt-12"><div class="card rounded-3xl p-5 md:p-6"><h2 class="text-white font-bold mb-2">מבנה האתר</h2><p class="text-slate-400 text-sm leading-7">דפי הערים נשמרים בתיקיית <span class="font-mono text-blue-300">cities/</span>. לודז׳ זמינה כעת בקובץ <span class="font-mono text-blue-300">cities/lodz.html</span>.</p></div></section></main></body></html>
