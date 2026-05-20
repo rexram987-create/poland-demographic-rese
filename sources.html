@@ -1,79 +1,31 @@
 <!DOCTYPE html>
-<html lang="he" dir="rtl">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>מקורות וקרדיטים | Global Explorer Hub</title>
+<html lang="he" dir="rtl"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>מקורות וקרדיטים | Global Explorer Hub</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     body{background:#020617;color:#e2e8f0;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif}
     .research-card{background:rgba(15,23,42,.88);border:1px solid rgba(51,65,85,.9);border-radius:24px;box-shadow:0 18px 50px rgba(0,0,0,.35)}
+    .modal-open{overflow:hidden}
     .credit-table th,.credit-table td{border-bottom:1px solid rgba(51,65,85,.85);padding:14px 12px;vertical-align:top}
     .credit-table th{color:#fff;background:rgba(15,23,42,.95);font-weight:800;white-space:nowrap}
     .credit-table td{color:#cbd5e1;line-height:1.8}
   </style>
 </head>
 <body class="min-h-screen selection:bg-blue-500/30 selection:text-blue-100">
-  <header class="sticky top-0 z-40 bg-slate-950/90 backdrop-blur border-b border-slate-800">
-    <nav class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between gap-3">
-      <a href="index.html" class="inline-flex items-center gap-2 text-sm text-slate-300 hover:text-white bg-slate-900 border border-slate-800 rounded-full px-4 py-2 transition"><i class="fa-solid fa-chevron-right text-xs"></i> חזרה לאינדקס</a>
-      <div class="flex items-center gap-2">
-        <a href="sources-en.html" class="inline-flex items-center gap-2 text-sm text-slate-300 hover:text-white bg-slate-900 border border-slate-800 rounded-full px-4 py-2 transition"><i class="fa-solid fa-language text-xs"></i> English</a>
-        <a href="about.html" class="inline-flex items-center gap-2 text-sm text-slate-300 hover:text-white bg-slate-900 border border-slate-800 rounded-full px-4 py-2 transition"><i class="fa-solid fa-circle-info text-xs"></i> אודות</a>
-      </div>
-    </nav>
-  </header>
-  <main class="max-w-6xl mx-auto px-4 py-8 space-y-6">
-    <section class="research-card p-6 md:p-8 overflow-hidden relative">
-      <div class="absolute -top-20 -right-20 w-56 h-56 bg-blue-600/20 blur-3xl rounded-full pointer-events-none"></div>
-      <div class="relative z-10">
-        <p class="text-blue-300 font-semibold mb-2 tracking-wide">Sources & Credits</p>
-        <h1 class="text-3xl md:text-5xl font-extrabold text-white mb-4">מקורות וקרדיטים</h1>
-        <p class="text-slate-300 leading-8 max-w-4xl">דף זה מרכז את הקרדיטים, מקורות התמונות, שמות הקבצים והרישיונות של הנכסים החזותיים המשמשים באתר. המטרה היא לשמור על שקיפות, סדר, ועמידה בדרישות ייחוס כאשר נעשה שימוש בתמונות ממקורות חופשיים כגון Wikimedia Commons.</p>
-      </div>
-    </section>
-    <section class="grid md:grid-cols-3 gap-4">
-      <article class="research-card p-5"><i class="fa-solid fa-file-shield text-blue-400 text-xl mb-3"></i><h2 class="font-bold text-white mb-2">ייחוס ברור</h2><p class="text-sm leading-7 text-slate-300">לכל תמונה ממקור חיצוני יש לציין שם קובץ, מקור, רישיון וקישור כאשר הדבר נדרש.</p></article>
-      <article class="research-card p-5"><i class="fa-solid fa-folder-open text-emerald-400 text-xl mb-3"></i><h2 class="font-bold text-white mb-2">תיקיית תמונות מרכזית</h2><p class="text-sm leading-7 text-slate-300">כל התמונות באתר נשמרות בתיקייה <span class="font-mono text-blue-300">assets/images/</span> כדי לשמור על מבנה נקי.</p></article>
-      <article class="research-card p-5"><i class="fa-solid fa-scale-balanced text-amber-400 text-xl mb-3"></i><h2 class="font-bold text-white mb-2">שימוש חינוכי</h2><p class="text-sm leading-7 text-slate-300">האתר נועד למחקר, למידה והמחשה חינוכית, תוך הקפדה על קרדיטים והפרדת מקורות.</p></article>
-    </section>
-    <section class="research-card p-5 md:p-6">
-      <h2 class="text-xl md:text-2xl font-bold text-white mb-4 flex items-center gap-2"><i class="fa-solid fa-table text-cyan-400"></i> טבלת קרדיטים לתמונות</h2>
-      <div class="overflow-x-auto rounded-2xl border border-slate-800">
-        <table class="credit-table w-full text-sm bg-slate-950/70">
-          <thead><tr><th>שם הקובץ באתר</th><th>מופיע בדפים</th><th>סוג מקור</th><th>קרדיט / מקור</th><th>רישיון / הערה</th></tr></thead>
-          <tbody>
-            <tr><td><span class="font-mono text-blue-300">poland-tatra-mountains-golden-hour-panorama.jpg</span></td><td>דף פולין בעברית ובאנגלית</td><td>תמונה מקומית / תמונה שנוצרה עבור האתר</td><td>נכס חזותי מקומי בתיקיית <span class="font-mono text-blue-300">assets/images/</span></td><td>מיועד להמחשה חזותית באתר.</td></tr>
-            <tr><td><span class="font-mono text-blue-300">poland-flag-straight-symmetrical.png</span></td><td>דף פולין בעברית ובאנגלית</td><td>תמונה מקומית / תמונה שנוצרה עבור האתר</td><td>נכס חזותי מקומי בתיקיית <span class="font-mono text-blue-300">assets/images/</span></td><td>מיועד להמחשה של דגל פולין.</td></tr>
-            <tr><td><span class="font-mono text-blue-300">polish-50-zloty-banknote-1919.png</span></td><td>דף פולין בעברית ובאנגלית</td><td>Wikimedia Commons</td><td>שם הקובץ המקורי: <span class="text-slate-100">1919 50 polish zloty.png</span><br>מקור: Wikimedia Commons.</td><td>רישיון: <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer" class="text-blue-300 hover:text-blue-200 underline">CC BY-SA 4.0</a>. יש לשמור על ייחוס מתאים בעת שימוש חוזר.</td></tr>
-            <tr><td><span class="font-mono text-blue-300">warsaw-old-town-panorama.jpg</span></td><td>דף ורשה בעברית ובאנגלית</td><td>תמונה מקומית / תמונה שנוצרה עבור האתר</td><td>נכס חזותי מקומי בתיקיית <span class="font-mono text-blue-300">assets/images/</span></td><td>מיועד להמחשת העיר העתיקה של ורשה וקו הרקיע.</td></tr>
-
-            <tr><td><span class="font-mono text-blue-300">warsaw-city-flag.png</span></td><td>דף ורשה בעברית ובאנגלית</td><td>Wikimedia Commons</td><td>Flag of Warsaw / Flaga Warszawy<br>מקור: Wikimedia Commons.</td><td>Public Domain. משמש להמחשת הדגל העירוני הרשמי של ורשה.</td></tr>
-            <tr><td><span class="font-mono text-blue-300">warsaw-city-coat-of-arms.png</span></td><td>דף ורשה בעברית ובאנגלית</td><td>Wikimedia Commons</td><td>Coat of arms of Warsaw / Herb Warszawy<br>מקור: Wikimedia Commons.</td><td>Public Domain. משמש להמחשת סמל העיר הרשמי של ורשה.</td></tr>
-            <tr><td><span class="font-mono text-blue-300">ramprofile.png</span></td><td>דף אודות בעברית ובאנגלית</td><td>תמונה אישית / פרופיל</td><td>תמונת פרופיל של יוצר האתר.</td><td>אין להשתמש מחוץ להקשר של דף האודות ללא אישור.</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
-    <section class="research-card p-5 md:p-6">
-      <h2 class="text-xl md:text-2xl font-bold text-white mb-4 flex items-center gap-2"><i class="fa-solid fa-circle-info text-purple-400"></i> כללי עבודה להמשך</h2>
-      <ul class="space-y-3 text-sm leading-8 text-slate-300">
-        <li><strong class="text-slate-100">תמונות חדשות:</strong> מומלץ לשמור את כל התמונות החדשות בתיקיית <span class="font-mono text-blue-300">assets/images/</span>.</li>
-        <li><strong class="text-slate-100">שמות קבצים:</strong> כדאי להשתמש בשמות באנגלית, באותיות קטנות, עם מקפים במקום רווחים.</li>
-        <li><strong class="text-slate-100">תמונות מ־Wikimedia Commons:</strong> יש לבדוק אם נדרש ייחוס, מה שם הרישיון, והאם מותר שימוש חוזר.</li>
-        <li><strong class="text-slate-100">קרדיט בדף עצמו:</strong> כאשר תמונה מופיעה בדף מחקר, מומלץ להוסיף גם קרדיט קצר מתחת לתמונה.</li>
-      </ul>
-    </section>
-    <section class="research-card p-5 md:p-6">
-      <h2 class="text-xl md:text-2xl font-bold text-white mb-4 flex items-center gap-2"><i class="fa-solid fa-link text-blue-400"></i> קישורים פנימיים</h2>
-      <div class="grid md:grid-cols-4 gap-3">
-        <a href="index.html" class="bg-slate-950/70 border border-slate-800 hover:border-blue-500 rounded-2xl p-4 transition"><strong class="text-white block mb-1">אינדקס ראשי</strong><span class="text-sm text-slate-400">עמוד הבית</span></a>
-        <a href="poland.html" class="bg-slate-950/70 border border-slate-800 hover:border-red-500 rounded-2xl p-4 transition"><strong class="text-white block mb-1">דף פולין</strong><span class="text-sm text-slate-400">מחקר מדינה</span></a>
-        <a href="cities/warsaw.html" class="bg-slate-950/70 border border-slate-800 hover:border-emerald-500 rounded-2xl p-4 transition"><strong class="text-white block mb-1">דף ורשה</strong><span class="text-sm text-slate-400">מחקר עיר</span></a>
-        <a href="about.html" class="bg-slate-950/70 border border-slate-800 hover:border-purple-500 rounded-2xl p-4 transition"><strong class="text-white block mb-1">אודות</strong><span class="text-sm text-slate-400">מידע על האתר</span></a>
-      </div>
-    </section>
-  </main>
-</body>
-</html>
+<header class="sticky top-0 z-40 bg-slate-950/90 backdrop-blur border-b border-slate-800"><nav class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between gap-3"><a href="index.html" class="inline-flex items-center gap-2 text-sm text-slate-300 hover:text-white bg-slate-900 border border-slate-800 rounded-full px-4 py-2 transition"><i class="fa-solid fa-chevron-right text-xs"></i> חזרה לאינדקס</a><div class="flex items-center gap-2"><a href="sources-en.html" class="inline-flex items-center gap-2 text-sm text-slate-300 hover:text-white bg-slate-900 border border-slate-800 rounded-full px-4 py-2 transition"><i class="fa-solid fa-language text-xs"></i> English</a><a href="about.html" class="inline-flex items-center gap-2 text-sm text-slate-300 hover:text-white bg-slate-900 border border-slate-800 rounded-full px-4 py-2 transition"><i class="fa-solid fa-circle-info text-xs"></i> אודות</a></div></nav></header>
+<main class="max-w-6xl mx-auto px-4 py-8 space-y-6">
+<section class="research-card p-6 md:p-8"><p class="text-blue-300 font-semibold mb-2 tracking-wide">Sources & Credits</p><h1 class="text-3xl md:text-5xl font-extrabold text-white mb-4">מקורות וקרדיטים</h1><p class="text-slate-300 leading-8 max-w-4xl">דף זה מרכז את הקרדיטים, מקורות התמונות, שמות הקבצים והרישיונות של הנכסים החזותיים המשמשים באתר.</p></section>
+<section class="research-card p-5 md:p-6"><h2 class="text-xl md:text-2xl font-bold text-white mb-4 flex items-center gap-2"><i class="fa-solid fa-table text-cyan-400"></i> טבלת קרדיטים לתמונות</h2><div class="overflow-x-auto rounded-2xl border border-slate-800"><table class="credit-table w-full text-sm bg-slate-950/70"><thead><tr><th>שם הקובץ באתר</th><th>מופיע בדפים</th><th>סוג מקור</th><th>קרדיט / מקור</th><th>רישיון / הערה</th></tr></thead><tbody>
+<tr><td><span class="font-mono text-blue-300">poland-tatra-mountains-golden-hour-panorama.jpg</span></td><td>דף פולין</td><td>תמונה מקומית</td><td>נכס חזותי מקומי</td><td>מיועד להמחשה חזותית באתר.</td></tr>
+<tr><td><span class="font-mono text-blue-300">poland-flag-straight-symmetrical.png</span></td><td>דף פולין</td><td>תמונה מקומית</td><td>נכס חזותי מקומי</td><td>מיועד להמחשה של דגל פולין.</td></tr>
+<tr><td><span class="font-mono text-blue-300">polish-50-zloty-banknote-1919.png</span></td><td>דף פולין</td><td>Wikimedia Commons</td><td>1919 50 polish zloty.png</td><td>CC BY-SA 4.0.</td></tr>
+<tr><td><span class="font-mono text-blue-300">warsaw-old-town-panorama.jpg</span></td><td>דף ורשה</td><td>תמונה מקומית</td><td>נכס חזותי מקומי</td><td>מיועד להמחשת ורשה.</td></tr>
+<tr><td><span class="font-mono text-blue-300">warsaw-city-flag.png</span></td><td>דף ורשה</td><td>Wikimedia Commons</td><td>Flag of Warsaw / Flaga Warszawy</td><td>Public Domain.</td></tr>
+<tr><td><span class="font-mono text-blue-300">warsaw-city-coat-of-arms.png</span></td><td>דף ורשה</td><td>Wikimedia Commons</td><td>Coat of arms of Warsaw / Herb Warszawy</td><td>Public Domain.</td></tr>
+<tr><td><span class="font-mono text-blue-300">krakow-old-town-wawel-panorama.jpg</span></td><td>דף קרקוב</td><td>תמונה מקומית / תמונה שנוצרה עבור האתר</td><td>נכס חזותי מקומי בתיקיית assets/images</td><td>מיועד להמחשת קרקוב, העיר העתיקה וטירת ואוול.</td></tr>
+<tr><td><span class="font-mono text-blue-300">krakow-city-flag.png</span></td><td>דף קרקוב</td><td>תמונה מקומית / תמונה שנוצרה עבור האתר</td><td>דגל קרקוב — גרפיקה נקייה של שני פסים: לבן מעל כחול.</td><td>מיועד להמחשה חזותית באתר.</td></tr>
+<tr><td><span class="font-mono text-blue-300">krakow-city-coat-of-arms.png</span></td><td>דף קרקוב</td><td>Wikimedia Commons</td><td>Krakow Herb.png / Coat of arms of Kraków</td><td>Public Domain.</td></tr>
+<tr><td><span class="font-mono text-blue-300">ramprofile.png</span></td><td>דף אודות</td><td>תמונה אישית</td><td>תמונת פרופיל של יוצר האתר.</td><td>אין להשתמש מחוץ להקשר דף האודות ללא אישור.</td></tr>
+</tbody></table></div></section>
+<section class="research-card p-5 md:p-6"><h2 class="text-xl md:text-2xl font-bold text-white mb-4 flex items-center gap-2"><i class="fa-solid fa-link text-blue-400"></i> קישורים פנימיים</h2><div class="grid md:grid-cols-4 gap-3"><a href="index.html" class="bg-slate-950/70 border border-slate-800 hover:border-blue-500 rounded-2xl p-4 transition"><strong class="text-white block mb-1">אינדקס ראשי</strong></a><a href="poland.html" class="bg-slate-950/70 border border-slate-800 hover:border-red-500 rounded-2xl p-4 transition"><strong class="text-white block mb-1">דף פולין</strong></a><a href="cities/warsaw.html" class="bg-slate-950/70 border border-slate-800 hover:border-emerald-500 rounded-2xl p-4 transition"><strong class="text-white block mb-1">דף ורשה</strong></a><a href="cities/krakow.html" class="bg-slate-950/70 border border-slate-800 hover:border-amber-500 rounded-2xl p-4 transition"><strong class="text-white block mb-1">דף קרקוב</strong></a></div></section>
+</main></body></html>

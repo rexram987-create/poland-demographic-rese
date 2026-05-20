@@ -1,79 +1,31 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sources and Credits | Global Explorer Hub</title>
+<html lang="en" dir="ltr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Sources and Credits | Global Explorer Hub</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     body{background:#020617;color:#e2e8f0;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif}
     .research-card{background:rgba(15,23,42,.88);border:1px solid rgba(51,65,85,.9);border-radius:24px;box-shadow:0 18px 50px rgba(0,0,0,.35)}
+    .modal-open{overflow:hidden}
     .credit-table th,.credit-table td{border-bottom:1px solid rgba(51,65,85,.85);padding:14px 12px;vertical-align:top}
     .credit-table th{color:#fff;background:rgba(15,23,42,.95);font-weight:800;white-space:nowrap}
     .credit-table td{color:#cbd5e1;line-height:1.8}
   </style>
 </head>
 <body class="min-h-screen selection:bg-blue-500/30 selection:text-blue-100">
-  <header class="sticky top-0 z-40 bg-slate-950/90 backdrop-blur border-b border-slate-800">
-    <nav class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between gap-3">
-      <a href="index.html" class="inline-flex items-center gap-2 text-sm text-slate-300 hover:text-white bg-slate-900 border border-slate-800 rounded-full px-4 py-2 transition"><i class="fa-solid fa-chevron-left text-xs"></i> Back to Index</a>
-      <div class="flex items-center gap-2">
-        <a href="sources.html" class="inline-flex items-center gap-2 text-sm text-slate-300 hover:text-white bg-slate-900 border border-slate-800 rounded-full px-4 py-2 transition"><i class="fa-solid fa-language text-xs"></i> עברית</a>
-        <a href="about-en.html" class="inline-flex items-center gap-2 text-sm text-slate-300 hover:text-white bg-slate-900 border border-slate-800 rounded-full px-4 py-2 transition"><i class="fa-solid fa-circle-info text-xs"></i> About</a>
-      </div>
-    </nav>
-  </header>
-  <main class="max-w-6xl mx-auto px-4 py-8 space-y-6">
-    <section class="research-card p-6 md:p-8 overflow-hidden relative">
-      <div class="absolute -top-20 -right-20 w-56 h-56 bg-blue-600/20 blur-3xl rounded-full pointer-events-none"></div>
-      <div class="relative z-10">
-        <p class="text-blue-300 font-semibold mb-2 tracking-wide">Sources & Credits</p>
-        <h1 class="text-3xl md:text-5xl font-extrabold text-white mb-4">Sources and Credits</h1>
-        <p class="text-slate-300 leading-8 max-w-4xl">This page centralizes the credits, image sources, file names, and license information for the visual assets used on the website. Its purpose is to keep the project transparent, organized, and compliant with attribution requirements when images from free sources such as Wikimedia Commons are used.</p>
-      </div>
-    </section>
-    <section class="grid md:grid-cols-3 gap-4">
-      <article class="research-card p-5"><i class="fa-solid fa-file-shield text-blue-400 text-xl mb-3"></i><h2 class="font-bold text-white mb-2">Clear Attribution</h2><p class="text-sm leading-7 text-slate-300">For every externally sourced image, the file name, source, license, and relevant links should be listed when required.</p></article>
-      <article class="research-card p-5"><i class="fa-solid fa-folder-open text-emerald-400 text-xl mb-3"></i><h2 class="font-bold text-white mb-2">Central Image Folder</h2><p class="text-sm leading-7 text-slate-300">All website images are stored in <span class="font-mono text-blue-300">assets/images/</span> to keep the file structure clean.</p></article>
-      <article class="research-card p-5"><i class="fa-solid fa-scale-balanced text-amber-400 text-xl mb-3"></i><h2 class="font-bold text-white mb-2">Educational Use</h2><p class="text-sm leading-7 text-slate-300">The website is intended for research, learning, and educational visual reference, with attention to proper credits.</p></article>
-    </section>
-    <section class="research-card p-5 md:p-6">
-      <h2 class="text-xl md:text-2xl font-bold text-white mb-4 flex items-center gap-2"><i class="fa-solid fa-table text-cyan-400"></i> Image Credits Table</h2>
-      <div class="overflow-x-auto rounded-2xl border border-slate-800">
-        <table class="credit-table w-full text-sm bg-slate-950/70">
-          <thead><tr><th>Website file name</th><th>Used on pages</th><th>Source type</th><th>Credit / Source</th><th>License / Note</th></tr></thead>
-          <tbody>
-            <tr><td><span class="font-mono text-blue-300">poland-tatra-mountains-golden-hour-panorama.jpg</span></td><td>Poland page in Hebrew and English</td><td>Local image / created for the website</td><td>Local visual asset stored in <span class="font-mono text-blue-300">assets/images/</span></td><td>Used as a visual illustration on the website.</td></tr>
-            <tr><td><span class="font-mono text-blue-300">poland-flag-straight-symmetrical.png</span></td><td>Poland page in Hebrew and English</td><td>Local image / created for the website</td><td>Local visual asset stored in <span class="font-mono text-blue-300">assets/images/</span></td><td>Used as an illustration of the Polish flag.</td></tr>
-            <tr><td><span class="font-mono text-blue-300">polish-50-zloty-banknote-1919.png</span></td><td>Poland page in Hebrew and English</td><td>Wikimedia Commons</td><td>Original file name: <span class="text-slate-100">1919 50 polish zloty.png</span><br>Source: Wikimedia Commons.</td><td>License: <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer" class="text-blue-300 hover:text-blue-200 underline">CC BY-SA 4.0</a>. Proper attribution should be preserved when reused.</td></tr>
-            <tr><td><span class="font-mono text-blue-300">warsaw-old-town-panorama.jpg</span></td><td>Warsaw page in Hebrew and English</td><td>Local image / created for the website</td><td>Local visual asset stored in <span class="font-mono text-blue-300">assets/images/</span></td><td>Used as an illustration of Warsaw Old Town and skyline.</td></tr>
-
-            <tr><td><span class="font-mono text-blue-300">warsaw-city-flag.png</span></td><td>Warsaw page in Hebrew and English</td><td>Wikimedia Commons</td><td>Flag of Warsaw / Flaga Warszawy<br>Source: Wikimedia Commons.</td><td>Public Domain. Used to illustrate the official municipal flag of Warsaw.</td></tr>
-            <tr><td><span class="font-mono text-blue-300">warsaw-city-coat-of-arms.png</span></td><td>Warsaw page in Hebrew and English</td><td>Wikimedia Commons</td><td>Coat of arms of Warsaw / Herb Warszawy<br>Source: Wikimedia Commons.</td><td>Public Domain. Used to illustrate the official municipal coat of arms of Warsaw.</td></tr>
-            <tr><td><span class="font-mono text-blue-300">ramprofile.png</span></td><td>About page in Hebrew and English</td><td>Personal / profile image</td><td>Profile image of the website creator.</td><td>Should not be used outside the context of the About page without permission.</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
-    <section class="research-card p-5 md:p-6">
-      <h2 class="text-xl md:text-2xl font-bold text-white mb-4 flex items-center gap-2"><i class="fa-solid fa-circle-info text-purple-400"></i> Future Working Rules</h2>
-      <ul class="space-y-3 text-sm leading-8 text-slate-300">
-        <li><strong class="text-slate-100">New images:</strong> All new images should be stored in <span class="font-mono text-blue-300">assets/images/</span>.</li>
-        <li><strong class="text-slate-100">File names:</strong> Use lowercase English file names with hyphens instead of spaces.</li>
-        <li><strong class="text-slate-100">Wikimedia Commons images:</strong> Check whether attribution is required, what the license is, and whether reuse is allowed.</li>
-        <li><strong class="text-slate-100">On-page credits:</strong> When an image appears on a research page, it is recommended to include a short credit beneath it.</li>
-      </ul>
-    </section>
-    <section class="research-card p-5 md:p-6">
-      <h2 class="text-xl md:text-2xl font-bold text-white mb-4 flex items-center gap-2"><i class="fa-solid fa-link text-blue-400"></i> Internal Links</h2>
-      <div class="grid md:grid-cols-4 gap-3">
-        <a href="index.html" class="bg-slate-950/70 border border-slate-800 hover:border-blue-500 rounded-2xl p-4 transition"><strong class="text-white block mb-1">Main Index</strong><span class="text-sm text-slate-400">Homepage</span></a>
-        <a href="poland-en.html" class="bg-slate-950/70 border border-slate-800 hover:border-red-500 rounded-2xl p-4 transition"><strong class="text-white block mb-1">Poland Page</strong><span class="text-sm text-slate-400">Country research</span></a>
-        <a href="cities/warsaw-en.html" class="bg-slate-950/70 border border-slate-800 hover:border-emerald-500 rounded-2xl p-4 transition"><strong class="text-white block mb-1">Warsaw Page</strong><span class="text-sm text-slate-400">City research</span></a>
-        <a href="about-en.html" class="bg-slate-950/70 border border-slate-800 hover:border-purple-500 rounded-2xl p-4 transition"><strong class="text-white block mb-1">About</strong><span class="text-sm text-slate-400">Project information</span></a>
-      </div>
-    </section>
-  </main>
-</body>
-</html>
+<header class="sticky top-0 z-40 bg-slate-950/90 backdrop-blur border-b border-slate-800"><nav class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between gap-3"><a href="index.html" class="inline-flex items-center gap-2 text-sm text-slate-300 hover:text-white bg-slate-900 border border-slate-800 rounded-full px-4 py-2 transition"><i class="fa-solid fa-chevron-right text-xs"></i> Back to Index</a><div class="flex items-center gap-2"><a href="sources.html" class="inline-flex items-center gap-2 text-sm text-slate-300 hover:text-white bg-slate-900 border border-slate-800 rounded-full px-4 py-2 transition"><i class="fa-solid fa-language text-xs"></i> עברית</a><a href="about-en.html" class="inline-flex items-center gap-2 text-sm text-slate-300 hover:text-white bg-slate-900 border border-slate-800 rounded-full px-4 py-2 transition"><i class="fa-solid fa-circle-info text-xs"></i> אודות</a></div></nav></header>
+<main class="max-w-6xl mx-auto px-4 py-8 space-y-6">
+<section class="research-card p-6 md:p-8"><p class="text-blue-300 font-semibold mb-2 tracking-wide">Sources & Credits</p><h1 class="text-3xl md:text-5xl font-extrabold text-white mb-4">Sources and Credits</h1><p class="text-slate-300 leading-8 max-w-4xl">This page centralizes the credits, image sources, file names, and license information for the visual assets used on the website.</p></section>
+<section class="research-card p-5 md:p-6"><h2 class="text-xl md:text-2xl font-bold text-white mb-4 flex items-center gap-2"><i class="fa-solid fa-table text-cyan-400"></i> Image Credits Table</h2><div class="overflow-x-auto rounded-2xl border border-slate-800"><table class="credit-table w-full text-sm bg-slate-950/70"><thead><tr><th>Website file name</th><th>Used on pages</th><th>Source type</th><th>Credit / Source</th><th>License / Note</th></tr></thead><tbody>
+<tr><td><span class="font-mono text-blue-300">poland-tatra-mountains-golden-hour-panorama.jpg</span></td><td>Poland page</td><td>Local image</td><td>Local visual asset</td><td>Used as a visual illustration on the website.</td></tr>
+<tr><td><span class="font-mono text-blue-300">poland-flag-straight-symmetrical.png</span></td><td>Poland page</td><td>Local image</td><td>Local visual asset</td><td>Used as an illustration of the Polish flag.</td></tr>
+<tr><td><span class="font-mono text-blue-300">polish-50-zloty-banknote-1919.png</span></td><td>Poland page</td><td>Wikimedia Commons</td><td>1919 50 polish zloty.png</td><td>CC BY-SA 4.0.</td></tr>
+<tr><td><span class="font-mono text-blue-300">warsaw-old-town-panorama.jpg</span></td><td>Warsaw page</td><td>Local image</td><td>Local visual asset</td><td>Used as an illustration of Warsaw.</td></tr>
+<tr><td><span class="font-mono text-blue-300">warsaw-city-flag.png</span></td><td>Warsaw page</td><td>Wikimedia Commons</td><td>Flag of Warsaw / Flaga Warszawy</td><td>Public Domain.</td></tr>
+<tr><td><span class="font-mono text-blue-300">warsaw-city-coat-of-arms.png</span></td><td>Warsaw page</td><td>Wikimedia Commons</td><td>Coat of arms of Warsaw / Herb Warszawy</td><td>Public Domain.</td></tr>
+<tr><td><span class="font-mono text-blue-300">krakow-old-town-wawel-panorama.jpg</span></td><td>Kraków page</td><td>Local image / created for the website</td><td>Local visual asset בתיקיית assets/images</td><td>Used to illustrate Kraków, the Old Town, and Wawel Castle.</td></tr>
+<tr><td><span class="font-mono text-blue-300">krakow-city-flag.png</span></td><td>Kraków page</td><td>Local image / created for the website</td><td>Flag of Kraków — clean two-stripe graphic: white above blue.</td><td>Used as a visual illustration on the website.</td></tr>
+<tr><td><span class="font-mono text-blue-300">krakow-city-coat-of-arms.png</span></td><td>Kraków page</td><td>Wikimedia Commons</td><td>Krakow Herb.png / Coat of arms of Kraków</td><td>Public Domain.</td></tr>
+<tr><td><span class="font-mono text-blue-300">ramprofile.png</span></td><td>About page</td><td>Personal image</td><td>Profile image of the website creator.</td><td>Should not be used outside the context of the About page without permission.</td></tr>
+</tbody></table></div></section>
+<section class="research-card p-5 md:p-6"><h2 class="text-xl md:text-2xl font-bold text-white mb-4 flex items-center gap-2"><i class="fa-solid fa-link text-blue-400"></i> Internal Links</h2><div class="grid md:grid-cols-4 gap-3"><a href="index.html" class="bg-slate-950/70 border border-slate-800 hover:border-blue-500 rounded-2xl p-4 transition"><strong class="text-white block mb-1">Main Index</strong></a><a href="poland.html" class="bg-slate-950/70 border border-slate-800 hover:border-red-500 rounded-2xl p-4 transition"><strong class="text-white block mb-1">Poland page</strong></a><a href="cities/warsaw.html" class="bg-slate-950/70 border border-slate-800 hover:border-emerald-500 rounded-2xl p-4 transition"><strong class="text-white block mb-1">Warsaw page</strong></a><a href="cities/krakow.html" class="bg-slate-950/70 border border-slate-800 hover:border-amber-500 rounded-2xl p-4 transition"><strong class="text-white block mb-1">Kraków page</strong></a></div></section>
+</main></body></html>
