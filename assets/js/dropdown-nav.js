@@ -55,11 +55,12 @@
     if (document.querySelector(".geh-nav-shell")) return;
 
     const en = isEnglishPage();
+    const homePath = en ? "index-en.html" : "index.html";
     const nav = document.createElement("div");
     nav.className = "geh-nav-shell";
     nav.innerHTML = `
       <div class="geh-nav-inner">
-        <a class="geh-brand" href="${withPrefix("index.html")}" aria-label="${en ? "Home" : "דף הבית"}">
+        <a class="geh-brand" href="${withPrefix(homePath)}" aria-label="${en ? "Home" : "דף הבית"}">
           <span class="geh-brand-mark"><i class="fa-solid fa-earth-europe"></i></span>
           <span>${en ? "Poland Research Hub" : "מרכז מחקר פולין"}</span>
         </a>
@@ -82,7 +83,7 @@
     const grid = nav.querySelector(".geh-menu-grid");
 
     const main = section(en ? "Main pages" : "עמודים ראשיים");
-    main.appendChild(link(withPrefix("index.html"), en ? "Home" : "ראשי", en ? "Research index" : "אינדקס המחקר", "fa-solid fa-house"));
+    main.appendChild(link(withPrefix(homePath), en ? "Home" : "ראשי", en ? "Research index" : "אינדקס המחקר", "fa-solid fa-house"));
     main.appendChild(link(withPrefix(en ? "poland-en.html" : "poland.html"), en ? "Poland" : "פולין", en ? "Country research" : "מחקר מדינה", "fa-solid fa-flag"));
     main.appendChild(link(withPrefix("timeline.html"), en ? "Timeline" : "ציר זמן", en ? "Interactive history" : "היסטוריה אינטראקטיבית", "fa-solid fa-clock-rotate-left"));
     main.appendChild(link(withPrefix(en ? "sources-en.html" : "sources.html"), en ? "Sources" : "מקורות", en ? "Credits and references" : "קרדיטים ומקורות", "fa-solid fa-link"));
