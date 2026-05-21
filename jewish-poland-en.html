@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jewish Poland | Global Explorer Hub</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/dropdown-nav.css">
+  <style>
+    body { background:#020617; color:#e2e8f0; font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif; }
+    .page-bg { background: radial-gradient(circle at 15% 10%, rgba(59,130,246,.22), transparent 28%), radial-gradient(circle at 85% 20%, rgba(245,158,11,.20), transparent 28%), radial-gradient(circle at 50% 95%, rgba(168,85,247,.16), transparent 30%); }
+    .card { background:rgba(15,23,42,.86); border:1px solid rgba(148,163,184,.24); border-radius:24px; box-shadow:0 18px 45px rgba(0,0,0,.32); }
+    .gold-title { background:linear-gradient(90deg,#fff,#fde68a,#bfdbfe,#fef3c7,#fff); -webkit-background-clip:text; background-clip:text; color:transparent; }
+    .tag { display:inline-flex; align-items:center; gap:.45rem; border-radius:999px; padding:.45rem .8rem; background:rgba(255,255,255,.09); border:1px solid rgba(255,255,255,.15); color:#e0f2fe; font-size:.86rem; }
+    .topic { border-radius:22px; padding:1rem; background:linear-gradient(135deg,var(--from),var(--to)); color:white; min-height:150px; box-shadow:0 16px 36px rgba(0,0,0,.28); }
+    .city-link { display:block; background:rgba(2,6,23,.55); border:1px solid rgba(148,163,184,.18); border-radius:18px; padding:1rem; color:#e2e8f0; text-decoration:none; transition:.2s ease; }
+    .city-link:hover { background:rgba(30,41,59,.8); border-color:rgba(251,191,36,.45); transform:translateY(-2px); }
+    .timeline-item { border-left:4px solid #fbbf24; padding-left:1rem; margin-bottom:1rem; background:rgba(2,6,23,.45); border-radius:18px; padding-top:1rem; padding-bottom:1rem; padding-right:1rem; }
+    .accordion-btn { width:100%; text-align:left; display:flex; align-items:center; justify-content:space-between; gap:1rem; border-radius:20px; padding:1rem 1.1rem; background:rgba(2,6,23,.50); border:1px solid rgba(148,163,184,.22); color:white; transition:.2s ease; }
+    .accordion-btn:hover, .accordion-btn[aria-expanded="true"] { background:rgba(30,41,59,.86); border-color:rgba(251,191,36,.42); }
+    .accordion-panel { display:none; margin-top:1rem; }
+    .accordion-panel.open { display:block; animation:openPanel .22s ease; }
+    @keyframes openPanel { from { opacity:0; transform:translateY(-6px); } to { opacity:1; transform:translateY(0); } }
+  </style>
+</head>
+<body class="page-bg">
+  <main class="max-w-6xl mx-auto px-4 py-8 md:py-12 space-y-8">
+    <header class="card p-6 md:p-10">
+      <div class="flex flex-wrap gap-2 mb-5">
+        <span class="tag"><i class="fa-solid fa-star-of-david"></i> Jewish heritage</span>
+        <span class="tag"><i class="fa-solid fa-book-open"></i> Historical research</span>
+        <span class="tag"><i class="fa-solid fa-map-location-dot"></i> Communities and cities</span>
+      </div>
+      <p class="text-amber-200 font-bold tracking-wide mb-3">POLISH JEWRY • ŻYDZI POLSCY</p>
+      <h1 class="gold-title text-4xl md:text-6xl font-black leading-tight mb-5">Jewish Poland — Community, Culture, Destruction and Memory</h1>
+      <p class="text-slate-200 leading-9 text-lg max-w-4xl">A research page about one of the most important Jewish communities in European history. Polish Jewry was a major center of Torah learning, Hasidism, trade, printing, Jewish politics, Yiddish culture, Zionism and youth movements — until the devastation of the Holocaust and the later struggle to preserve memory and heritage.</p>
+      <div class="flex flex-wrap gap-3 mt-7">
+        <a href="index-en.html" class="rounded-full bg-blue-500 hover:bg-blue-400 text-white font-bold px-5 py-3 transition"><i class="fa-solid fa-house mr-2"></i>Home</a>
+        <a href="timeline.html" class="rounded-full bg-emerald-500 hover:bg-emerald-400 text-white font-bold px-5 py-3 transition"><i class="fa-solid fa-clock-rotate-left mr-2"></i>Timeline</a>
+        <a href="jewish-poland.html" class="rounded-full bg-white text-slate-950 font-bold px-5 py-3 transition"><i class="fa-solid fa-language mr-2"></i>עברית</a>
+      </div>
+    </header>
+
+    <section class="grid md:grid-cols-4 gap-4">
+      <div class="card p-5 text-center"><i class="fa-solid fa-scroll text-amber-300 text-2xl mb-2"></i><p class="text-sm text-slate-400">Early presence</p><strong class="text-white text-xl">Middle Ages</strong></div>
+      <div class="card p-5 text-center"><i class="fa-solid fa-users text-blue-300 text-2xl mb-2"></i><p class="text-sm text-slate-400">Main setting</p><strong class="text-white text-xl">Urban communities</strong></div>
+      <div class="card p-5 text-center"><i class="fa-solid fa-language text-purple-300 text-2xl mb-2"></i><p class="text-sm text-slate-400">Major languages</p><strong class="text-white text-xl">Yiddish, Hebrew, Polish</strong></div>
+      <div class="card p-5 text-center"><i class="fa-solid fa-landmark text-emerald-300 text-2xl mb-2"></i><p class="text-sm text-slate-400">Heritage centers</p><strong class="text-white text-xl">Warsaw, Kraków, Lublin</strong></div>
+    </section>
+
+    <section class="card p-5 md:p-6">
+      <h2 class="text-2xl md:text-3xl font-black text-white mb-4"><i class="fa-solid fa-book-open text-amber-300 mr-2"></i>1. Historical Introduction</h2>
+      <div class="space-y-4 text-slate-300 leading-8">
+        <p>Jewish Poland was not a single community, but an entire world of communities, institutions, dialects, study houses, synagogues, newspapers, trade networks, political movements, youth organizations and spiritual life.</p>
+        <p>Poland’s position between Eastern and Western Europe made it a meeting ground of Ashkenazi traditions, Polish, Lithuanian, Ukrainian and Russian influences, Torah learning, Hasidism, the Haskalah, Zionism, the Bund and modern Yiddish culture.</p>
+      </div>
+    </section>
+
+    <section class="card p-5 md:p-6">
+      <button class="accordion-btn" type="button" aria-expanded="false" aria-controls="panel-timeline">
+        <span><i class="fa-solid fa-timeline text-blue-300 mr-2"></i><strong class="text-2xl md:text-3xl font-black">2. Short Timeline</strong><small class="block text-slate-400 mt-1">Click to open a deeper historical explanation</small></span>
+        <i class="fa-solid fa-chevron-down text-amber-200"></i>
+      </button>
+      <div id="panel-timeline" class="accordion-panel text-slate-300 leading-8">
+        <div class="timeline-item"><strong class="text-white">Middle Ages:</strong> Jewish settlement developed around towns, trade routes and centers of authority. Communities created synagogues, cemeteries, charitable institutions and rabbinic leadership.</div>
+        <div class="timeline-item"><strong class="text-white">16th century:</strong> Poland became one of the great centers of Ashkenazi Jewry, with rabbinic scholarship, Hebrew printing, community organization and cultural expansion.</div>
+        <div class="timeline-item"><strong class="text-white">17th–18th centuries:</strong> Polish-Lithuanian Jewry experienced crises and violence, but also spiritual renewal. Hasidism emerged in Eastern Europe and reshaped Jewish religious life.</div>
+        <div class="timeline-item"><strong class="text-white">19th century:</strong> The partitions of Poland placed Jews under Russian, Prussian and Austrian rule. New movements emerged: the Haskalah, Zionism, Jewish socialism, Yiddish journalism and modern Jewish politics.</div>
+        <div class="timeline-item"><strong class="text-white">1918–1939:</strong> Independent Poland contained one of the largest Jewish communities in the world, with schools, parties, youth movements, newspapers, theaters, yeshivas and religious life.</div>
+        <div class="timeline-item"><strong class="text-white">1939–1945:</strong> Nazi occupation destroyed most of Polish Jewry through ghettos, forced labor, deportations, camps, starvation and mass murder.</div>
+        <div class="timeline-item"><strong class="text-white">After 1945:</strong> Survivors attempted to rebuild Jewish life, but many left Poland. Later decades brought memory projects, museums, cemetery restoration, festivals and roots journeys.</div>
+      </div>
+    </section>
+
+    <section class="card p-5 md:p-6">
+      <button class="accordion-btn" type="button" aria-expanded="false" aria-controls="panel-centers">
+        <span><i class="fa-solid fa-city text-emerald-300 mr-2"></i><strong class="text-2xl md:text-3xl font-black">3. Important Jewish Centers in Poland</strong><small class="block text-slate-400 mt-1">Click to open details about cities and communities</small></span>
+        <i class="fa-solid fa-chevron-down text-amber-200"></i>
+      </button>
+      <div id="panel-centers" class="accordion-panel">
+        <div class="grid md:grid-cols-3 gap-4">
+          <a class="city-link" href="cities/warsaw-en.html"><strong class="text-white block mb-1">Warsaw</strong><span class="text-sm text-slate-400">The largest Jewish community in Poland before the Holocaust, and a major center of Yiddish culture, education, politics and memory.</span></a>
+          <a class="city-link" href="cities/krakow-en.html"><strong class="text-white block mb-1">Kraków and Kazimierz</strong><span class="text-sm text-slate-400">One of the most recognizable Jewish heritage landscapes in Poland, known for synagogues, cemeteries and historic Jewish streets.</span></a>
+          <a class="city-link" href="cities/lodz-en.html"><strong class="text-white block mb-1">Łódź</strong><span class="text-sm text-slate-400">A major industrial city with a large Jewish population and one of the largest and longest-lasting ghettos during the Holocaust.</span></a>
+          <a class="city-link" href="cities/poznan-en.html"><strong class="text-white block mb-1">Poznań</strong><span class="text-sm text-slate-400">An old community in western Poland shaped by Polish and German cultural influences.</span></a>
+          <a class="city-link" href="cities/wroclaw-en.html"><strong class="text-white block mb-1">Wrocław / Breslau</strong><span class="text-sm text-slate-400">An important Jewish center in a German-Polish borderland, with rabbinic, academic and communal traditions.</span></a>
+          <a class="city-link" href="cities/gdansk-en.html"><strong class="text-white block mb-1">Gdańsk / Danzig</strong><span class="text-sm text-slate-400">A Baltic community shaped by maritime trade, migration, shifting borders and multicultural urban life.</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="card p-5 md:p-6">
+      <button class="accordion-btn" type="button" aria-expanded="false" aria-controls="panel-topics">
+        <span><i class="fa-solid fa-layer-group text-purple-300 mr-2"></i><strong class="text-2xl md:text-3xl font-black">4. Main Research Themes</strong><small class="block text-slate-400 mt-1">Click to open deeper explanations</small></span>
+        <i class="fa-solid fa-chevron-down text-amber-200"></i>
+      </button>
+      <div id="panel-topics" class="accordion-panel">
+        <div class="topic-grid">
+          <article class="topic" style="--from:#2563eb;--to:#7c3aed"><i class="fa-solid fa-synagogue text-3xl mb-4"></i><h3 class="text-xl font-black mb-2">Community and Institutions</h3><p class="text-white/85 text-sm leading-7">Jewish communities were organized through synagogues, study houses, cemeteries, charity networks, education, rabbinic authority and local leadership.</p></article>
+          <article class="topic" style="--from:#f59e0b;--to:#dc2626"><i class="fa-solid fa-book text-3xl mb-4"></i><h3 class="text-xl font-black mb-2">Torah and Hasidism</h3><p class="text-white/85 text-sm leading-7">Poland was a center of Torah learning, rabbinic authority, yeshivas and Hasidic life, emphasizing devotion, melody, joy and spiritual leadership.</p></article>
+          <article class="topic" style="--from:#0891b2;--to:#0f766e"><i class="fa-solid fa-language text-3xl mb-4"></i><h3 class="text-xl font-black mb-2">Yiddish and Culture</h3><p class="text-white/85 text-sm leading-7">Yiddish was a language of home, street, press, theater, literature, humor, education and daily life.</p></article>
+          <article class="topic" style="--from:#9333ea;--to:#db2777"><i class="fa-solid fa-people-arrows text-3xl mb-4"></i><h3 class="text-xl font-black mb-2">Jewish Politics</h3><p class="text-white/85 text-sm leading-7">Zionists, the Bund, Agudath Israel, youth movements and secular and religious parties debated language, education, faith, class and the future of Jewish life.</p></article>
+          <article class="topic" style="--from:#64748b;--to:#111827"><i class="fa-solid fa-triangle-exclamation text-3xl mb-4"></i><h3 class="text-xl font-black mb-2">The Holocaust</h3><p class="text-white/85 text-sm leading-7">The destruction of Polish Jewry included ghettos, camps, deportations, starvation, forced labor, resistance and underground documentation.</p></article>
+          <article class="topic" style="--from:#22c55e;--to:#0ea5e9"><i class="fa-solid fa-seedling text-3xl mb-4"></i><h3 class="text-xl font-black mb-2">Memory and Preservation</h3><p class="text-white/85 text-sm leading-7">Museums, cemetery restoration, memorial plaques, festivals, research and roots journeys preserve not only death, but the Jewish life that existed before.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="card p-5 md:p-6">
+      <h2 class="text-2xl md:text-3xl font-black text-white mb-4"><i class="fa-solid fa-star-of-david text-amber-300 mr-2"></i>5. Jewish Life Before the Holocaust</h2>
+      <div class="space-y-4 text-slate-300 leading-8">
+        <p>Before World War II, millions of Jews lived in Poland. Some lived in major cities such as Warsaw, Łódź and Kraków, while others lived in small towns — shtetls — where Jewish life formed a central part of local society.</p>
+        <p>The communities included Hasidim, Mitnagdim, Haskalah circles, Zionists, socialists, Yiddish speakers, Polish speakers, artisans, merchants, yeshiva students, teachers, journalists, artists and workers.</p>
+      </div>
+    </section>
+
+    <section class="card p-5 md:p-6">
+      <h2 class="text-2xl md:text-3xl font-black text-white mb-4"><i class="fa-solid fa-fire-flame-curved text-red-300 mr-2"></i>6. The Holocaust and the Destruction of Polish Jewry</h2>
+      <div class="space-y-4 text-slate-300 leading-8">
+        <p>Nazi occupation turned Poland into a central geography of genocide. Jews were forced into ghettos, sent to forced labor, suffered hunger, disease, violence and deportations, and were murdered in vast numbers.</p>
+        <p>The Warsaw Ghetto, the Łódź Ghetto, Kraków, Lublin and many other places became symbols of suffering, resistance, documentation and memory.</p>
+      </div>
+    </section>
+
+    <section class="card p-5 md:p-6">
+      <h2 class="text-2xl md:text-3xl font-black text-white mb-4"><i class="fa-solid fa-masks-theater text-purple-300 mr-2"></i>7. Jewish Folklore in Poland</h2>
+      <div class="space-y-4 text-slate-300 leading-8">
+        <p>Jewish folklore in Poland was transmitted orally within families, towns, markets, synagogues, Sabbath tables, weddings, funerals, holidays and children’s stories.</p>
+        <p>It blended ancient Jewish tradition with the Slavic and Polish environment: stories of angels, demons, dybbuks, souls, charms, amulets, hidden righteous figures and wonder-working leaders.</p>
+        <p><strong class="text-white">Hasidic tales and righteous figures:</strong> Polish and Polish-Lithuanian Jewish culture developed rich traditions about rebbes, tzaddikim, scholars and miracle-working figures.</p>
+        <p><strong class="text-white">Baalei Shem, healers and charms:</strong> The golem legend is not characteristic of Poland and is primarily associated with Prague. In the Polish context, it is more accurate to emphasize baalei shem, folk healers, amulet writers and local storytellers.</p>
+        <p><strong class="text-white">Dybbuks, demons and souls:</strong> Dybbuk stories were widespread in Eastern European Jewish culture and expressed religious and social fears.</p>
+        <p><strong class="text-white">Nigunim, klezmer musicians and Yiddish humor:</strong> Weddings and holidays included Hasidic melodies, klezmer music, jesters, folk songs and Yiddish humor.</p>
+      </div>
+    </section>
+  </main>
+  <script>
+    document.querySelectorAll('.accordion-btn').forEach(function(button) {
+      button.addEventListener('click', function() {
+        const panel = document.getElementById(button.getAttribute('aria-controls'));
+        const open = button.getAttribute('aria-expanded') === 'true';
+        button.setAttribute('aria-expanded', String(!open));
+        panel.classList.toggle('open', !open);
+        const icon = button.querySelector('.fa-chevron-down, .fa-chevron-up');
+        if (icon) {
+          icon.classList.toggle('fa-chevron-down', open);
+          icon.classList.toggle('fa-chevron-up', !open);
+        }
+      });
+    });
+  </script>
+  <script src="assets/js/dropdown-nav.js"></script>
+</body>
+</html>
