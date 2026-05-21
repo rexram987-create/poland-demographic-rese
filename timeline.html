@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ציר הזמן ההיסטורי של פולין | Global Explorer Hub</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/dropdown-nav.css">
+  <style>
+    body{
+      background:
+        radial-gradient(circle at 15% 8%, rgba(239,68,68,.28), transparent 28%),
+        radial-gradient(circle at 85% 14%, rgba(59,130,246,.28), transparent 30%),
+        radial-gradient(circle at 50% 90%, rgba(245,158,11,.18), transparent 32%),
+        #020617;
+      color:#e2e8f0;
+      font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+    }
+    .glass{background:rgba(15,23,42,.76);border:1px solid rgba(148,163,184,.24);border-radius:28px;box-shadow:0 24px 70px rgba(0,0,0,.38);backdrop-filter:blur(16px)}
+    .timeline-wrap{position:relative}
+    .timeline-wrap::before{content:"";position:absolute;top:0;bottom:0;right:1.28rem;width:4px;border-radius:99px;background:linear-gradient(#ef4444,#3b82f6,#f59e0b,#22c55e)}
+    .time-item{position:relative;padding-right:4rem;margin-bottom:1rem}
+    .time-dot{position:absolute;right:.55rem;top:1.05rem;width:1.55rem;height:1.55rem;border-radius:999px;background:linear-gradient(135deg,var(--from),var(--to));border:3px solid #020617;box-shadow:0 0 0 3px rgba(255,255,255,.12)}
+    .time-button{width:100%;text-align:right;background:rgba(15,23,42,.86);border:1px solid rgba(148,163,184,.22);border-radius:22px;padding:1rem 1.1rem;display:grid;grid-template-columns:auto 1fr auto;gap:1rem;align-items:center;transition:.2s ease;box-shadow:0 14px 34px rgba(0,0,0,.25)}
+    .time-button:hover,.time-button[aria-expanded="true"]{border-color:rgba(255,255,255,.42);transform:translateY(-2px);background:rgba(30,41,59,.92)}
+    .year-badge{min-width:84px;text-align:center;border-radius:16px;padding:.7rem .8rem;color:white;font-weight:900;background:linear-gradient(135deg,var(--from),var(--to));box-shadow:0 12px 28px rgba(0,0,0,.28)}
+    .panel{display:none;margin-top:.55rem;background:rgba(2,6,23,.68);border:1px solid rgba(148,163,184,.18);border-radius:20px;padding:1rem 1.1rem;line-height:1.9;color:#cbd5e1}
+    .panel.open{display:block;animation:openPanel .22s ease}
+    @keyframes openPanel{from{opacity:0;transform:translateY(-5px)}to{opacity:1;transform:translateY(0)}}
+    .tag{display:inline-flex;align-items:center;gap:.4rem;border-radius:999px;padding:.4rem .75rem;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.14);color:#dbeafe;font-size:.82rem}
+    @media(max-width:720px){.timeline-wrap::before{right:.75rem}.time-item{padding-right:2.7rem}.time-dot{right:.05rem}.time-button{grid-template-columns:1fr auto}.year-badge{grid-column:1/-1;text-align:right}.time-button i:first-child{display:none}}
+  </style>
+</head>
+<body>
+  <main class="max-w-6xl mx-auto px-4 py-8 md:py-12 space-y-8">
+    <header class="glass p-6 md:p-10">
+      <div class="flex flex-wrap gap-2 mb-5">
+        <span class="tag"><i class="fa-solid fa-clock-rotate-left"></i> ציר זמן אינטראקטיבי</span>
+        <span class="tag"><i class="fa-solid fa-hand-pointer"></i> לחצו לפתיחת הסבר</span>
+        <span class="tag"><i class="fa-solid fa-earth-europe"></i> פולין לאורך הדורות</span>
+      </div>
+      <p class="text-red-200 font-bold tracking-wide mb-3">POLAND HISTORY TIMELINE</p>
+      <h1 class="text-4xl md:text-6xl font-black text-white leading-tight mb-4">ציר הזמן ההיסטורי של פולין</h1>
+      <p class="text-slate-300 leading-8 max-w-4xl">עמוד זה מציג את התחנות המרכזיות בתולדות פולין. כל אירוע מופיע ככרטיס לחיץ: בלחיצה עליו נפתח הסבר מורחב על משמעות התקופה, ההקשר ההיסטורי והקשר שלה לזהות הפולנית.</p>
+      <div class="flex flex-wrap gap-3 mt-6">
+        <a href="index.html" class="rounded-full bg-blue-500 hover:bg-blue-400 text-white font-bold px-5 py-3 transition"><i class="fa-solid fa-house ml-2"></i>חזרה לדף הבית</a>
+        <a href="poland.html" class="rounded-full bg-red-500 hover:bg-red-400 text-white font-bold px-5 py-3 transition"><i class="fa-solid fa-flag ml-2"></i>דף פולין</a>
+      </div>
+    </header>
+
+    <section class="glass p-4 md:p-6">
+      <div class="timeline-wrap" id="timeline">
+
+        <article class="time-item" style="--from:#ef4444;--to:#f97316">
+          <span class="time-dot"></span>
+          <button class="time-button" type="button" aria-expanded="false" aria-controls="event-966">
+            <span class="year-badge">966</span>
+            <span><strong class="text-xl text-white">טבילת פולין והופעת המדינה הפולנית המוקדמת</strong><small class="block text-slate-400 mt-1">מיישקו הראשון וקבלת הנצרות הקתולית</small></span>
+            <i class="fa-solid fa-chevron-down text-slate-300"></i>
+          </button>
+          <div class="panel" id="event-966">
+            שנת 966 נחשבת לנקודת יסוד סמלית בתולדות פולין. מיישקו הראשון, שליט משושלת פיאסט, קיבל את הנצרות הקתולית וחיבר את פולין הצעירה לעולם הלטיני־קתולי של מערב אירופה. האירוע לא היה רק דתי, אלא גם מדיני: הוא חיזק את מעמד השליט, יצר קשרים דיפלומטיים, והציב את פולין בתוך מערכת התרבות, הכתיבה והכנסייה של אירופה הנוצרית.
+          </div>
+        </article>
+
+        <article class="time-item" style="--from:#f59e0b;--to:#dc2626">
+          <span class="time-dot"></span>
+          <button class="time-button" type="button" aria-expanded="false" aria-controls="event-1025">
+            <span class="year-badge">1025</span>
+            <span><strong class="text-xl text-white">הכתרת בולסלאב הראשון והתגבשות הממלכה</strong><small class="block text-slate-400 mt-1">מעבר מנסיכות אזורית לממלכה בעלת יוקרה</small></span>
+            <i class="fa-solid fa-chevron-down text-slate-300"></i>
+          </button>
+          <div class="panel" id="event-1025">
+            בשנת 1025 הוכתר בולסלאב הראשון למלך פולין. ההכתרה סימלה עלייה במעמדה של פולין ממסגרת שבטית־נסיכותית לממלכה בעלת הכרה ויוקרה. היא חיזקה את מוסד המלוכה, את הקשר עם הכנסייה ואת השאיפה הפולנית לעצמאות מדינית בתוך אירופה של ימי הביניים.
+          </div>
+        </article>
+
+        <article class="time-item" style="--from:#3b82f6;--to:#7c3aed">
+          <span class="time-dot"></span>
+          <button class="time-button" type="button" aria-expanded="false" aria-controls="event-1385">
+            <span class="year-badge">1385</span>
+            <span><strong class="text-xl text-white">האיחוד עם ליטא</strong><small class="block text-slate-400 mt-1">ברית קרבו וראשית שותפות פולנית־ליטאית</small></span>
+            <i class="fa-solid fa-chevron-down text-slate-300"></i>
+          </button>
+          <div class="panel" id="event-1385">
+            ברית קרבו יצרה קשר dynastic ופוליטי בין פולין לליטא. הברית נולדה מתוך צרכים אסטרטגיים, ביטחוניים ודתיים, והכינה את הקרקע לאחת הישויות המדיניות החשובות באירופה המזרחית־מרכזית. היא חיברה בין מרחבים, עמים ואליטות פוליטיות, והרחיבה מאוד את אופקיה של פולין.
+          </div>
+        </article>
+
+        <article class="time-item" style="--from:#2563eb;--to:#06b6d4">
+          <span class="time-dot"></span>
+          <button class="time-button" type="button" aria-expanded="false" aria-controls="event-1569">
+            <span class="year-badge">1569</span>
+            <span><strong class="text-xl text-white">האיחוד הפולני־ליטאי</strong><small class="block text-slate-400 mt-1">איחוד לובלין ותקופת עוצמה אזורית</small></span>
+            <i class="fa-solid fa-chevron-down text-slate-300"></i>
+          </button>
+          <div class="panel" id="event-1569">
+            איחוד לובלין יצר את האיחוד הפולני־ליטאי, אחת הישויות המדיניות הגדולות באירופה. האיחוד התבסס על מלך נבחר, פרלמנט חזק ואצולה בעלת זכויות רחבות. תקופה זו קשורה לשגשוג תרבותי, מרחב רב־אתני ורב־דתי, אך גם למבנה פוליטי מורכב שיצר בהמשך חולשות פנימיות.
+          </div>
+        </article>
+
+        <article class="time-item" style="--from:#64748b;--to:#334155">
+          <span class="time-dot"></span>
+          <button class="time-button" type="button" aria-expanded="false" aria-controls="event-1795">
+            <span class="year-badge">1795</span>
+            <span><strong class="text-xl text-white">חלוקת פולין והיעלמות המדינה מהמפה</strong><small class="block text-slate-400 mt-1">רוסיה, פרוסיה ואוסטריה מחלקות את פולין</small></span>
+            <i class="fa-solid fa-chevron-down text-slate-300"></i>
+          </button>
+          <div class="panel" id="event-1795">
+            בסוף המאה ה־18 חולקה פולין בין המעצמות השכנות ונמחקה מהמפה המדינית. למרות היעדר מדינה עצמאית, הזהות הפולנית המשיכה להתקיים דרך שפה, ספרות, דת, חינוך, זיכרון היסטורי ומרידות לאומיות. התקופה הזו עיצבה עמוקות את תחושת המאבק והתחייה הלאומית הפולנית.
+          </div>
+        </article>
+
+        <article class="time-item" style="--from:#22c55e;--to:#16a34a">
+          <span class="time-dot"></span>
+          <button class="time-button" type="button" aria-expanded="false" aria-controls="event-1918">
+            <span class="year-badge">1918</span>
+            <span><strong class="text-xl text-white">עצמאות מחדש לאחר מלחמת העולם הראשונה</strong><small class="block text-slate-400 mt-1">תחיית המדינה הפולנית לאחר יותר ממאה שנה</small></span>
+            <i class="fa-solid fa-chevron-down text-slate-300"></i>
+          </button>
+          <div class="panel" id="event-1918">
+            בשנת 1918 שבה פולין לעצמאות בעקבות התמוטטות האימפריות הישנות לאחר מלחמת העולם הראשונה. תחיית המדינה הייתה הישג עצום, אך גם אתגר אדיר: היה צורך לאחד אזורים שהיו תחת שלטונות שונים, לבנות מוסדות, גבולות, צבא, כלכלה ומערכת פוליטית חדשה.
+          </div>
+        </article>
+
+        <article class="time-item" style="--from:#b91c1c;--to:#111827">
+          <span class="time-dot"></span>
+          <button class="time-button" type="button" aria-expanded="false" aria-controls="event-1939">
+            <span class="year-badge">1939</span>
+            <span><strong class="text-xl text-white">פלישת גרמניה וברית המועצות לפולין</strong><small class="block text-slate-400 mt-1">ראשית מלחמת העולם השנייה באירופה</small></span>
+            <i class="fa-solid fa-chevron-down text-slate-300"></i>
+          </button>
+          <div class="panel" id="event-1939">
+            בשנת 1939 הותקפה פולין ממערב על ידי גרמניה הנאצית וממזרח על ידי ברית המועצות. הפלישה סימנה את פתיחת מלחמת העולם השנייה באירופה והובילה להרס עצום, כיבוש, דיכוי, גירושים ורצח המוני. עבור פולין, זו הייתה אחת התקופות הטראגיות ביותר בתולדותיה.
+          </div>
+        </article>
+
+        <article class="time-item" style="--from:#7c2d12;--to:#f97316">
+          <span class="time-dot"></span>
+          <button class="time-button" type="button" aria-expanded="false" aria-controls="event-1944">
+            <span class="year-badge">1944</span>
+            <span><strong class="text-xl text-white">מרד ורשה</strong><small class="block text-slate-400 mt-1">ניסיון לשחרר את הבירה לפני כניסת הצבא האדום</small></span>
+            <i class="fa-solid fa-chevron-down text-slate-300"></i>
+          </button>
+          <div class="panel" id="event-1944">
+            מרד ורשה היה אחד האירועים הדרמטיים ביותר בתולדות פולין במלחמת העולם השנייה. לוחמי המחתרת הפולנית ניסו לשחרר את העיר מהכיבוש הגרמני, אך המרד דוכא באכזריות, והעיר נהרסה במידה עצומה. האירוע הפך לסמל של גבורה, הקרבה וטרגדיה לאומית.
+          </div>
+        </article>
+
+        <article class="time-item" style="--from:#475569;--to:#0f172a">
+          <span class="time-dot"></span>
+          <button class="time-button" type="button" aria-expanded="false" aria-controls="event-1945">
+            <span class="year-badge">1945</span>
+            <span><strong class="text-xl text-white">פולין לאחר המלחמה והמשטר הקומוניסטי</strong><small class="block text-slate-400 mt-1">שינוי גבולות והשפעה סובייטית</small></span>
+            <i class="fa-solid fa-chevron-down text-slate-300"></i>
+          </button>
+          <div class="panel" id="event-1945">
+            לאחר מלחמת העולם השנייה פולין עברה שינויי גבולות דרמטיים ונכנסה לתחום ההשפעה הסובייטי. המדינה נבנתה מחדש לאחר הרס עצום, אך תחת משטר קומוניסטי. התקופה שילבה שיקום, תיעוש, שליטה פוליטית, צנזורה ומתחים בין החברה האזרחית לבין השלטון.
+          </div>
+        </article>
+
+        <article class="time-item" style="--from:#06b6d4;--to:#2563eb">
+          <span class="time-dot"></span>
+          <button class="time-button" type="button" aria-expanded="false" aria-controls="event-1980">
+            <span class="year-badge">1980</span>
+            <span><strong class="text-xl text-white">תנועת סולידריות</strong><small class="block text-slate-400 mt-1">מאבק עובדים, חופש אזרחי ושינוי פוליטי</small></span>
+            <i class="fa-solid fa-chevron-down text-slate-300"></i>
+          </button>
+          <div class="panel" id="event-1980">
+            תנועת סולידריות, שצמחה במספנות גדנסק, הפכה לאחד הסמלים החשובים של התנגדות אזרחית למשטר הקומוניסטי. היא שילבה מאבק עובדים, דרישה לחופש התארגנות, זכויות אזרח וזהות לאומית. השפעתה חרגה מפולין והייתה חלק מתהליך רחב שהוביל להתערערות הגוש הקומוניסטי.
+          </div>
+        </article>
+
+        <article class="time-item" style="--from:#22c55e;--to:#0ea5e9">
+          <span class="time-dot"></span>
+          <button class="time-button" type="button" aria-expanded="false" aria-controls="event-1989">
+            <span class="year-badge">1989</span>
+            <span><strong class="text-xl text-white">נפילת הקומוניזם ומעבר לדמוקרטיה</strong><small class="block text-slate-400 mt-1">בחירות, רפורמות וכלכלת שוק</small></span>
+            <i class="fa-solid fa-chevron-down text-slate-300"></i>
+          </button>
+          <div class="panel" id="event-1989">
+            שנת 1989 סימנה מפנה היסטורי: פולין החלה לצאת מן המשטר הקומוניסטי ולעבור לדמוקרטיה ולכלכלת שוק. המעבר היה מורכב וכואב, אך הוא פתח את הדרך להשתלבות מחודשת באירופה, לרפורמות פוליטיות, לצמיחה כלכלית ולבנייה מחדש של מוסדות אזרחיים.
+          </div>
+        </article>
+
+        <article class="time-item" style="--from:#1d4ed8;--to:#facc15">
+          <span class="time-dot"></span>
+          <button class="time-button" type="button" aria-expanded="false" aria-controls="event-2004">
+            <span class="year-badge">2004</span>
+            <span><strong class="text-xl text-white">הצטרפות פולין לאיחוד האירופי</strong><small class="block text-slate-400 mt-1">שלב חדש באינטגרציה האירופית</small></span>
+            <i class="fa-solid fa-chevron-down text-slate-300"></i>
+          </button>
+          <div class="panel" id="event-2004">
+            בשנת 2004 הצטרפה פולין לאיחוד האירופי. ההצטרפות חיזקה את הקשרים הכלכליים, הפוליטיים והתשתיתיים של פולין עם אירופה, פתחה הזדמנויות חדשות למסחר, השקעות, חינוך ותנועה חופשית, והפכה את פולין לשחקנית מרכזית יותר במרחב האירופי המודרני.
+          </div>
+        </article>
+
+      </div>
+    </section>
+  </main>
+
+  <script>
+    document.querySelectorAll('.time-button').forEach(button => {
+      button.addEventListener('click', () => {
+        const panel = document.getElementById(button.getAttribute('aria-controls'));
+        const isOpen = button.getAttribute('aria-expanded') === 'true';
+        button.setAttribute('aria-expanded', String(!isOpen));
+        panel.classList.toggle('open', !isOpen);
+        const icon = button.querySelector('.fa-chevron-down, .fa-chevron-up');
+        if (icon) {
+          icon.classList.toggle('fa-chevron-down', isOpen);
+          icon.classList.toggle('fa-chevron-up', !isOpen);
+        }
+      });
+    });
+  </script>
+  <script src="assets/js/dropdown-nav.js"></script>
+</body>
+</html>
