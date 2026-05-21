@@ -84,6 +84,7 @@
     const main = section(en ? "Main pages" : "עמודים ראשיים");
     main.appendChild(link(withPrefix("index.html"), en ? "Home" : "ראשי", en ? "Research index" : "אינדקס המחקר", "fa-solid fa-house"));
     main.appendChild(link(withPrefix(en ? "poland-en.html" : "poland.html"), en ? "Poland" : "פולין", en ? "Country research" : "מחקר מדינה", "fa-solid fa-flag"));
+    main.appendChild(link(withPrefix("timeline.html"), en ? "Timeline" : "ציר זמן", en ? "Interactive history" : "היסטוריה אינטראקטיבית", "fa-solid fa-clock-rotate-left"));
     main.appendChild(link(withPrefix(en ? "sources-en.html" : "sources.html"), en ? "Sources" : "מקורות", en ? "Credits and references" : "קרדיטים ומקורות", "fa-solid fa-link"));
     main.appendChild(link(withPrefix(en ? "about-en.html" : "about.html"), en ? "About" : "אודות", en ? "Project information" : "מידע על הפרויקט", "fa-solid fa-circle-info"));
 
