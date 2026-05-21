@@ -8,15 +8,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="assets/css/dropdown-nav.css">
   <style>
-    body{
-      background:
-        radial-gradient(circle at 12% 8%, rgba(59,130,246,.25), transparent 28%),
-        radial-gradient(circle at 88% 16%, rgba(245,158,11,.22), transparent 30%),
-        radial-gradient(circle at 50% 94%, rgba(168,85,247,.18), transparent 33%),
-        #020617;
-      color:#e2e8f0;
-      font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
-    }
+    body{background:radial-gradient(circle at 12% 8%, rgba(59,130,246,.25), transparent 28%),radial-gradient(circle at 88% 16%, rgba(245,158,11,.22), transparent 30%),radial-gradient(circle at 50% 94%, rgba(168,85,247,.18), transparent 33%),#020617;color:#e2e8f0;font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
     .glass{background:rgba(15,23,42,.78);border:1px solid rgba(148,163,184,.22);border-radius:28px;box-shadow:0 24px 70px rgba(0,0,0,.38);backdrop-filter:blur(16px)}
     .gold-title{background:linear-gradient(90deg,#ffffff,#fde68a,#bfdbfe,#fef3c7,#ffffff);-webkit-background-clip:text;background-clip:text;color:transparent}
     .tag{display:inline-flex;align-items:center;gap:.45rem;border-radius:999px;padding:.45rem .8rem;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.15);color:#e0f2fe;font-size:.86rem}
@@ -26,31 +18,20 @@
     .topic{position:relative;overflow:hidden;border-radius:24px;padding:1.15rem;min-height:170px;border:1px solid rgba(255,255,255,.14);background:linear-gradient(135deg,var(--from),var(--to));box-shadow:0 18px 40px rgba(0,0,0,.3)}
     .topic::after{content:"";position:absolute;inset:-70px;background:radial-gradient(circle at 28% 18%,rgba(255,255,255,.32),transparent 32%)}
     .topic>*{position:relative;z-index:1}
-    .timeline{position:relative;padding-right:2.7rem}
-    .timeline::before{content:"";position:absolute;top:0;bottom:0;right:.65rem;width:3px;border-radius:99px;background:linear-gradient(#f59e0b,#3b82f6,#a855f7,#ef4444)}
-    .event{position:relative;margin-bottom:1rem;background:rgba(2,6,23,.55);border:1px solid rgba(148,163,184,.18);border-radius:20px;padding:1rem}
-    .event::before{content:"";position:absolute;right:-2.38rem;top:1rem;width:1rem;height:1rem;border-radius:50%;background:#fbbf24;border:3px solid #020617;box-shadow:0 0 0 3px rgba(251,191,36,.18)}
-    .city-link{display:block;background:rgba(2,6,23,.55);border:1px solid rgba(148,163,184,.18);border-radius:18px;padding:1rem;color:#e2e8f0;text-decoration:none;transition:.2s ease}
-    .city-link:hover{background:rgba(30,41,59,.8);border-color:rgba(251,191,36,.45);transform:translateY(-2px)}
+    .timeline{position:relative;padding-right:2.7rem}.timeline::before{content:"";position:absolute;top:0;bottom:0;right:.65rem;width:3px;border-radius:99px;background:linear-gradient(#f59e0b,#3b82f6,#a855f7,#ef4444)}
+    .event{position:relative;margin-bottom:1rem;background:rgba(2,6,23,.55);border:1px solid rgba(148,163,184,.18);border-radius:20px;padding:1rem}.event::before{content:"";position:absolute;right:-2.38rem;top:1rem;width:1rem;height:1rem;border-radius:50%;background:#fbbf24;border:3px solid #020617;box-shadow:0 0 0 3px rgba(251,191,36,.18)}
+    .city-link{display:block;background:rgba(2,6,23,.55);border:1px solid rgba(148,163,184,.18);border-radius:18px;padding:1rem;color:#e2e8f0;text-decoration:none;transition:.2s ease}.city-link:hover{background:rgba(30,41,59,.8);border-color:rgba(251,191,36,.45);transform:translateY(-2px)}
   </style>
 </head>
 <body>
   <main class="max-w-6xl mx-auto px-4 py-8 md:py-12 space-y-8">
     <header class="glass p-6 md:p-10 overflow-hidden relative">
       <div class="relative z-10">
-        <div class="flex flex-wrap gap-2 mb-5">
-          <span class="tag"><i class="fa-solid fa-star-of-david"></i> מורשת יהודית</span>
-          <span class="tag"><i class="fa-solid fa-book-open"></i> מחקר היסטורי</span>
-          <span class="tag"><i class="fa-solid fa-map-location-dot"></i> קהילות וערים</span>
-        </div>
+        <div class="flex flex-wrap gap-2 mb-5"><span class="tag"><i class="fa-solid fa-star-of-david"></i> מורשת יהודית</span><span class="tag"><i class="fa-solid fa-book-open"></i> מחקר היסטורי</span><span class="tag"><i class="fa-solid fa-map-location-dot"></i> קהילות וערים</span></div>
         <p class="text-amber-200 font-bold tracking-wide mb-3">POLISH JEWRY • ŻYDZI POLSCY</p>
         <h1 class="gold-title text-4xl md:text-6xl font-black leading-tight mb-5">יהדות פולין — קהילה, תרבות, חורבן ומורשת</h1>
         <p class="text-slate-200 leading-9 text-lg max-w-4xl">דף מחקר על אחת הקהילות היהודיות החשובות, הגדולות והמשפיעות בתולדות אירופה. יהדות פולין הייתה מרכז של תורה, חסידות, מסחר, דפוס, השכלה, פוליטיקה יהודית, תרבות יידיש, ציונות, תנועות נוער וחיים עירוניים עשירים — עד החורבן האדיר בתקופת השואה, ולאחריו מאבקי זיכרון, שיקום ושימור מורשת.</p>
-        <div class="flex flex-wrap gap-3 mt-7">
-          <a href="index.html" class="rounded-full bg-blue-500 hover:bg-blue-400 text-white font-bold px-5 py-3 transition"><i class="fa-solid fa-house ml-2"></i>דף הבית</a>
-          <a href="timeline.html" class="rounded-full bg-emerald-500 hover:bg-emerald-400 text-white font-bold px-5 py-3 transition"><i class="fa-solid fa-clock-rotate-left ml-2"></i>ציר הזמן</a>
-          <a href="cities/krakow.html" class="rounded-full bg-amber-400 hover:bg-amber-300 text-slate-950 font-bold px-5 py-3 transition"><i class="fa-solid fa-city ml-2"></i>קרקוב וקז׳ימייז׳</a>
-        </div>
+        <div class="flex flex-wrap gap-3 mt-7"><a href="index.html" class="rounded-full bg-blue-500 hover:bg-blue-400 text-white font-bold px-5 py-3 transition"><i class="fa-solid fa-house ml-2"></i>דף הבית</a><a href="timeline.html" class="rounded-full bg-emerald-500 hover:bg-emerald-400 text-white font-bold px-5 py-3 transition"><i class="fa-solid fa-clock-rotate-left ml-2"></i>ציר הזמן</a><a href="cities/krakow.html" class="rounded-full bg-amber-400 hover:bg-amber-300 text-slate-950 font-bold px-5 py-3 transition"><i class="fa-solid fa-city ml-2"></i>קרקוב וקז׳ימייז׳</a></div>
       </div>
     </header>
 
@@ -61,79 +42,40 @@
       <div class="stat"><i class="fa-solid fa-landmark text-emerald-300 text-2xl mb-2"></i><p class="text-sm text-slate-400">מוקדי מורשת</p><strong class="text-white text-xl">ורשה, קרקוב, לובלין</strong></div>
     </section>
 
+    <section class="section-card"><h2 class="text-2xl md:text-3xl font-black text-white mb-4"><i class="fa-solid fa-book-open text-amber-300 ml-2"></i>1. מבוא היסטורי</h2><div class="space-y-4 text-slate-300 leading-8"><p>יהדות פולין לא הייתה רק קהילה אחת, אלא עולם שלם של קהילות, מוסדות, ניבים, בתי מדרש, בתי כנסת, עיתונות, מסחר, מפלגות, תנועות נוער וחיים רוחניים. במשך מאות שנים הייתה פולין אחד המרכזים הגדולים ביותר של העם היהודי באירופה.</p><p>מיקומה של פולין בין מזרח למערב אירופה הפך אותה למרחב מפגש: מסורות אשכנזיות, השפעות גרמניות, פולניות, ליטאיות, אוקראיניות ורוסיות, יחד עם חיי תורה, חסידות, מתנגדים, השכלה, ציונות, בונד ותרבות יידיש מודרנית.</p><p>הדף הזה נועד להציג את יהדות פולין באופן רחב: לא רק דרך השואה, אלא גם דרך החיים שהיו לפניה, התרבות שצמחה בה, הערים שבהן התקיימה, והמאמצים לשמר את זכרה כיום.</p></div></section>
+
+    <section class="section-card"><h2 class="text-2xl md:text-3xl font-black text-white mb-4"><i class="fa-solid fa-timeline text-blue-300 ml-2"></i>2. ציר זמן מקוצר של יהדות פולין</h2><div class="timeline text-slate-300 leading-8"><article class="event"><strong class="text-white">ימי הביניים:</strong> התיישבות יהודית מתפתחת בערים ובמרכזי מסחר. יהודים מוצאים בפולין מרחב יחסי של פעילות כלכלית, קהילתית ודתית.</article><article class="event"><strong class="text-white">המאה ה־16:</strong> פולין הופכת לאחד המרכזים החשובים של יהדות אשכנז. מתפתחים מוסדות קהילה, לימוד, רבנות, דפוס וארגון עצמי.</article><article class="event"><strong class="text-white">המאות ה־17–18:</strong> תקופות של משבר, פגיעות, שינויים פוליטיים, התפתחות חסידות במרחב הפולני־ליטאי והעמקת עולם הישיבות והחצרות.</article><article class="event"><strong class="text-white">המאה ה־19:</strong> חלוקות פולין מביאות את היהודים לשלטון רוסי, פרוסי ואוסטרי. צומחות תנועות השכלה, ציונות, סוציאליזם יהודי, עיתונות ותרבות מודרנית.</article><article class="event"><strong class="text-white">1918–1939:</strong> בפולין העצמאית מתקיימת אחת הקהילות היהודיות הגדולות בעולם. לצד יצירה תרבותית וחיים פוליטיים עשירים, קיימים גם מתחים, עוני ואנטישמיות.</article><article class="event"><strong class="text-white">1939–1945:</strong> הכיבוש הנאצי מוביל לגטאות, מחנות, השמדה ורצח רוב יהודי פולין. ורשה, לודז׳, קרקוב ולובלין הופכות למוקדי טרגדיה וזיכרון.</article><article class="event"><strong class="text-white">לאחר 1945:</strong> שארית הפליטה, הגירה, ניסיונות שיקום, אנטישמיות מחודשת, עזיבות נוספות, ולצד זאת מאמצי זיכרון, מחקר ושימור אתרי מורשת.</article></div></section>
+
+    <section class="section-card"><h2 class="text-2xl md:text-3xl font-black text-white mb-4"><i class="fa-solid fa-city text-emerald-300 ml-2"></i>3. מרכזים יהודיים חשובים בפולין</h2><div class="grid md:grid-cols-3 gap-4"><a class="city-link" href="cities/warsaw.html"><strong class="text-white block mb-1">ורשה</strong><span class="text-sm text-slate-400">הקהילה היהודית הגדולה ביותר בפולין ערב השואה, מרכז פוליטי, תרבותי ועיתונאי.</span></a><a class="city-link" href="cities/krakow.html"><strong class="text-white block mb-1">קרקוב וקז׳ימייז׳</strong><span class="text-sm text-slate-400">מרחב יהודי היסטורי מפורסם, בתי כנסת, בתי עלמין, מורשת קהילתית ותיירות זיכרון.</span></a><a class="city-link" href="cities/lodz.html"><strong class="text-white block mb-1">לודז׳</strong><span class="text-sm text-slate-400">עיר תעשייה גדולה עם קהילה יהודית משמעותית וגטו לודז׳ בתקופת השואה.</span></a><a class="city-link" href="cities/poznan.html"><strong class="text-white block mb-1">פוזנן</strong><span class="text-sm text-slate-400">קהילה עתיקה באזור מערב פולין, הקשורה למסחר, עירוניות ושינויים פוליטיים.</span></a><a class="city-link" href="cities/wroclaw.html"><strong class="text-white block mb-1">ורוצלב / ברסלאו</strong><span class="text-sm text-slate-400">מרכז יהודי חשוב במרחב הגרמני־פולני, עם מורשת רבנית, אקדמית וקהילתית.</span></a><a class="city-link" href="cities/gdansk.html"><strong class="text-white block mb-1">גדנסק / דנציג</strong><span class="text-sm text-slate-400">קהילה במרחב הבלטי, קשורה למסחר, הגירה וזהות עירונית רב־תרבותית.</span></a></div></section>
+
+    <section class="section-card"><h2 class="text-2xl md:text-3xl font-black text-white mb-4"><i class="fa-solid fa-layer-group text-purple-300 ml-2"></i>4. נושאי עומק מרכזיים</h2><div class="topic-grid"><article class="topic" style="--from:#2563eb;--to:#7c3aed"><i class="fa-solid fa-synagogue text-3xl mb-4"></i><h3 class="text-xl font-black text-white mb-2">קהילה ומוסדות</h3><p class="text-white/85 text-sm leading-7">בתי כנסת, חברות קדישא, בתי מדרש, מוסדות צדקה, הנהגה רבנית ומבנה קהילתי עצמאי.</p></article><article class="topic" style="--from:#f59e0b;--to:#dc2626"><i class="fa-solid fa-book text-3xl mb-4"></i><h3 class="text-xl font-black text-white mb-2">תורה וחסידות</h3><p class="text-white/85 text-sm leading-7">פולין הייתה מרכז של לימוד תורה, רבנות, ישיבות, חסידות וחצרות רוחניות בעלות השפעה רחבה.</p></article><article class="topic" style="--from:#0891b2;--to:#0f766e"><i class="fa-solid fa-language text-3xl mb-4"></i><h3 class="text-xl font-black text-white mb-2">יידיש ותרבות</h3><p class="text-white/85 text-sm leading-7">עיתונות, תיאטרון, ספרות, שירה, חינוך, דפוס וחיים תרבותיים מודרניים ביידיש ובעברית.</p></article><article class="topic" style="--from:#9333ea;--to:#db2777"><i class="fa-solid fa-people-arrows text-3xl mb-4"></i><h3 class="text-xl font-black text-white mb-2">פוליטיקה יהודית</h3><p class="text-white/85 text-sm leading-7">ציונות, בונד, אגודת ישראל, תנועות נוער, מאבקים חברתיים ודיונים על עתיד העם היהודי.</p></article><article class="topic" style="--from:#64748b;--to:#111827"><i class="fa-solid fa-triangle-exclamation text-3xl mb-4"></i><h3 class="text-xl font-black text-white mb-2">השואה</h3><p class="text-white/85 text-sm leading-7">גטאות, מחנות, אקציות, מרידות, הצלה, תיעוד, אובדן עולם יהודי שלם וזיכרון הקורבנות.</p></article><article class="topic" style="--from:#22c55e;--to:#0ea5e9"><i class="fa-solid fa-seedling text-3xl mb-4"></i><h3 class="text-xl font-black text-white mb-2">זיכרון ושימור</h3><p class="text-white/85 text-sm leading-7">מוזיאונים, בתי עלמין, שלטי זיכרון, שיקום בתי כנסת, מסעות שורשים ומחקר קהילתי.</p></article></div></section>
+
+    <section class="section-card"><h2 class="text-2xl md:text-3xl font-black text-white mb-4"><i class="fa-solid fa-star-of-david text-amber-300 ml-2"></i>5. החיים היהודיים לפני השואה</h2><div class="space-y-4 text-slate-300 leading-8"><p>לפני מלחמת העולם השנייה חיו בפולין מיליוני יהודים. חלקם התגוררו בערים גדולות כמו ורשה, לודז׳ וקרקוב, וחלקם בעיירות קטנות — שטעטלים — שבהן החיים היהודיים היו חלק מרכזי מהמרקם המקומי.</p><p>הקהילות כללו מגוון רחב מאוד: חרדים, חסידים, מתנגדים, משכילים, ציונים, סוציאליסטים, דוברי יידיש, דוברי פולנית, בעלי מלאכה, סוחרים, תלמידי ישיבות, מורים, עיתונאים, אמנים ופועלים.</p><p>העושר של יהדות פולין נבע גם מן המתח הפנימי שבתוכה: מסורת מול מודרנה, דת מול חילון, ציונות מול השתלבות מקומית, יידיש מול עברית ופולנית, וחיים קהילתיים לצד פוליטיקה יהודית מודרנית.</p></div></section>
+
+    <section class="section-card"><h2 class="text-2xl md:text-3xl font-black text-white mb-4"><i class="fa-solid fa-candle-holder text-red-300 ml-2"></i>6. השואה וחורבן יהדות פולין</h2><div class="space-y-4 text-slate-300 leading-8"><p>הכיבוש הנאצי של פולין הפך את הארץ למרכז מרכזי של מדיניות ההשמדה. יהודים רוכזו בגטאות, נשלחו לעבודות כפייה, סבלו מרעב, מחלות, אלימות וגירושים, ולבסוף נרצחו בהמוניהם במחנות ההשמדה.</p><p>גטו ורשה, גטו לודז׳, אזור קרקוב, לובלין ומקומות רבים נוספים הפכו לסמלים של סבל, עמידה, תיעוד, מרד וזיכרון. לצד החורבן התקיימו גם ניסיונות הצלה, מחתרות, ארכיונים חשאיים, חינוך בסתר ועמידה רוחנית.</p><p>הדיון ביהדות פולין חייב להחזיק יחד שני ממדים: מצד אחד עולם חיים עשיר שהתקיים במשך מאות שנים, ומצד שני חורבן חסר תקדים שהשמיד את רובו.</p></div></section>
+
     <section class="section-card">
-      <h2 class="text-2xl md:text-3xl font-black text-white mb-4"><i class="fa-solid fa-book-open text-amber-300 ml-2"></i>1. מבוא היסטורי</h2>
+      <h2 class="text-2xl md:text-3xl font-black text-white mb-4"><i class="fa-solid fa-masks-theater text-purple-300 ml-2"></i>7. הפולקלור היהודי בפולין</h2>
       <div class="space-y-4 text-slate-300 leading-8">
-        <p>יהדות פולין לא הייתה רק קהילה אחת, אלא עולם שלם של קהילות, מוסדות, ניבים, בתי מדרש, בתי כנסת, עיתונות, מסחר, מפלגות, תנועות נוער וחיים רוחניים. במשך מאות שנים הייתה פולין אחד המרכזים הגדולים ביותר של העם היהודי באירופה.</p>
-        <p>מיקומה של פולין בין מזרח למערב אירופה הפך אותה למרחב מפגש: מסורות אשכנזיות, השפעות גרמניות, פולניות, ליטאיות, אוקראיניות ורוסיות, יחד עם חיי תורה, חסידות, מתנגדים, השכלה, ציונות, בונד ותרבות יידיש מודרנית.</p>
-        <p>הדף הזה נועד להציג את יהדות פולין באופן רחב: לא רק דרך השואה, אלא גם דרך החיים שהיו לפניה, התרבות שצמחה בה, הערים שבהן התקיימה, והמאמצים לשמר את זכרה כיום.</p>
+        <p>הפולקלור היהודי בפולין היה חלק מרכזי מן החיים העממיים של הקהילה. הוא לא התקיים רק בספרים או בבתי מדרש, אלא עבר בעל פה בתוך משפחות, בעיירות, בשווקים, בחדרים, בבתי הכנסת, סביב שולחן השבת, בחתונות, בלוויות, בחגים ובסיפורי ילדים. דרך הפולקלור אפשר לראות כיצד יהודים הבינו את העולם סביבם: פחד, תקווה, פרנסה, מחלה, מזל, שידוכים, ניסים, גזירות, צדיקים, שדים, חלומות וזיכרון קהילתי.</p>
+        <p>אחד המאפיינים החשובים של הפולקלור היהודי־פולני הוא השילוב בין מסורת יהודית עתיקה לבין החיים במרחב הסלאבי והפולני. סיפורים על מלאכים, שדים, דיבוקים, נשמות, סגולות, קמעות, צדיקים נסתרים ובעלי מופת השתלבו עם נופי העיירה, היער, הנהר, בית העלמין, בית הכנסת והפונדק. כך נוצר עולם דמיון יהודי מקומי, שבו המקרא, התלמוד, הקבלה, החסידות וחיי היומיום נפגשו זה עם זה.</p>
+        <p><strong class="text-white">סיפורי חסידים וצדיקים:</strong> בפולין ובמרחב הפולני־ליטאי התפתחו מסורות עשירות של סיפורים על אדמו״רים, צדיקים, תלמידי חכמים ובעלי מופת. סיפורים אלו עסקו בריפוי, ברכות, ראיית הנסתר, הצלת עניים, תיקון נשמות ועזרה ליהודים פשוטים. מטרתם לא הייתה רק לבדר, אלא ללמד אמונה, ענווה, צדקה, דבקות וחמלה.</p>
+        <p><strong class="text-white">דיבוקים, שדים ונשמות:</strong> סיפורי דיבוק היו נפוצים בתרבות היהודית המזרח־אירופית. הדיבוק תואר כנשמה שאינה מוצאת מנוחה ונכנסת בגוף אדם חי. סיפורים אלה שיקפו פחדים חברתיים ודתיים: חטא שלא תוקן, הבטחה שלא קוימה, עוול משפחתי, שידוך שנכשל או נשמה שלא זכתה למנוחה. טקסי גירוש דיבוק, תפילות, קמעות ונוכחות רבנית שימשו חלק מהדמיון הדתי והקהילתי.</p>
+        <p><strong class="text-white">הגולם ודמויות פלא:</strong> אף שהמסורת המפורסמת ביותר על הגולם קשורה לפראג, רעיון הגולם והאדם המלאכותי השתלב בדמיון היהודי הרחב של מרכז ומזרח אירופה. הוא ביטא רצון להגנה על הקהילה, במיוחד מול סכנות חיצוניות, עלילות דם ופגיעות ביהודים. סיפורים כאלה שיקפו את התקווה לכוח מגן נסתר בזמן חולשה פוליטית וחברתית.</p>
+        <p><strong class="text-white">מנהגים, סגולות וחיי בית:</strong> הפולקלור היהודי לא עסק רק במופלא, אלא גם בפרטים יומיומיים: מנהגי לידה, שמירה על יולדת ותינוק, מנהגי חתונה, אמונות סביב עין הרע, ברכות לפרנסה, שמירה מפני מזיקים, טקסי שבת וחג, מאכלים מסורתיים, נרות, זמירות, סימנים טובים וסיפורים סביב שולחן המשפחה.</p>
+        <p><strong class="text-white">ניגונים, בדחנים והומור יידי:</strong> עולם החתונה והחג כלל ניגונים חסידיים, כליזמרים, בדחנים ושירים עממיים. ההומור היידי היה כלי חשוב להתמודדות עם עוני, פחד, שלטון זר, מצוקה משפחתית וקשיי פרנסה. הבדיחה היהודית לא הייתה רק בידור; היא הייתה צורת חשיבה, ביקורת חברתית ודרך לשרוד מציאות קשה.</p>
+        <p><strong class="text-white">משלים, סיפורי חכמים ופתגמים:</strong> ביידיש ובעברית עממית נפוצו פתגמים, משלים וסיפורי חכמים. הם לימדו זהירות, חכמה מעשית, יחס לכסף, משפחה, שכנים, לימוד תורה, שידוכים ויחסים בין עשירים לעניים. הפתגם היה קצר, חד, לעיתים מצחיק ולעיתים מריר — והוא שימש כזיכרון מרוכז של ניסיון חיים קהילתי.</p>
+        <p><strong class="text-white">זיכרון השטעטל:</strong> לאחר השואה, הפולקלור היהודי של פולין קיבל משמעות נוספת: הוא הפך לגשר אל עולם שנחרב. סיפורי עיירה, שירי יידיש, מאכלים, ניגונים, בדיחות, שמות משפחה, בתי כנסת, בתי עלמין וסיפורי סבים וסבתות הפכו לאמצעים לשחזור זיכרון, זהות ושייכות. לכן סעיף הפולקלור אינו רק “תרבות עממית”, אלא דרך להבין את החיים עצמם — את הקולות, הפחדים, השמחות, הדמיון והנשמה של יהדות פולין.</p>
+      </div>
+      <div class="topic-grid mt-5">
+        <article class="topic" style="--from:#7c3aed;--to:#2563eb"><i class="fa-solid fa-ghost text-3xl mb-4"></i><h3 class="text-xl font-black text-white mb-2">דיבוקים ושדים</h3><p class="text-white/85 text-sm leading-7">סיפורים על נשמות, פחדים, קמעות וטקסי תיקון קהילתיים.</p></article>
+        <article class="topic" style="--from:#f59e0b;--to:#b45309"><i class="fa-solid fa-music text-3xl mb-4"></i><h3 class="text-xl font-black text-white mb-2">ניגונים וכליזמרים</h3><p class="text-white/85 text-sm leading-7">חתונות, שמחות, ריקודים, ניגונים חסידיים ומוזיקה עממית.</p></article>
+        <article class="topic" style="--from:#059669;--to:#0f766e"><i class="fa-solid fa-comments text-3xl mb-4"></i><h3 class="text-xl font-black text-white mb-2">יידיש והומור</h3><p class="text-white/85 text-sm leading-7">בדיחות, פתגמים, משלים וחכמת חיים עממית.</p></article>
+        <article class="topic" style="--from:#be123c;--to:#7f1d1d"><i class="fa-solid fa-hands-praying text-3xl mb-4"></i><h3 class="text-xl font-black text-white mb-2">צדיקים וסגולות</h3><p class="text-white/85 text-sm leading-7">סיפורי חסידים, ברכות, מופתים, קמעות ומנהגי בית.</p></article>
       </div>
     </section>
 
-    <section class="section-card">
-      <h2 class="text-2xl md:text-3xl font-black text-white mb-4"><i class="fa-solid fa-timeline text-blue-300 ml-2"></i>2. ציר זמן מקוצר של יהדות פולין</h2>
-      <div class="timeline text-slate-300 leading-8">
-        <article class="event"><strong class="text-white">ימי הביניים:</strong> התיישבות יהודית מתפתחת בערים ובמרכזי מסחר. יהודים מוצאים בפולין מרחב יחסי של פעילות כלכלית, קהילתית ודתית.</article>
-        <article class="event"><strong class="text-white">המאה ה־16:</strong> פולין הופכת לאחד המרכזים החשובים של יהדות אשכנז. מתפתחים מוסדות קהילה, לימוד, רבנות, דפוס וארגון עצמי.</article>
-        <article class="event"><strong class="text-white">המאות ה־17–18:</strong> תקופות של משבר, פגיעות, שינויים פוליטיים, התפתחות חסידות במרחב הפולני־ליטאי והעמקת עולם הישיבות והחצרות.</article>
-        <article class="event"><strong class="text-white">המאה ה־19:</strong> חלוקות פולין מביאות את היהודים לשלטון רוסי, פרוסי ואוסטרי. צומחות תנועות השכלה, ציונות, סוציאליזם יהודי, עיתונות ותרבות מודרנית.</article>
-        <article class="event"><strong class="text-white">1918–1939:</strong> בפולין העצמאית מתקיימת אחת הקהילות היהודיות הגדולות בעולם. לצד יצירה תרבותית וחיים פוליטיים עשירים, קיימים גם מתחים, עוני ואנטישמיות.</article>
-        <article class="event"><strong class="text-white">1939–1945:</strong> הכיבוש הנאצי מוביל לגטאות, מחנות, השמדה ורצח רוב יהודי פולין. ורשה, לודז׳, קרקוב ולובלין הופכות למוקדי טרגדיה וזיכרון.</article>
-        <article class="event"><strong class="text-white">לאחר 1945:</strong> שארית הפליטה, הגירה, ניסיונות שיקום, אנטישמיות מחודשת, עזיבות נוספות, ולצד זאת מאמצי זיכרון, מחקר ושימור אתרי מורשת.</article>
-      </div>
-    </section>
-
-    <section class="section-card">
-      <h2 class="text-2xl md:text-3xl font-black text-white mb-4"><i class="fa-solid fa-city text-emerald-300 ml-2"></i>3. מרכזים יהודיים חשובים בפולין</h2>
-      <div class="grid md:grid-cols-3 gap-4">
-        <a class="city-link" href="cities/warsaw.html"><strong class="text-white block mb-1">ורשה</strong><span class="text-sm text-slate-400">הקהילה היהודית הגדולה ביותר בפולין ערב השואה, מרכז פוליטי, תרבותי ועיתונאי.</span></a>
-        <a class="city-link" href="cities/krakow.html"><strong class="text-white block mb-1">קרקוב וקז׳ימייז׳</strong><span class="text-sm text-slate-400">מרחב יהודי היסטורי מפורסם, בתי כנסת, בתי עלמין, מורשת קהילתית ותיירות זיכרון.</span></a>
-        <a class="city-link" href="cities/lodz.html"><strong class="text-white block mb-1">לודז׳</strong><span class="text-sm text-slate-400">עיר תעשייה גדולה עם קהילה יהודית משמעותית וגטו לודז׳ בתקופת השואה.</span></a>
-        <a class="city-link" href="cities/poznan.html"><strong class="text-white block mb-1">פוזנן</strong><span class="text-sm text-slate-400">קהילה עתיקה באזור מערב פולין, הקשורה למסחר, עירוניות ושינויים פוליטיים.</span></a>
-        <a class="city-link" href="cities/wroclaw.html"><strong class="text-white block mb-1">ורוצלב / ברסלאו</strong><span class="text-sm text-slate-400">מרכז יהודי חשוב במרחב הגרמני־פולני, עם מורשת רבנית, אקדמית וקהילתית.</span></a>
-        <a class="city-link" href="cities/gdansk.html"><strong class="text-white block mb-1">גדנסק / דנציג</strong><span class="text-sm text-slate-400">קהילה במרחב הבלטי, קשורה למסחר, הגירה וזהות עירונית רב־תרבותית.</span></a>
-      </div>
-    </section>
-
-    <section class="section-card">
-      <h2 class="text-2xl md:text-3xl font-black text-white mb-4"><i class="fa-solid fa-layer-group text-purple-300 ml-2"></i>4. נושאי עומק מרכזיים</h2>
-      <div class="topic-grid">
-        <article class="topic" style="--from:#2563eb;--to:#7c3aed"><i class="fa-solid fa-synagogue text-3xl mb-4"></i><h3 class="text-xl font-black text-white mb-2">קהילה ומוסדות</h3><p class="text-white/85 text-sm leading-7">בתי כנסת, חברות קדישא, בתי מדרש, מוסדות צדקה, הנהגה רבנית ומבנה קהילתי עצמאי.</p></article>
-        <article class="topic" style="--from:#f59e0b;--to:#dc2626"><i class="fa-solid fa-book text-3xl mb-4"></i><h3 class="text-xl font-black text-white mb-2">תורה וחסידות</h3><p class="text-white/85 text-sm leading-7">פולין הייתה מרכז של לימוד תורה, רבנות, ישיבות, חסידות וחצרות רוחניות בעלות השפעה רחבה.</p></article>
-        <article class="topic" style="--from:#0891b2;--to:#0f766e"><i class="fa-solid fa-language text-3xl mb-4"></i><h3 class="text-xl font-black text-white mb-2">יידיש ותרבות</h3><p class="text-white/85 text-sm leading-7">עיתונות, תיאטרון, ספרות, שירה, חינוך, דפוס וחיים תרבותיים מודרניים ביידיש ובעברית.</p></article>
-        <article class="topic" style="--from:#9333ea;--to:#db2777"><i class="fa-solid fa-people-arrows text-3xl mb-4"></i><h3 class="text-xl font-black text-white mb-2">פוליטיקה יהודית</h3><p class="text-white/85 text-sm leading-7">ציונות, בונד, אגודת ישראל, תנועות נוער, מאבקים חברתיים ודיונים על עתיד העם היהודי.</p></article>
-        <article class="topic" style="--from:#64748b;--to:#111827"><i class="fa-solid fa-triangle-exclamation text-3xl mb-4"></i><h3 class="text-xl font-black text-white mb-2">השואה</h3><p class="text-white/85 text-sm leading-7">גטאות, מחנות, אקציות, מרידות, הצלה, תיעוד, אובדן עולם יהודי שלם וזיכרון הקורבנות.</p></article>
-        <article class="topic" style="--from:#22c55e;--to:#0ea5e9"><i class="fa-solid fa-seedling text-3xl mb-4"></i><h3 class="text-xl font-black text-white mb-2">זיכרון ושימור</h3><p class="text-white/85 text-sm leading-7">מוזיאונים, בתי עלמין, שלטי זיכרון, שיקום בתי כנסת, מסעות שורשים ומחקר קהילתי.</p></article>
-      </div>
-    </section>
-
-    <section class="section-card">
-      <h2 class="text-2xl md:text-3xl font-black text-white mb-4"><i class="fa-solid fa-star-of-david text-amber-300 ml-2"></i>5. החיים היהודיים לפני השואה</h2>
-      <div class="space-y-4 text-slate-300 leading-8">
-        <p>לפני מלחמת העולם השנייה חיו בפולין מיליוני יהודים. חלקם התגוררו בערים גדולות כמו ורשה, לודז׳ וקרקוב, וחלקם בעיירות קטנות — שטעטלים — שבהן החיים היהודיים היו חלק מרכזי מהמרקם המקומי.</p>
-        <p>הקהילות כללו מגוון רחב מאוד: חרדים, חסידים, מתנגדים, משכילים, ציונים, סוציאליסטים, דוברי יידיש, דוברי פולנית, בעלי מלאכה, סוחרים, תלמידי ישיבות, מורים, עיתונאים, אמנים ופועלים.</p>
-        <p>העושר של יהדות פולין נבע גם מן המתח הפנימי שבתוכה: מסורת מול מודרנה, דת מול חילון, ציונות מול השתלבות מקומית, יידיש מול עברית ופולנית, וחיים קהילתיים לצד פוליטיקה יהודית מודרנית.</p>
-      </div>
-    </section>
-
-    <section class="section-card">
-      <h2 class="text-2xl md:text-3xl font-black text-white mb-4"><i class="fa-solid fa-candle-holder text-red-300 ml-2"></i>6. השואה וחורבן יהדות פולין</h2>
-      <div class="space-y-4 text-slate-300 leading-8">
-        <p>הכיבוש הנאצי של פולין הפך את הארץ למרכז מרכזי של מדיניות ההשמדה. יהודים רוכזו בגטאות, נשלחו לעבודות כפייה, סבלו מרעב, מחלות, אלימות וגירושים, ולבסוף נרצחו בהמוניהם במחנות ההשמדה.</p>
-        <p>גטו ורשה, גטו לודז׳, אזור קרקוב, לובלין ומקומות רבים נוספים הפכו לסמלים של סבל, עמידה, תיעוד, מרד וזיכרון. לצד החורבן התקיימו גם ניסיונות הצלה, מחתרות, ארכיונים חשאיים, חינוך בסתר ועמידה רוחנית.</p>
-        <p>הדיון ביהדות פולין חייב להחזיק יחד שני ממדים: מצד אחד עולם חיים עשיר שהתקיים במשך מאות שנים, ומצד שני חורבן חסר תקדים שהשמיד את רובו.</p>
-      </div>
-    </section>
-
-    <section class="section-card">
-      <h2 class="text-2xl md:text-3xl font-black text-white mb-4"><i class="fa-solid fa-map text-blue-300 ml-2"></i>7. הצעות להמשך הרחבה באתר</h2>
-      <ul class="space-y-3 text-slate-300 leading-8">
-        <li><strong class="text-white">מפת קהילות יהודיות:</strong> עמוד מפה עם ורשה, קרקוב, לובלין, לודז׳, פוזנן, ורוצלב, ביאליסטוק ועוד.</li>
-        <li><strong class="text-white">גלריית בתי כנסת:</strong> תמונות, היסטוריה, מצב שימור וקרדיטים לכל אתר.</li>
-        <li><strong class="text-white">ציר זמן יהודי נפרד:</strong> מההתיישבות בימי הביניים ועד מוזיאונים ומיזמי זיכרון כיום.</li>
-        <li><strong class="text-white">עמודי קהילה:</strong> דף עצמאי לכל קהילה יהודית מרכזית בפולין.</li>
-      </ul>
-    </section>
+    <section class="section-card"><h2 class="text-2xl md:text-3xl font-black text-white mb-4"><i class="fa-solid fa-map text-blue-300 ml-2"></i>8. הצעות להמשך הרחבה באתר</h2><ul class="space-y-3 text-slate-300 leading-8"><li><strong class="text-white">מפת קהילות יהודיות:</strong> עמוד מפה עם ורשה, קרקוב, לובלין, לודז׳, פוזנן, ורוצלב, ביאליסטוק ועוד.</li><li><strong class="text-white">גלריית בתי כנסת:</strong> תמונות, היסטוריה, מצב שימור וקרדיטים לכל אתר.</li><li><strong class="text-white">ציר זמן יהודי נפרד:</strong> מההתיישבות בימי הביניים ועד מוזיאונים ומיזמי זיכרון כיום.</li><li><strong class="text-white">עמודי קהילה:</strong> דף עצמאי לכל קהילה יהודית מרכזית בפולין.</li><li><strong class="text-white">ארכיון פולקלור:</strong> אוסף סיפורי עם, פתגמים, ניגונים, מנהגים, דיבוקים, סיפורי צדיקים וזיכרונות שטעטל.</li></ul></section>
   </main>
   <script src="assets/js/dropdown-nav.js"></script>
 </body>
