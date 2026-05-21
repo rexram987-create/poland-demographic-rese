@@ -6,6 +6,7 @@
   <title>אודות | Global Explorer Hub</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/dropdown-nav.css">
   <style>
     body{background:#020617;color:#e2e8f0;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif}
     .research-card{background:rgba(15,23,42,.88);border:1px solid rgba(51,65,85,.9);border-radius:24px;box-shadow:0 18px 50px rgba(0,0,0,.35)}
@@ -68,11 +69,17 @@
 ├── about-en.html
 ├── sources.html
 ├── sources-en.html
-├── cities/
-│   ├── warsaw.html
-│   └── warsaw-en.html
-└── assets/
-    └── images/</code></pre>
+├── assets/
+│   ├── css/dropdown-nav.css
+│   ├── js/dropdown-nav.js
+│   └── images/
+└── cities/
+    ├── warsaw.html / warsaw-en.html
+    ├── krakow.html / krakow-en.html
+    ├── lodz.html / lodz-en.html
+    ├── gdansk.html / gdansk-en.html
+    ├── wroclaw.html / wroclaw-en.html
+    └── poznan.html / poznan-en.html</code></pre>
       </div>
     </section>
 
@@ -111,5 +118,6 @@
     function closeImage(){const modal=document.getElementById("imageModal");modal.classList.add("hidden");modal.classList.remove("flex");document.body.classList.remove("modal-open");}
     document.addEventListener("keydown",function(event){if(event.key==="Escape")closeImage();});
   </script>
+  <script src="assets/js/dropdown-nav.js"></script>
 </body>
 </html>
