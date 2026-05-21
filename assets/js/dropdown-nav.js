@@ -56,6 +56,7 @@
 
     const en = isEnglishPage();
     const homePath = en ? "index-en.html" : "index.html";
+    const jewishPath = en ? "jewish-poland-en.html" : "jewish-poland.html";
     const nav = document.createElement("div");
     nav.className = "geh-nav-shell";
     nav.innerHTML = `
@@ -86,7 +87,7 @@
     main.appendChild(link(withPrefix(homePath), en ? "Home" : "ראשי", en ? "Research index" : "אינדקס המחקר", "fa-solid fa-house"));
     main.appendChild(link(withPrefix(en ? "poland-en.html" : "poland.html"), en ? "Poland" : "פולין", en ? "Country research" : "מחקר מדינה", "fa-solid fa-flag"));
     main.appendChild(link(withPrefix("timeline.html"), en ? "Timeline" : "ציר זמן", en ? "Interactive history" : "היסטוריה אינטראקטיבית", "fa-solid fa-clock-rotate-left"));
-    main.appendChild(link(withPrefix("jewish-poland.html"), en ? "Jewish Poland" : "יהדות פולין", en ? "Jewish heritage" : "מורשת יהודית", "fa-solid fa-star-of-david"));
+    main.appendChild(link(withPrefix(jewishPath), en ? "Jewish Poland" : "יהדות פולין", en ? "Jewish heritage" : "מורשת יהודית", "fa-solid fa-star-of-david"));
     main.appendChild(link(withPrefix(en ? "sources-en.html" : "sources.html"), en ? "Sources" : "מקורות", en ? "Credits and references" : "קרדיטים ומקורות", "fa-solid fa-link"));
     main.appendChild(link(withPrefix(en ? "about-en.html" : "about.html"), en ? "About" : "אודות", en ? "Project information" : "מידע על הפרויקט", "fa-solid fa-circle-info"));
 
@@ -97,7 +98,12 @@
 
     const language = section(en ? "Language" : "שפה");
     const current = location.pathname.split("/").pop() || "index.html";
-    const other = en ? current.replace("-en.html", ".html") : current.replace(".html", "-en.html");
+    let other;
+    if (current === "index.html") other = "index-en.html";
+    else if (current === "index-en.html") other = "index.html";
+    else if (current === "jewish-poland.html") other = "jewish-poland-en.html";
+    else if (current === "jewish-poland-en.html") other = "jewish-poland.html";
+    else other = en ? current.replace("-en.html", ".html") : current.replace(".html", "-en.html");
     language.appendChild(link(other, en ? "עברית" : "English", en ? "Switch to Hebrew" : "מעבר לאנגלית", "fa-solid fa-language"));
     language.appendChild(link("#top", en ? "Top of page" : "ראש הדף", en ? "Return to the beginning" : "חזרה לתחילת העמוד", "fa-solid fa-arrow-up"));
 
