@@ -46,5 +46,23 @@
     grid.appendChild(main);grid.appendChild(cities);grid.appendChild(language);
     const button=nav.querySelector("button.geh-menu-button");const dropdown=nav.querySelector(".geh-dropdown");function setOpen(open){dropdown.hidden=!open;button.setAttribute("aria-expanded",String(open));button.querySelector("span").textContent=open?(en?"Close navigation":"סגור ניווט"):(en?"Open navigation":"פתח ניווט");}
     button.addEventListener("click",function(){setOpen(dropdown.hidden);});document.addEventListener("click",function(event){if(!nav.contains(event.target))setOpen(false);});document.addEventListener("keydown",function(event){if(event.key==="Escape")setOpen(false);});}
-  if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",buildNav);}else{buildNav();}
+  function loadFullFolkloreStories(){
+    if(!location.pathname.endsWith("folklore-archive.html")) return;
+    const script=document.createElement("script");
+    script.src="assets/js/folklore-stories-full.js?v=20260522h";
+    script.onload=function(){
+      if(!window.FOLKLORE_STORIES_FULL) return;
+      const modal=document.getElementById('storyModal'),title=document.getElementById('modalTitle'),cat=document.getElementById('modalCategory'),body=document.getElementById('modalBody');
+      if(!modal||!title||!cat||!body) return;
+      document.querySelectorAll('[data-story]').forEach(function(btn){
+        btn.addEventListener('click',function(){
+          const s=window.FOLKLORE_STORIES_FULL[btn.dataset.story];
+          if(!s) return;
+          setTimeout(function(){cat.textContent=s.cat;title.textContent=s.title;body.innerHTML=s.body;modal.classList.add('open');document.body.style.overflow='hidden';},0);
+        });
+      });
+    };
+    document.head.appendChild(script);
+  }
+  if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",function(){buildNav();loadFullFolkloreStories();});}else{buildNav();loadFullFolkloreStories();}
 })();
