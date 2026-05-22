@@ -13,6 +13,22 @@
     const main=section(en?"Main pages":"עמודים ראשיים");main.appendChild(link(withPrefix(homePath),en?"Home":"ראשי",en?"Research index":"אינדקס המחקר","fa-solid fa-house"));main.appendChild(link(withPrefix(en?"poland-en.html":"poland.html"),en?"Poland":"פולין",en?"Country research":"מחקר מדינה","fa-solid fa-flag"));main.appendChild(link(withPrefix("timeline.html"),en?"Timeline":"ציר זמן",en?"Interactive history":"היסטוריה אינטראקטיבית","fa-solid fa-clock-rotate-left"));main.appendChild(link(withPrefix(jewishPath),en?"Jewish Poland":"יהדות פולין",en?"Jewish heritage":"מורשת יהודית","fa-solid fa-star-of-david"));main.appendChild(link(withPrefix(jewishTimelinePath),en?"Jewish Timeline":"ציר זמן יהודי",en?"Expanded Jewish timeline":"ציר זמן יהודי מורחב","fa-solid fa-timeline"));main.appendChild(link(withPrefix(folklorePath),en?"Folklore Archive":"ארכיון פולקלור",en?"Stories, proverbs and memory":"סיפורי עם, פתגמים וזיכרון","fa-solid fa-masks-theater"));main.appendChild(link(withPrefix(en?"sources-en.html":"sources.html"),en?"Sources":"מקורות",en?"Credits and references":"קרדיטים ומקורות","fa-solid fa-link"));main.appendChild(link(withPrefix(en?"about-en.html":"about.html"),en?"About":"אודות",en?"Project information":"מידע על הפרויקט","fa-solid fa-circle-info"));
     const cities=section(en?"City research pages":"דפי מחקר ערים");(en?cityLinksEn:cityLinksHe).forEach(([path,label,note])=>cities.appendChild(link(cityPath(path),label,note,"fa-solid fa-city")));const language=section(en?"Language":"שפה");language.appendChild(link(languageHref(languagePath),en?"עברית":"English",en?"Switch to Hebrew":"מעבר לאנגלית","fa-solid fa-language"));language.appendChild(link("#top",en?"Top of page":"ראש הדף",en?"Return to the beginning":"חזרה לתחילת העמוד","fa-solid fa-arrow-up"));grid.appendChild(main);grid.appendChild(cities);grid.appendChild(language);
     const button=nav.querySelector("button.geh-menu-button");const dropdown=nav.querySelector(".geh-dropdown");function setOpen(open){dropdown.hidden=!open;button.setAttribute("aria-expanded",String(open));button.querySelector("span").textContent=open?(en?"Close navigation":"סגור ניווט"):(en?"Open navigation":"פתח ניווט");}button.addEventListener("click",function(){setOpen(dropdown.hidden);});document.addEventListener("click",function(event){if(!nav.contains(event.target))setOpen(false);});document.addEventListener("keydown",function(event){if(event.key==="Escape")setOpen(false);});}
+  function injectRabkaIndexCard(){
+    const current=location.pathname.split('/').pop()||'index.html';
+    if(current!=="index.html"&&current!=="index-en.html")return;
+    if(document.querySelector('a[href="cities/rabka-zdroj.html"],a[href="cities/rabka-zdroj-en.html"]'))return;
+    const en=current==="index-en.html";
+    const grid=document.querySelector('#cities .grid');
+    if(!grid)return;
+    const a=document.createElement('a');
+    a.href=en?'cities/rabka-zdroj-en.html':'cities/rabka-zdroj.html';
+    a.className='city-card';
+    a.style.setProperty('--from','#16a34a');
+    a.style.setProperty('--to','#0ea5e9');
+    a.innerHTML=`<div class="city-content"><span class="icon-bubble"><i class="fa-solid fa-spa text-2xl"></i></span><div><h3 class="text-2xl font-black">${en?'Rabka-Zdrój':'ראבקה־זדרוי'}</h3><p class="text-white/85 text-sm">${en?'Spa town and Jewish memory':'עיירת מרפא וזיכרון יהודי'}</p></div></div>`;
+    const sources=grid.querySelector(en?'a[href="sources-en.html"]':'a[href="sources.html"]');
+    if(sources)grid.insertBefore(a,sources);else grid.appendChild(a);
+  }
   function loadFullFolkloreStories(){
     const isHe=location.pathname.endsWith("folklore-archive.html");
     const isEn=location.pathname.endsWith("folklore-archive-en.html");
@@ -28,5 +44,5 @@
     };
     document.head.appendChild(script);
   }
-  if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",function(){buildNav();loadFullFolkloreStories();});}else{buildNav();loadFullFolkloreStories();}
+  if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",function(){buildNav();injectRabkaIndexCard();loadFullFolkloreStories();});}else{buildNav();injectRabkaIndexCard();loadFullFolkloreStories();}
 })();
