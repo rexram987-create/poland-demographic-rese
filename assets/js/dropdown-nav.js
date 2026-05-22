@@ -33,6 +33,15 @@
     return inCitiesFolder() ? path.replace("cities/", "") : path;
   }
 
+  function getLanguageTarget(en) {
+    const current = location.pathname.split("/").pop() || "index.html";
+    if (current === "index.html") return "index-en.html";
+    if (current === "index-en.html") return "index.html";
+    if (current === "jewish-poland.html") return "jewish-poland-en.html";
+    if (current === "jewish-poland-en.html") return "jewish-poland.html";
+    return en ? current.replace("-en.html", ".html") : current.replace(".html", "-en.html");
+  }
+
   function link(href, label, note, iconClass) {
     const a = document.createElement("a");
     a.className = "geh-menu-link";
@@ -57,19 +66,26 @@
     const en = isEnglishPage();
     const homePath = en ? "index-en.html" : "index.html";
     const jewishPath = en ? "jewish-poland-en.html" : "jewish-poland.html";
+    const languagePath = getLanguageTarget(en);
     const nav = document.createElement("div");
     nav.className = "geh-nav-shell";
     nav.innerHTML = `
       <div class="geh-nav-inner">
         <a class="geh-brand" href="${withPrefix(homePath)}" aria-label="${en ? "Home" : "דף הבית"}">
-          <span class="geh-brand-mark"><i class="fa-solid fa-earth-europe"></i></span>
+          <span class="geh-brand-mark"><i class="fa-solid fa-house"></i></span>
           <span>${en ? "Poland Research Hub" : "מרכז מחקר פולין"}</span>
         </a>
-        <button class="geh-menu-button" type="button" aria-expanded="false" aria-controls="gehDropdownMenu">
-          <i class="fa-solid fa-bars"></i>
-          <span>${en ? "Open navigation" : "פתח ניווט"}</span>
-          <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
-        </button>
+        <div style="display:flex;align-items:center;gap:.55rem;">
+          <a class="geh-menu-button" href="${withPrefix(languagePath)}" aria-label="${en ? "Switch to Hebrew" : "Switch to English"}" style="text-decoration:none;">
+            <i class="fa-solid fa-language"></i>
+            <span>${en ? "עברית" : "English"}</span>
+          </a>
+          <button class="geh-menu-button" type="button" aria-expanded="false" aria-controls="gehDropdownMenu">
+            <i class="fa-solid fa-bars"></i>
+            <span>${en ? "Open navigation" : "פתח ניווט"}</span>
+            <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+          </button>
+        </div>
       </div>
       <div class="geh-dropdown" id="gehDropdownMenu" hidden>
         <div class="geh-menu-scroll">
@@ -97,21 +113,14 @@
     });
 
     const language = section(en ? "Language" : "שפה");
-    const current = location.pathname.split("/").pop() || "index.html";
-    let other;
-    if (current === "index.html") other = "index-en.html";
-    else if (current === "index-en.html") other = "index.html";
-    else if (current === "jewish-poland.html") other = "jewish-poland-en.html";
-    else if (current === "jewish-poland-en.html") other = "jewish-poland.html";
-    else other = en ? current.replace("-en.html", ".html") : current.replace(".html", "-en.html");
-    language.appendChild(link(other, en ? "עברית" : "English", en ? "Switch to Hebrew" : "מעבר לאנגלית", "fa-solid fa-language"));
+    language.appendChild(link(withPrefix(languagePath), en ? "עברית" : "English", en ? "Switch to Hebrew" : "מעבר לאנגלית", "fa-solid fa-language"));
     language.appendChild(link("#top", en ? "Top of page" : "ראש הדף", en ? "Return to the beginning" : "חזרה לתחילת העמוד", "fa-solid fa-arrow-up"));
 
     grid.appendChild(main);
     grid.appendChild(cities);
     grid.appendChild(language);
 
-    const button = nav.querySelector(".geh-menu-button");
+    const button = nav.querySelector("button.geh-menu-button");
     const dropdown = nav.querySelector(".geh-dropdown");
 
     function setOpen(open) {
