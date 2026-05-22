@@ -13,6 +13,21 @@
     const main=section(en?"Main pages":"עמודים ראשיים");main.appendChild(link(withPrefix(homePath),en?"Home":"ראשי",en?"Research index":"אינדקס המחקר","fa-solid fa-house"));main.appendChild(link(withPrefix(en?"poland-en.html":"poland.html"),en?"Poland":"פולין",en?"Country research":"מחקר מדינה","fa-solid fa-flag"));main.appendChild(link(withPrefix("timeline.html"),en?"Timeline":"ציר זמן",en?"Interactive history":"היסטוריה אינטראקטיבית","fa-solid fa-clock-rotate-left"));main.appendChild(link(withPrefix(jewishPath),en?"Jewish Poland":"יהדות פולין",en?"Jewish heritage":"מורשת יהודית","fa-solid fa-star-of-david"));main.appendChild(link(withPrefix(jewishTimelinePath),en?"Jewish Timeline":"ציר זמן יהודי",en?"Expanded Jewish timeline":"ציר זמן יהודי מורחב","fa-solid fa-timeline"));main.appendChild(link(withPrefix(folklorePath),en?"Folklore Archive":"ארכיון פולקלור",en?"Stories, proverbs and memory":"סיפורי עם, פתגמים וזיכרון","fa-solid fa-masks-theater"));main.appendChild(link(withPrefix(en?"sources-en.html":"sources.html"),en?"Sources":"מקורות",en?"Credits and references":"קרדיטים ומקורות","fa-solid fa-link"));main.appendChild(link(withPrefix(en?"about-en.html":"about.html"),en?"About":"אודות",en?"Project information":"מידע על הפרויקט","fa-solid fa-circle-info"));
     const cities=section(en?"City research pages":"דפי מחקר ערים");(en?cityLinksEn:cityLinksHe).forEach(([path,label,note])=>cities.appendChild(link(cityPath(path),label,note,"fa-solid fa-city")));const language=section(en?"Language":"שפה");language.appendChild(link(languageHref(languagePath),en?"עברית":"English",en?"Switch to Hebrew":"מעבר לאנגלית","fa-solid fa-language"));language.appendChild(link("#top",en?"Top of page":"ראש הדף",en?"Return to the beginning":"חזרה לתחילת העמוד","fa-solid fa-arrow-up"));grid.appendChild(main);grid.appendChild(cities);grid.appendChild(language);
     const button=nav.querySelector("button.geh-menu-button");const dropdown=nav.querySelector(".geh-dropdown");function setOpen(open){dropdown.hidden=!open;button.setAttribute("aria-expanded",String(open));button.querySelector("span").textContent=open?(en?"Close navigation":"סגור ניווט"):(en?"Open navigation":"פתח ניווט");}button.addEventListener("click",function(){setOpen(dropdown.hidden);});document.addEventListener("click",function(event){if(!nav.contains(event.target))setOpen(false);});document.addEventListener("keydown",function(event){if(event.key==="Escape")setOpen(false);});}
+  function injectSieradzPageLanguageButton(){
+    const current=location.pathname.split('/').pop()||'';
+    if(current!=="sieradz.html"&&current!=="sieradz-en.html")return;
+    if(document.querySelector('[data-sieradz-language-button="true"]'))return;
+    const target=current==="sieradz.html"?"sieradz-en.html":"sieradz.html";
+    const label=current==="sieradz.html"?"English":"עברית";
+    const iconSide=current==="sieradz.html"?"ml-2":"mr-2";
+    const button=document.createElement('a');
+    button.href=target;
+    button.dataset.sieradzLanguageButton="true";
+    button.className="rounded-full bg-white text-slate-950 font-bold px-5 py-3";
+    button.innerHTML=`<i class="fa-solid fa-language ${iconSide}"></i>${label}`;
+    const headerButtons=document.querySelector('header .flex.flex-wrap.gap-3.mt-7');
+    if(headerButtons)headerButtons.appendChild(button);
+  }
   function loadFullFolkloreStories(){
     const isHe=location.pathname.endsWith("folklore-archive.html");
     const isEn=location.pathname.endsWith("folklore-archive-en.html");
@@ -28,5 +43,5 @@
     };
     document.head.appendChild(script);
   }
-  if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",function(){buildNav();loadFullFolkloreStories();});}else{buildNav();loadFullFolkloreStories();}
+  if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",function(){buildNav();injectSieradzPageLanguageButton();loadFullFolkloreStories();});}else{buildNav();injectSieradzPageLanguageButton();loadFullFolkloreStories();}
 })();
