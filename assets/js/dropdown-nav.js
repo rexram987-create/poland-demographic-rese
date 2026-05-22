@@ -1,6 +1,6 @@
 (function () {
-  const cityLinksHe = [["cities/warsaw.html","ורשה","עיר הבירה"],["cities/krakow.html","קרקוב","עיר מלכותית"],["cities/lodz.html","לודז׳","תעשייה וטקסטיל"],["cities/gdansk.html","גדנסק","נמל וחירות"],["cities/wroclaw.html","ורוצלב","גשרים ואיים"],["cities/poznan.html","פוזנן","ראשית פולין"]];
-  const cityLinksEn = [["cities/warsaw-en.html","Warsaw","Capital city"],["cities/krakow-en.html","Kraków","Royal city"],["cities/lodz-en.html","Łódź","Industry and textiles"],["cities/gdansk-en.html","Gdańsk","Port and freedom"],["cities/wroclaw-en.html","Wrocław","Bridges and islands"],["cities/poznan-en.html","Poznań","Early Poland"]];
+  const cityLinksHe = [["cities/warsaw.html","ורשה","עיר הבירה"],["cities/krakow.html","קרקוב","עיר מלכותית"],["cities/lodz.html","לודז׳","תעשייה וטקסטיל"],["cities/gdansk.html","גדנסק","נמל וחירות"],["cities/wroclaw.html","ורוצלב","גשרים ואיים"],["cities/poznan.html","פוזנן","ראשית פולין"],["cities/sieradz.html","שייראדז","מורשת יהודית"]];
+  const cityLinksEn = [["cities/warsaw-en.html","Warsaw","Capital city"],["cities/krakow-en.html","Kraków","Royal city"],["cities/lodz-en.html","Łódź","Industry and textiles"],["cities/gdansk-en.html","Gdańsk","Port and freedom"],["cities/wroclaw-en.html","Wrocław","Bridges and islands"],["cities/poznan-en.html","Poznań","Early Poland"],["cities/sieradz.html","Sieradz","Jewish heritage"]];
   function isEnglishPage(){return document.documentElement.lang&&document.documentElement.lang.toLowerCase().startsWith("en");}
   function inCitiesFolder(){return location.pathname.includes("/cities/");}
   function withPrefix(path){return inCitiesFolder()?"../"+path:path;}
