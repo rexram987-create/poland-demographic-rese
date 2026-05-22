@@ -29,6 +29,28 @@
     const sources=grid.querySelector(en?'a[href="sources-en.html"]':'a[href="sources.html"]');
     if(sources)grid.insertBefore(a,sources);else grid.appendChild(a);
   }
+  function injectRabkaMainImage(){
+    const current=location.pathname.split('/').pop()||'';
+    if(current!=="rabka-zdroj.html"&&current!=="rabka-zdroj-en.html")return;
+    if(document.querySelector('[data-rabka-main-image="true"]'))return;
+    const en=current==="rabka-zdroj-en.html";
+    const sectionEl=document.createElement('section');
+    sectionEl.className='card p-4 md:p-5';
+    sectionEl.dataset.rabkaMainImage='true';
+    sectionEl.innerHTML=`<figure class="bg-slate-950 border border-slate-800 rounded-2xl overflow-hidden"><button class="relative block w-full aspect-video bg-slate-950 ${en?'text-left':'text-right'}" type="button" data-rabka-open-image="true" aria-label="${en?'Open Rabka-Zdrój image':'פתח תמונת ראבקה־זדרוי'}"><img src="../assets/images/rabka-zdroj-main-spa-view.jpg" alt="${en?'Rabka-Zdrój spa town view':'ראבקה־זדרוי — מבט עירוני ועיירת מרפא'}" style="width:100%;height:100%;object-fit:cover;display:block;"><span class="absolute top-3 ${en?'right-3':'left-3'} bg-slate-950/80 border border-slate-700 rounded-full px-3 py-1 text-xs text-white">${en?'Open modal':'פתח בחלון צף'}</span><div class="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-slate-950/90 to-transparent ${en?'text-left':'text-right'}"><p class="text-white font-bold">${en?'Rabka-Zdrój — spa town view':'ראבקה־זדרוי — מבט עירוני ועיירת מרפא'}</p><p class="text-xs text-slate-300">rabka-zdroj-main-spa-view.jpg</p></div></button></figure><p class="text-slate-400 text-sm leading-7 mt-3">${en?'Main image for the Rabka-Zdrój page.':'תמונה ראשית לדף ראבקה־זדרוי.'}</p>`;
+    const header=document.querySelector('main header');
+    if(header&&header.parentNode)header.parentNode.insertBefore(sectionEl,header.nextSibling);
+    const modal=document.createElement('div');
+    modal.dataset.rabkaImageModal='true';
+    modal.style.cssText='position:fixed;inset:0;background:rgba(2,6,23,.86);backdrop-filter:blur(10px);display:none;align-items:center;justify-content:center;padding:1rem;z-index:9999;';
+    modal.innerHTML=`<button type="button" data-rabka-close-image="true" aria-label="${en?'Close':'סגור'}" style="position:absolute;top:1rem;${en?'right':'left'}:1rem;border:1px solid rgba(255,255,255,.25);background:rgba(15,23,42,.85);color:white;border-radius:999px;width:44px;height:44px;display:flex;align-items:center;justify-content:center;"><i class="fa-solid fa-xmark"></i></button><div style="width:min(1100px,100%);max-height:88vh;overflow:auto;background:#020617;border:1px solid rgba(251,191,36,.35);border-radius:24px;box-shadow:0 30px 90px rgba(0,0,0,.6);"><img src="../assets/images/rabka-zdroj-main-spa-view.jpg" alt="${en?'Rabka-Zdrój spa town view':'ראבקה־זדרוי'}" style="width:100%;display:block;"></div>`;
+    document.body.appendChild(modal);
+    function open(){modal.style.display='flex';document.body.style.overflow='hidden';}
+    function close(){modal.style.display='none';document.body.style.overflow='';}
+    document.querySelector('[data-rabka-open-image="true"]').addEventListener('click',open);
+    modal.addEventListener('click',function(e){if(e.target===modal||e.target.closest('[data-rabka-close-image="true"]'))close();});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+  }
   function loadFullFolkloreStories(){
     const isHe=location.pathname.endsWith("folklore-archive.html");
     const isEn=location.pathname.endsWith("folklore-archive-en.html");
@@ -44,5 +66,5 @@
     };
     document.head.appendChild(script);
   }
-  if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",function(){buildNav();injectRabkaIndexCard();loadFullFolkloreStories();});}else{buildNav();injectRabkaIndexCard();loadFullFolkloreStories();}
+  if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",function(){buildNav();injectRabkaIndexCard();injectRabkaMainImage();loadFullFolkloreStories();});}else{buildNav();injectRabkaIndexCard();injectRabkaMainImage();loadFullFolkloreStories();}
 })();
